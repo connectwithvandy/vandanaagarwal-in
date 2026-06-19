@@ -85,3 +85,5 @@ npx vercel@latest deploy --prod --yes
   (they are not prices and help people choose).
 - Out of scope for v1 (roadmap): pricing/packages pages, lead magnet + newsletter, dedicated
   /coaching /consulting /resources pages, larger case-study testimonial wall.
+
+_CI: auto-deploy on push verified via GitHub → Vercel integration._
