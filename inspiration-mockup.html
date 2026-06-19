@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vandana Agarwal Nik | SDR Coach (template mockup)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --violet:#7C2FD4;
+    --violet-dark:#6322B0;
+    --lav:#B98BEA;
+    --lav-bg:#F4ECFB;
+    --bg:#FBF8FE;
+    --dark:#140A1E;
+    --dark-2:#1F1130;
+    --ink:#241934;
+    --soft:#6A5C82;
+    --line:#E7DAF6;
+    --white:#fff;
+    --shadow:0 18px 50px -24px rgba(36,25,52,.45);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .kicker{font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lav)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:600;font-size:.97rem;padding:.85rem 1.5rem;border-radius:999px;transition:transform .15s,box-shadow .15s,background .15s;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
+  .btn-primary{background:var(--violet);color:#fff;box-shadow:0 10px 26px -10px rgba(124,47,212,.7)}
+  .btn-primary:hover{background:var(--violet-dark);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .btn-ghost-l{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+  .btn-ghost-l:hover{background:#fff;color:var(--dark)}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(20,10,30,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:'Fraunces';font-weight:600;font-size:1.16rem;color:#fff}
+  .logo span{color:var(--lav)}
+  .nav-links{display:flex;gap:1.9rem}
+  .nav-links a{font-size:.95rem;font-weight:500;color:#D9CCEC}
+  .nav-links a:hover{color:#fff}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  /* HERO dark, echoes the black+violet banner */
+  .hero{background:radial-gradient(120% 120% at 80% 0%, #3A1668 0%, var(--dark) 55%);color:#fff;padding:88px 0 80px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.6rem);margin:16px 0 18px;color:#fff}
+  .hero h1 em{font-style:normal;color:var(--lav)}
+  .hero .sub{font-size:1.13rem;color:#D9CCEC;max-width:33rem}
+  .hero .sub b{color:#fff;font-weight:600}
+  .hero-cta{display:flex;gap:14px;margin:28px 0;flex-wrap:wrap}
+  .chips{display:flex;gap:12px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:11px 15px}
+  .chip b{display:block;font-family:'Fraunces';font-size:1.05rem;color:var(--lav)}
+  .chip small{font-size:.78rem;color:#C9B8E0}
+  .hero-photo img{width:100%;border-radius:22px;display:block;border:5px solid rgba(255,255,255,.1);object-fit:cover;aspect-ratio:4/5;box-shadow:var(--shadow)}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero-photo{max-width:340px;margin:0 auto}}
+
+  section{padding:76px 0}
+  .alt{background:var(--lav-bg)}
+  .sec-head{max-width:42rem;margin-bottom:42px}
+  .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin:10px 0 12px}
+  .sec-head p{color:var(--soft);font-size:1.06rem}
+
+  .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .card h3{font-size:1.28rem;margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .badge{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--violet);color:#fff;padding:3px 9px;border-radius:999px}
+  .card p.d{color:var(--soft);margin-bottom:14px}
+  .card ul{list-style:none;margin-bottom:22px;display:flex;flex-direction:column;gap:8px}
+  .card li{position:relative;padding-left:24px;font-size:.95rem}
+  .card li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--lav)}
+  .card .btn{margin-top:auto;align-self:flex-start}
+  @media(max-width:860px){.offers{grid-template-columns:1fr}}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px}
+  .step .n{font-family:'Fraunces';font-size:2.3rem;color:var(--violet);display:block;margin-bottom:12px}
+  .step h3{font-size:1.2rem;margin-bottom:8px}
+  .step p{color:var(--soft);font-size:.95rem}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+  .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .vid{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .vframe{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+  .vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vid p{padding:14px 18px;font-size:.9rem;color:var(--soft)}
+  @media(max-width:860px){.videos{grid-template-columns:1fr}}
+
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}
+  .about img{width:100%;border-radius:20px;box-shadow:var(--shadow);border:5px solid #fff;object-fit:cover;aspect-ratio:1/1}
+  .about p{color:var(--soft);font-size:1.06rem;margin-bottom:20px}
+  .cred{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+  .cred li{position:relative;padding-left:26px;font-weight:500;font-size:.95rem}
+  .cred li::before{content:"\2713";position:absolute;left:0;color:var(--violet);font-weight:700}
+  @media(max-width:860px){.about{grid-template-columns:1fr;gap:30px}.about img{max-width:330px}.cred{grid-template-columns:1fr}}
+
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .quote .stars{color:var(--violet);font-size:1rem;margin-bottom:10px}
+  .quote p{font-size:1rem;margin-bottom:14px}
+  .quote .who{font-weight:600;font-size:.9rem;color:var(--soft)}
+  @media(max-width:860px){.quotes{grid-template-columns:1fr}}
+
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;padding:2px 22px;max-width:760px;margin-left:auto;margin-right:auto}
+  summary{list-style:none;cursor:pointer;font-weight:600;font-size:1.03rem;padding:17px 0;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.45rem;color:var(--violet);font-weight:400}
+  details[open] summary::after{content:"\2013"}
+  details .a{padding:0 0 18px;color:var(--soft)}
+
+  .final{background:radial-gradient(120% 120% at 20% 0%, #3A1668 0%, var(--dark) 55%);color:#fff;text-align:center;border-radius:26px;padding:62px 30px;margin:0 24px}
+  .final h2{color:#fff;font-size:clamp(2rem,4vw,2.9rem);margin-bottom:12px}
+  .final p{color:#D9CCEC;font-size:1.12rem;margin-bottom:28px}
+  .final-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer.site{padding:40px 0;border-top:1px solid var(--line);margin-top:74px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--soft);font-size:.9rem}
+  .foot a{color:var(--soft)}.foot a:hover{color:var(--violet)}
+  .tag{display:inline-block;background:var(--lav-bg);color:var(--violet);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin:18px 24px 0}
+</style>
+</head>
+<body>
+
+<div class="tag">Template mockup &bull; purple brand</div>
+
+<header class="nav"><div class="wrap nav-inner">
+  <a href="#top" class="logo">Vandana<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#offers">Offers</a><a href="#process">Process</a><a href="#featured">Featured</a><a href="#about">About</a><a href="#faq">FAQ</a>
+  </nav>
+  <a href="https://topmate.io/vandana_agarwal" target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
+</div></header>
+
+<a id="top"></a>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <span class="kicker">Global SDR coaching &bull; APAC-built execution</span>
+    <h1>Ramp faster. Book more meetings. Build outbound systems that <em>actually stick.</em></h1>
+    <p class="sub">I'm <b>Vandana Agarwal Nik</b>, a Sales Development Leader and SDR coach. I help SDRs in their ramp, people breaking into SDR, and founders and leaders who want repeatable pipeline without the chaos.</p>
+    <div class="hero-cta">
+      <a href="https://topmate.io/vandana_agarwal" target="_blank" rel="noopener" class="btn btn-primary">Book a session on Topmate</a>
+      <a href="#offers" class="btn btn-ghost-l">See coaching offers</a>
+    </div>
+    <div class="chips">
+      <div class="chip"><b>8+ yrs</b><small>SaaS sales development</small></div>
+      <div class="chip"><b>APAC · EMEA · AMER</b><small>Cross-border leadership</small></div>
+      <div class="chip"><b>100 PWIS '25</b><small>Powerful Women in Sales</small></div>
+    </div>
+  </div>
+  <div class="hero-photo"><img src="https://static.topmate.io/7EutG6eEufbXFciaZLGCgX.jpg" alt="Vandana Agarwal Nik"></div>
+</div></section>
+
+<section id="offers" class="alt"><div class="wrap">
+  <div class="sec-head"><span class="kicker">Coaching &amp; consulting</span><h2>Pick what matches your stage</h2><p>Practical, direct, and built for real SaaS SDR work.</p></div>
+  <div class="offers">
+    <div class="card"><h3>SDR Ramp Coaching</h3><p class="d">For new SDRs in their first 30 to 90 days. Move from activity to conversations to booked meetings.</p><ul><li>Ramp plan plus weekly execution</li><li>Messaging and cadence review</li><li>Objection and call coaching</li></ul><a href="https://topmate.io/vandana_agarwal" target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a></div>
+    <div class="card"><h3>Break into SDR</h3><p class="d">For people entering SaaS sales. Positioning, outreach, and interview prep that gets you hired.</p><ul><li>Target roles and companies</li><li>Outreach and a pitch that get replies</li><li>Mock interview and feedback</li></ul><a href="https://topmate.io/vandana_agarwal" target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a></div>
+    <div class="card"><h3>Consulting <span class="badge">Limited</span></h3><p class="d">For founders and SDR leaders. Fix onboarding, process, outbound systems, and GTM alignment.</p><ul><li>Process and playbook audit</li><li>Team coaching framework</li><li>Metrics that drive behavior</li></ul><a href="https://topmate.io/vandana_agarwal" target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a></div>
+    <div class="card"><h3>1:1 Mentorship</h3><p class="d">A single focused session, or a 6 to 8 week program to build clarity, skills, and your next move.</p><ul><li>One-time or multi-week</li><li>A clear next move</li><li>Support between sessions</li></ul><a href="https://topmate.io/vandana_agarwal" target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a></div>
+  </div>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <div class="sec-head"><span class="kicker">How we work together</span><h2>A simple system that removes the guesswork</h2></div>
+  <div class="steps">
+    <div class="step"><span class="n">01</span><h3>Diagnose</h3><p>We find where you are stuck: messaging, activity, confidence, process, or prioritization.</p></div>
+    <div class="step"><span class="n">02</span><h3>Playbook</h3><p>We build your operating system: ICP, cadences, scripts, and a daily rhythm you can run.</p></div>
+    <div class="step"><span class="n">03</span><h3>Coach &amp; iterate</h3><p>Weekly feedback loops. Real calls, real edits, real improvements you can see.</p></div>
+  </div>
+</div></section>
+
+<section id="featured" class="alt"><div class="wrap">
+  <div class="sec-head"><span class="kicker">Video podcasts</span><h2>Catch me on the mic</h2></div>
+  <div class="videos">
+    <div class="vid"><div class="vframe"><iframe src="https://www.youtube.com/embed/wDsukLjubus" title="Video podcast 1" loading="lazy" allowfullscreen></iframe></div><p>Watch the episode</p></div>
+    <div class="vid"><div class="vframe"><iframe src="https://www.youtube.com/embed/35mHdwO_PsI" title="Video podcast 2" loading="lazy" allowfullscreen></iframe></div><p>Watch the episode</p></div>
+    <div class="vid"><div class="vframe"><iframe src="https://www.youtube.com/embed/b5bccZRw7YU" title="Video podcast 3" loading="lazy" allowfullscreen></iframe></div><p>Watch the episode</p></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <img src="https://static.topmate.io/7EutG6eEufbXFciaZLGCgX.jpg" alt="Vandana Agarwal Nik">
+  <div>
+    <span class="kicker">About Vandana</span>
+    <h2 style="margin:10px 0 16px;font-size:clamp(1.9rem,3.6vw,2.6rem)">I build SDR teams from zero to pipeline</h2>
+    <p>I build and scale high-performing sales development teams across APAC, EMEA, and AMER, from an early-stage startup at Clickpost to scale at Rubrik and JumpCloud. I am obsessed with coaching systems that help SDRs win consistently.</p>
+    <ul class="cred">
+      <li>Founder, SDR Leaders of APAC (250+ members)</li>
+      <li>100 Powerful Women in Sales, 2025</li>
+      <li>8+ years in SaaS sales development</li>
+      <li>Lifted SAL conversion 57% to 91% in 5 months</li>
+    </ul>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="https://topmate.io/vandana_agarwal" target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
+      <a href="mailto:coaching@vandanaagarwal.in" class="btn btn-ghost">Email me</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="sec-head" style="margin:0 auto 40px;text-align:center"><span class="kicker">What people say</span><h2>Real words from real sessions</h2></div>
+  <div class="quotes">
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"She was very open about what I needed to improve and what my strengths were, so I could pitch myself better. Anyone breaking into SaaS should get a session with Vandana."</p><div class="who">Bharath S</div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"The absolute observer who will give excellent mentorship. I got clarity about where I am and what I need to do. Thanks, Vandana."</p><div class="who">Shivam Pandey</div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"I reached out to Vandana for insights on SDR hiring. She was super helpful and gave good, actionable insights."</p><div class="who">Sandeep Gupta</div></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <div class="sec-head" style="margin:0 auto 38px;text-align:center"><span class="kicker">FAQ</span><h2>Good questions before we start</h2></div>
+  <details open><summary>How do I book?</summary><div class="a">Book directly on Topmate. Pick a slot and we meet over video.</div></details>
+  <details><summary>Do you work with SDRs globally?</summary><div class="a">Yes. Coaching is global, grounded in APAC execution and cross-border experience across APAC, EMEA, and AMER.</div></details>
+  <details><summary>What if I am not sure which offer fits?</summary><div class="a">Start with the intro call. We figure out where you are and pick the right path together.</div></details>
+</div></section>
+
+<section style="padding-top:0"><div class="final"><div style="max-width:1120px;margin:0 auto">
+  <h2>Ready to move from busy to booked?</h2>
+  <p>Let's make your pipeline predictable, one week at a time.</p>
+  <div class="final-cta">
+    <a href="https://topmate.io/vandana_agarwal" target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
+    <a href="mailto:coaching@vandanaagarwal.in" class="btn btn-ghost-l">coaching@vandanaagarwal.in</a>
+  </div>
+</div></div></section>
+
+<footer class="site"><div class="wrap foot">
+  <span class="logo" style="color:var(--ink)">Vandana Agarwal Nik</span>
+  <nav style="display:flex;gap:20px;flex-wrap:wrap"><a href="#offers">Offers</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="https://www.linkedin.com/in/meet-vandana/" target="_blank" rel="noopener">LinkedIn</a></nav>
+  <span>&copy; 2026 Vandana Agarwal Nik</span>
+</div></footer>
+
+</body>
+</html>
