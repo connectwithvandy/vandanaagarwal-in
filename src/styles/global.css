@@ -192,7 +192,8 @@ section { padding: 112px 0; }
 .aud-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; perspective: 1400px; }
 .aud { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 26px; transition: transform .18s, box-shadow .18s, border-color .18s, background .18s; }
 .aud:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--violet); background: var(--card-2); }
-.aud-ico { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; font-size: 1.7rem; background: var(--lav-bg); border-radius: 18px; margin-bottom: 18px; }
+.aud-ico { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; color: var(--violet-2); background: var(--lav-bg); border-radius: 18px; margin-bottom: 18px; }
+.aud-ico svg { width: 27px; height: 27px; }
 .aud h3 { font-size: 1.2rem; margin-bottom: 9px; line-height: 1.2; color: #fff; }
 .aud .pain { color: var(--lav); font-weight: 600; font-size: .98rem; margin-bottom: 8px; }
 .aud p { color: var(--soft); font-size: .96rem; }
@@ -200,6 +201,7 @@ section { padding: 112px 0; }
 @media (max-width: 520px) { .aud-grid { grid-template-columns: 1fr; } }
 
 /* How I help (intro) */
+#intro { overflow-x: clip; }
 .intro { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: center; }
 .intro-photo { position: relative; max-width: 420px; margin-inline: auto; width: 100%; }
 /* Living halo behind the portrait — drifts/breathes so the photo feels embedded, not pasted on */
@@ -311,6 +313,14 @@ section { padding: 112px 0; }
 .svc-link { font-weight: 600; font-size: .94rem; color: var(--violet-2); display: inline-flex; align-items: center; gap: 6px; transition: gap .18s; }
 .svc:hover .svc-link { gap: 11px; }
 .badge { font-size: .64rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--violet); color: #fff; padding: 4px 11px; border-radius: 999px; white-space: nowrap; }
+.svc-wide { grid-column: 1 / -1; }
+@media (min-width: 861px) {
+  .svc-wide { flex-direction: row; align-items: center; flex-wrap: wrap; column-gap: 30px; row-gap: 6px; padding: 28px 34px; }
+  .svc-wide .svc-top { order: 1; width: 100%; margin-bottom: 12px; }
+  .svc-wide h3 { order: 2; margin: 0; flex: 0 0 auto; }
+  .svc-wide .d { order: 3; margin: 0; flex: 1 1 300px; }
+  .svc-wide .svc-link { order: 4; margin-left: auto; flex: 0 0 auto; white-space: nowrap; }
+}
 @media (max-width: 860px) { .svc-grid { grid-template-columns: 1fr; } .tabs { width: 100%; justify-content: center; flex-wrap: wrap; } }
 
 /* Final CTA band */

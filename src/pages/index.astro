@@ -8,11 +8,19 @@ const APAC = 'https://www.linkedin.com/company/sdr-leaders-of-apac/';
 
 // Who she helps (4 audiences) - led with the pain, then the outcome
 const audiences = [
-  { icon: '🚀', title: 'New & ramping SDRs', pain: 'Busy all day, but the meetings still aren’t coming?', body: 'Your first 30, 60, 90 days, sorted. We turn activity into conversations, and conversations into booked meetings.' },
-  { icon: '🎯', title: 'Breaking into SaaS', pain: 'Sure you’d be great in sales, but no one calls back?', body: 'Positioning, outreach, and interview prep that actually gets you hired as an SDR.' },
-  { icon: '🛠️', title: 'Founders & SDR leaders', pain: 'Hired SDRs, but the pipeline still isn’t predictable?', body: 'Build or fix the SDR engine: onboarding, process, outbound systems, and GTM alignment.' },
-  { icon: '🧭', title: 'Feeling stuck', pain: 'Plateaued, and the next move just isn’t obvious?', body: 'An honest read on where you are, a clear next move, and a plan you actually follow.' },
+  { icon: 'ramp', title: 'New & ramping SDRs', pain: 'Busy all day, but the meetings still aren’t coming?', body: 'Your first 30, 60, 90 days, sorted. We turn activity into conversations, and conversations into booked meetings.' },
+  { icon: 'door', title: 'Breaking into SaaS', pain: 'Sure you’d be great in sales, but no one calls back?', body: 'Positioning, outreach, and interview prep that actually gets you hired as an SDR.' },
+  { icon: 'build', title: 'Founders & SDR leaders', pain: 'Hired SDRs, but the pipeline still isn’t predictable?', body: 'Build or fix the SDR engine: onboarding, process, outbound systems, and GTM alignment.' },
+  { icon: 'compass', title: 'Feeling stuck', pain: 'Plateaued, and the next move just isn’t obvious?', body: 'An honest read on where you are, a clear next move, and a plan you actually follow.' },
 ];
+
+// Stroke line-icons for the audience cards (inherit the lavender accent via currentColor)
+const ICONS = {
+  ramp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>`,
+  door: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>`,
+  build: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>`,
+  compass: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg>`,
+};
 
 // ALL live Topmate services, grouped. No prices on the site, booking happens on Topmate.
 const services = {
@@ -22,8 +30,8 @@ const services = {
     { id: '2131934', title: 'Break into SDR', format: '1:1 call', dur: '45 min', desc: 'For people entering SaaS sales. Target the right roles, position your resume and LinkedIn, and outreach that gets replies.', badge: null },
     { id: '69119', title: 'SDR Mock Interview', format: '1:1 call', dur: '45 min', desc: 'A realistic SDR interview run with honest, specific feedback. Walk in calmer and sharper for the real thing.', badge: null },
     { id: '69118', title: 'Career Clarity Call', format: '1:1 call', dur: '30 min', desc: 'A focused session to unblock your next move, whether that is AE, SDR leadership, a switch, or staying relevant as the role changes.', badge: null },
-    { id: '2131945', title: 'Consulting for Founders & Leaders', format: '1:1 call', dur: '60 min', desc: 'We diagnose what is leaking in your pipeline and design the fix: process, onboarding, outbound systems, and the metrics that matter.', badge: 'For teams' },
     { id: '2131970', title: 'Resume & LinkedIn Review', format: 'Async', dur: 'reply in 7 days', desc: 'No call needed. Send me your resume and LinkedIn, and I send back specific, honest written feedback to position you for SDR roles.', badge: 'No call' },
+    { id: '2131945', title: 'Consulting for Founders & Leaders', format: '1:1 call', dur: '60 min', desc: 'We diagnose what is leaking in your pipeline and design the fix: process, onboarding, outbound systems, and the metrics that matter.', badge: 'For teams', wide: true },
   ],
   Packages: [
     { id: '2131963', title: 'SDR Ramp Pack', format: '3 sessions', dur: 'over 8 weeks', desc: 'Three ramp sessions across your ramp. We set the plan, review your real calls and messaging, and course-correct as your numbers move.', badge: null },
@@ -141,7 +149,7 @@ const faqs = [
     <div class="chips reveal" data-d="3">
       <div class="chip"><b>8+ yrs</b><small>SaaS sales development</small></div>
       <div class="chip"><b>APAC &middot; EMEA &middot; AMER</b><small>Cross-border leadership</small></div>
-      <div class="chip"><b>100 Powerful Women in Sales</b><small>Demandbase &amp; WIS, '25</small></div>
+      <div class="chip"><b>100 Powerful Women in Sales</b><small>Demandbase &amp; Women in Sales, 2025</small></div>
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true"><span class="mouse"></span><span>Scroll</span></div>
@@ -166,7 +174,7 @@ const faqs = [
     <div class="aud-grid">
       {audiences.map((a, i) => (
         <div class="aud reveal" style={`--i:${i}`}>
-          <span class="aud-ico" aria-hidden="true">{a.icon}</span>
+          <span class="aud-ico" aria-hidden="true" set:html={ICONS[a.icon]}></span>
           <h3>{a.title}</h3>
           <p class="pain">{a.pain}</p>
           <p>{a.body}</p>
@@ -183,7 +191,7 @@ const faqs = [
       <img src="/assets/va-portrait.jpg" alt="Vandana Agarwal Nik, SDR coach and Sales Development Leader" width="1000" height="1250" class="img-reveal" />
     </div>
     <div class="intro-body reveal" data-rev="r" data-d="1">
-      <span class="hello">Hi, I'm Vandana <span aria-hidden="true">👋</span></span>
+      <span class="hello">Hi, I'm Vandana</span>
       <h2>The mentor I wish I'd had, now in your corner</h2>
       <p class="lead-q">Early in my career, I didn't have someone who had done the job and could show me the way. I figured out outbound the hard way, one rejection at a time. That is exactly why I coach now.</p>
       <p>I build and scale high-performing SDR teams across APAC, EMEA, and AMER, from an early-stage startup at Clickpost to growth and scale at Rubrik and JumpCloud. I am obsessed with coaching systems that turn effort into booked meetings.</p>
@@ -265,7 +273,7 @@ const faqs = [
       <div class={`svc-panel${i === 0 ? ' active' : ''}`} data-panel={g}>
         <div class="svc-grid">
           {services[g].map((s, si) => (
-            <a href={`${TOPMATE}/${s.id}`} target="_blank" rel="noopener" class="svc reveal" style={`--i:${si}`}>
+            <a href={`${TOPMATE}/${s.id}`} target="_blank" rel="noopener" class={`svc reveal${s.wide ? ' svc-wide' : ''}`} style={`--i:${si}`}>
               <div class="svc-top">
                 <span class="svc-format">{s.format} &middot; {s.dur}</span>
                 {s.badge && <span class="badge">{s.badge}</span>}
@@ -356,14 +364,14 @@ const faqs = [
   <span class="hero-glow" aria-hidden="true"></span>
   <div class="wrap">
     <div class="final reveal">
-      <span class="kicker">Let's get to work</span>
+      <span class="kicker">In your corner</span>
       <h2>Ready to move from busy to booked?</h2>
       <p>Let's make your pipeline predictable, one week at a time. I would love to help, whenever you are ready.</p>
       <div class="final-cta">
         <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
-        <a href={APAC} target="_blank" rel="noopener" class="btn btn-ghost-l">Join SDR Leaders of APAC</a>
+        <a href={LINKEDIN} target="_blank" rel="noopener" class="btn btn-ghost-l">Connect on LinkedIn</a>
       </div>
-      <p class="final-mail">Not ready to book? Come join the community, or just say hello at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+      <p class="final-mail">Not ready to book? Connect on LinkedIn, or just say hello at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
     </div>
   </div>
 </section>
