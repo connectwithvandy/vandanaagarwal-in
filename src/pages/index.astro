@@ -5,6 +5,47 @@ const TOPMATE = 'https://topmate.io/vandana_agarwal';
 const EMAIL = 'coaching@vandanaagarwal.in';
 const LINKEDIN = 'https://www.linkedin.com/in/meet-vandana/';
 const APAC = 'https://www.linkedin.com/company/sdr-leaders-of-apac/';
+const SITE = 'https://vandanaagarwal.in';
+const OG_IMAGE = `${SITE}/assets/va-portrait.jpg`;
+
+// Structured data (JSON-LD) so search engines understand the person, site, and service.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE}/#vandana`,
+      name: 'Vandana Agarwal Nik',
+      url: SITE,
+      image: OG_IMAGE,
+      jobTitle: 'SDR Coach & Sales Development Leader',
+      description: 'Global SDR coach who builds and scales BDR teams from zero to pipeline across APAC, EMEA, and AMER for SaaS, identity, and cybersecurity companies.',
+      sameAs: [LINKEDIN, TOPMATE, APAC],
+      knowsAbout: ['Sales Development', 'SDR coaching', 'Outbound sales', 'BDR enablement', 'SaaS sales', 'Go-to-market'],
+      award: '100 Powerful Women in Sales, 2025',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/#website`,
+      url: SITE,
+      name: 'Vandana Agarwal Nik | Global SDR Coach',
+      publisher: { '@id': `${SITE}/#vandana` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${SITE}/#service`,
+      name: 'Vandana Agarwal Nik, SDR Coaching',
+      url: SITE,
+      image: OG_IMAGE,
+      description: '1:1 SDR coaching, mock interviews, career clarity, and outbound consulting for founders and sales leaders. Booked on Topmate.',
+      provider: { '@id': `${SITE}/#vandana` },
+      areaServed: ['APAC', 'EMEA', 'AMER'],
+      serviceType: 'SDR coaching and sales development consulting',
+      email: EMAIL,
+    },
+  ],
+};
 
 // Who she helps (4 audiences) - led with the pain, then the outcome
 const audiences = [
@@ -75,6 +116,17 @@ const faqs = [
   { q: 'Will you get my market if I am not in APAC?', a: 'Yes. I have built and scaled SDR teams across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. The fundamentals of booking meetings travel, and I tailor the playbook to your region and motion.', open: false },
   { q: 'How do I pick the right session?', a: 'If you are unsure, start with Let’s connect and we choose together. New SDRs usually start with Ramp Coaching, job seekers with Break into SDR, and founders or leaders with Consulting.', open: false },
 ];
+
+// Expose the FAQ to search and AI answer engines as machine-readable Q&A.
+jsonLd['@graph'].push({
+  '@type': 'FAQPage',
+  '@id': `${SITE}/#faq`,
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});
 ---
 
 <!DOCTYPE html>
@@ -89,8 +141,20 @@ const faqs = [
   <meta property="og:description" content="Booking meetings shouldn't feel this hard. SDR coaching that turns activity into booked meetings." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vandanaagarwal.in/" />
-  <meta property="og:image" content="/assets/va-portrait.jpg" />
+  <meta property="og:image" content={OG_IMAGE} />
+  <meta property="og:image:alt" content="Vandana Agarwal Nik, Global SDR Coach" />
+  <meta property="og:site_name" content="Vandana Agarwal Nik" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vandana Agarwal Nik | Global SDR Coach" />
+  <meta name="twitter:description" content="Booking meetings shouldn't feel this hard. SDR coaching that turns activity into booked meetings." />
+  <meta name="twitter:image" content={OG_IMAGE} />
+  <meta name="author" content="Vandana Agarwal Nik" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#181818" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
