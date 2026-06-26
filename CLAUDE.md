@@ -71,11 +71,13 @@ Keep all private life out (family, health, finances). This is a public coaching 
 
 ## 2) Page structure (one page, pain-first flow as built)
 
-The flow leads with the reader's pain, introduces Vandana second, builds trust, then presents the
-offer last (peer-feedback driven; do not revert to name-first).
+The flow leads with the reader's pain, introduces Vandana second, builds trust with results and
+process, then presents the offer, and closes with social proof and FAQ (do not revert to name-first).
+Note: the offer (Services) was moved up to sit right after the trust-build (Numbers/Process/banner)
+and before Reviews/FAQ at owner request, so it is no longer dead last.
 
 1. **Header / Nav.** Round avatar (`va-square.jpg`) + "Vandana Agarwal Nik". Links: Who I help, Meet
-   me, Reviews, FAQ, Services. Primary button: Book on Topmate. Sticky, reacts on scroll, mobile menu.
+   me, Services, Reviews, FAQ. Primary button: Book on Topmate. Sticky, reacts on scroll, mobile menu.
 2. **Hero (Anima style).** Dark, centered, big serif headline with an accent-gradient highlight word
    ("Booking meetings shouldn't feel this *hard*."), centered pain-led subhead, two CTAs, three proof
    chips (8+ yrs; APAC · EMEA · AMER; 100 Powerful Women in Sales). Large purple glow blooming from the
@@ -89,14 +91,14 @@ offer last (peer-feedback driven; do not revert to name-first).
 7. **Process.** Three steps: Diagnose, Playbook, Coach & iterate.
 8. **Photo banner.** Full-bleed dark LinkedIn banner, `public/assets/banner.jpg`, lazy-loaded.
    (Do NOT use the old `linkedin BG.jpeg` — it says "10+ years", which breaks the writing rule.)
-9. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
-10. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
-11. **FAQ.** How to book, do you work globally, how to pick a session, can the booking link change.
-12. **Services ("Work with me").** All 10 live Topmate services, grouped in two tabs: Sessions (7)
+9. **Services ("Work with me").** All 10 live Topmate services, grouped in two tabs: Sessions (7)
     and Packages (3). The async "Resume & LinkedIn Review" lives under Sessions (the separate Async
     tab was folded in at owner request). Each card has title, format/duration, description, **no
     price**, and **deep-links to its own Topmate booking page** (`topmate.io/vandana_agarwal/<id>`),
     not the main profile. Cross-check titles/durations/ids against the live Topmate page when editing.
+10. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
+11. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
+12. **FAQ.** How to book, do you work globally, how to pick a session, can the booking link change.
 13. **Final CTA.** Dark band, strong close, Book on Topmate + the email.
 14. **Footer.** Nav links, LinkedIn, SDR Leaders of APAC, copyright.
 

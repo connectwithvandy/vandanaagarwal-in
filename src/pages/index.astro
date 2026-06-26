@@ -11,7 +11,7 @@ const audiences = [
   { icon: '🚀', title: 'New & ramping SDRs', pain: 'Busy all day, but the meetings still aren’t coming?', body: 'Your first 30, 60, 90 days, sorted. We turn activity into conversations, and conversations into booked meetings.' },
   { icon: '🎯', title: 'Breaking into SaaS', pain: 'Sure you’d be great in sales, but no one calls back?', body: 'Positioning, outreach, and interview prep that actually gets you hired as an SDR.' },
   { icon: '🛠️', title: 'Founders & SDR leaders', pain: 'Pipeline is leaking and you cannot see where?', body: 'Build or fix the SDR engine: onboarding, process, outbound systems, and GTM alignment.' },
-  { icon: '🧭', title: 'Feeling stuck', pain: 'Plateaued, and the next move just is not obvious?', body: 'An honest read on where you are, a clear next move, and a plan you actually follow.' },
+  { icon: '🧭', title: 'Feeling stuck', pain: 'Plateaued, and the next move just isn’t obvious?', body: 'An honest read on where you are, a clear next move, and a plan you actually follow.' },
 ];
 
 // ALL live Topmate services, grouped. No prices on the site, booking happens on Topmate.
@@ -113,9 +113,9 @@ const faqs = [
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="#who">Who I help</a>
       <a href="#intro">Meet me</a>
+      <a href="#offers">Services</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
-      <a href="#offers">Services</a>
     </nav>
     <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary nav-cta magnetic">Book on Topmate</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -183,7 +183,7 @@ const faqs = [
       <img src="/assets/va-portrait.jpg" alt="Vandana Agarwal Nik, SDR coach and Sales Development Leader" width="1000" height="1250" class="img-reveal" />
       <div class="sig-card">
         <span class="signature">Vandana</span>
-        <small>works globally</small>
+        <small>Global SDR Coach</small>
       </div>
     </div>
     <div class="intro-body reveal" data-rev="r" data-d="1">
@@ -246,6 +246,43 @@ const faqs = [
 <!-- PHOTO BANNER -->
 <section class="banner-strip" aria-label="Helping SDRs perform better and prepare smarter for interviews">
   <img src="/assets/banner.jpg" alt="Vandana Agarwal Nik. Helping SDRs perform better and prepare smarter for interviews. Career clarity, growth mentorship, interview preparation, and coaching." width="1400" height="350" loading="lazy" />
+</section>
+
+<!-- WAYS TO WORK WITH ME / SERVICES (the offer) -->
+<section id="offers">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Ways to work with me</span>
+      <h2>Pick what feels right for you</h2>
+      <p>Single sessions, longer programs, or a quick async review. Everything is booked on Topmate, where you can see times and details.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Ways to work together">
+      {groups.map((g, i) => (
+        <button class={`tab${i === 0 ? ' active' : ''}`} role="tab" data-tab={g} aria-selected={i === 0 ? 'true' : 'false'}>
+          {g}
+        </button>
+      ))}
+    </div>
+
+    {groups.map((g, i) => (
+      <div class={`svc-panel${i === 0 ? ' active' : ''}`} data-panel={g}>
+        <div class="svc-grid">
+          {services[g].map((s, si) => (
+            <a href={`${TOPMATE}/${s.id}`} target="_blank" rel="noopener" class="svc reveal" style={`--i:${si}`}>
+              <div class="svc-top">
+                <span class="svc-format">{s.format} &middot; {s.dur}</span>
+                {s.badge && <span class="badge">{s.badge}</span>}
+              </div>
+              <h3>{s.title}</h3>
+              <p class="d">{s.desc}</p>
+              <span class="svc-link">Book on Topmate <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
 </section>
 
 <!-- TESTIMONIALS / SUCCESS STORIES -->
@@ -314,43 +351,6 @@ const faqs = [
         <summary>{f.q}</summary>
         <div class="a">{f.a}</div>
       </details>
-    ))}
-  </div>
-</section>
-
-<!-- WAYS TO WORK WITH ME / SERVICES (the offer, after trust is built) -->
-<section id="offers">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="kicker">Ways to work with me</span>
-      <h2>Pick what feels right for you</h2>
-      <p>Single sessions, longer programs, or a quick async review. Everything is booked on Topmate, where you can see times and details.</p>
-    </div>
-
-    <div class="tabs reveal" role="tablist" aria-label="Ways to work together">
-      {groups.map((g, i) => (
-        <button class={`tab${i === 0 ? ' active' : ''}`} role="tab" data-tab={g} aria-selected={i === 0 ? 'true' : 'false'}>
-          {g}
-        </button>
-      ))}
-    </div>
-
-    {groups.map((g, i) => (
-      <div class={`svc-panel${i === 0 ? ' active' : ''}`} data-panel={g}>
-        <div class="svc-grid">
-          {services[g].map((s, si) => (
-            <a href={`${TOPMATE}/${s.id}`} target="_blank" rel="noopener" class="svc reveal" style={`--i:${si}`}>
-              <div class="svc-top">
-                <span class="svc-format">{s.format} &middot; {s.dur}</span>
-                {s.badge && <span class="badge">{s.badge}</span>}
-              </div>
-              <h3>{s.title}</h3>
-              <p class="d">{s.desc}</p>
-              <span class="svc-link">Book on Topmate <span aria-hidden="true">&rarr;</span></span>
-            </a>
-          ))}
-        </div>
-      </div>
     ))}
   </div>
 </section>
