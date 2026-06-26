@@ -200,8 +200,8 @@ section { padding: 112px 0; }
 @media (max-width: 520px) { .aud-grid { grid-template-columns: 1fr; } }
 
 /* How I help (intro) */
-.intro { display: grid; grid-template-columns: .82fr 1.18fr; gap: 64px; align-items: center; }
-.intro-photo { position: relative; max-width: 410px; margin-inline: auto; width: 100%; }
+.intro { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: center; }
+.intro-photo { position: relative; max-width: 420px; margin-inline: auto; width: 100%; }
 /* Living halo behind the portrait — drifts/breathes so the photo feels embedded, not pasted on */
 .intro-photo::before { content: ""; position: absolute; inset: -16%; background: radial-gradient(circle at 50% 42%, rgba(124,58,237,.5), transparent 64%); filter: blur(42px); z-index: 0; animation: halo 9s ease-in-out infinite; }
 @keyframes halo { 0%, 100% { transform: scale(1); opacity: .82; } 50% { transform: scale(1.13); opacity: 1; } }
@@ -211,17 +211,17 @@ section { padding: 112px 0; }
   box-shadow: 0 34px 80px -42px rgba(124,58,237,.65);
   border: none; object-fit: cover; object-position: center 14%; aspect-ratio: 4/5;
   filter: saturate(1.05) contrast(1.03);
-  -webkit-mask-image: radial-gradient(112% 114% at 50% 36%, #000 55%, transparent 93%);
-          mask-image: radial-gradient(112% 114% at 50% 36%, #000 55%, transparent 93%);
+  -webkit-mask-image: radial-gradient(135% 138% at 50% 42%, #000 82%, transparent 100%);
+          mask-image: radial-gradient(135% 138% at 50% 42%, #000 82%, transparent 100%);
 }
 /* Duotone wash: tint the cool grey toward the brand violet up top, melt the base into the page below */
 .intro-photo::after {
   content: ""; position: absolute; inset: 0; z-index: 2; border-radius: 24px; pointer-events: none;
   background:
-    linear-gradient(180deg, transparent 34%, rgba(24,24,24,.55) 82%, var(--bg) 100%),
+    linear-gradient(180deg, transparent 62%, rgba(24,24,24,.4) 90%, var(--bg) 100%),
     radial-gradient(92% 72% at 50% 10%, rgba(124,58,237,.22), transparent 60%);
-  -webkit-mask-image: radial-gradient(112% 114% at 50% 36%, #000 55%, transparent 93%);
-          mask-image: radial-gradient(112% 114% at 50% 36%, #000 55%, transparent 93%);
+  -webkit-mask-image: radial-gradient(135% 138% at 50% 42%, #000 82%, transparent 100%);
+          mask-image: radial-gradient(135% 138% at 50% 42%, #000 82%, transparent 100%);
 }
 .intro-photo .sig-card { position: absolute; z-index: 3; right: -14px; bottom: -18px; background: var(--card-2); border: 1px solid var(--line-2); border-radius: 18px; padding: 14px 20px; box-shadow: var(--shadow); text-align: center; }
 .intro-photo .sig-card .signature { font-family: 'Caveat', cursive; font-weight: 700; font-size: 2.1rem; color: var(--lav); line-height: 1; }
@@ -354,14 +354,31 @@ footer.site { padding: 44px 0; border-top: 1px solid var(--line); background: va
 
 @keyframes float { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -24px); } }
 
-/* Lusion-style 3D card entrance — cards swing in around the Y axis, staggered.
-   Uses standalone `rotate`/`translate`/`scale` so it composes with the hover-tilt `transform`. */
-@keyframes card3d {
-  from { opacity: 0; rotate: y -22deg; translate: 0 46px; scale: .96; }
-  60%  { opacity: 1; }
-  to   { opacity: 1; rotate: y 0deg; translate: 0 0; scale: 1; }
+/* Lusion-style card entrances — every block animates in DIFFERENTLY. Six distinct 3D moves
+   (flip from top / left / right, zoom, slide from each side) are cycled across the cards by
+   position so no two neighbours enter the same way. All use the standalone `rotate`/`translate`/
+   `scale` properties (+ ancestor `perspective`) so they compose with the hover-tilt `transform`. */
+@keyframes b-flip-top   { from { opacity: 0; rotate: x -90deg; translate: 0 16px; } 55% { opacity: 1; } to { opacity: 1; rotate: x 0deg; translate: 0 0; } }
+@keyframes b-flip-left  { from { opacity: 0; rotate: y -88deg; } 55% { opacity: 1; } to { opacity: 1; rotate: y 0deg; } }
+@keyframes b-flip-right { from { opacity: 0; rotate: y 88deg; } 55% { opacity: 1; } to { opacity: 1; rotate: y 0deg; } }
+@keyframes b-zoom       { from { opacity: 0; scale: .76; translate: 0 26px; } to { opacity: 1; scale: 1; translate: 0 0; } }
+@keyframes b-slide-l    { from { opacity: 0; translate: -72px 0; rotate: y 20deg; } to { opacity: 1; translate: 0 0; rotate: y 0deg; } }
+@keyframes b-slide-r    { from { opacity: 0; translate: 72px 0; rotate: y -20deg; } to { opacity: 1; translate: 0 0; rotate: y 0deg; } }
+
+.aud.in, .svc.in, .step.in, .quote.in, .vid.in {
+  animation-duration: .82s; animation-timing-function: cubic-bezier(.22,1,.36,1);
+  animation-fill-mode: both; animation-delay: calc(var(--i, 0) * .08s);
 }
-.svc.in, .aud.in { animation: card3d .7s cubic-bezier(.16,1,.3,1) both; animation-delay: calc(var(--i, 0) * .08s); }
+/* cycle the six moves across each grid's cards */
+.aud.in:nth-child(6n+1), .svc.in:nth-child(6n+1), .step.in:nth-child(6n+1), .quote.in:nth-child(6n+1), .vid.in:nth-child(6n+1) { animation-name: b-flip-top; transform-origin: center top; }
+.aud.in:nth-child(6n+2), .svc.in:nth-child(6n+2), .step.in:nth-child(6n+2), .quote.in:nth-child(6n+2), .vid.in:nth-child(6n+2) { animation-name: b-flip-left; transform-origin: left center; }
+.aud.in:nth-child(6n+3), .svc.in:nth-child(6n+3), .step.in:nth-child(6n+3), .quote.in:nth-child(6n+3), .vid.in:nth-child(6n+3) { animation-name: b-zoom; }
+.aud.in:nth-child(6n+4), .svc.in:nth-child(6n+4), .step.in:nth-child(6n+4), .quote.in:nth-child(6n+4), .vid.in:nth-child(6n+4) { animation-name: b-flip-right; transform-origin: right center; }
+.aud.in:nth-child(6n+5), .svc.in:nth-child(6n+5), .step.in:nth-child(6n+5), .quote.in:nth-child(6n+5), .vid.in:nth-child(6n+5) { animation-name: b-slide-l; }
+.aud.in:nth-child(6n+6), .svc.in:nth-child(6n+6), .step.in:nth-child(6n+6), .quote.in:nth-child(6n+6), .vid.in:nth-child(6n+6) { animation-name: b-slide-r; }
+
+/* the flips need a shared 3D space — give every card grid perspective (aud/svc already have it) */
+.steps, .quotes, .videos { perspective: 1400px; }
 
 .results li b { transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
 .results li.in b { animation: pop .6s cubic-bezier(.34,1.56,.64,1); }
@@ -475,3 +492,89 @@ footer.site { background: transparent; }
   .aurora .r3 { animation: rib3 60s ease-in-out infinite !important; }
   .aurora .r4 { animation: rib4 66s ease-in-out infinite !important; }
 }
+/* ===== EVERYTHING ANIMATES (every section) + HERO BACKGROUND ANIMATION ===== */
+
+/* --- Hero (first section) gets its own living backdrop: a slow rotating light disc --- */
+.hero::before {
+  content: ""; position: absolute; inset: -25% -12% auto -12%; height: 150%; z-index: 0; pointer-events: none;
+  background: conic-gradient(from 0deg at 50% 58%, transparent 0deg, rgba(124,58,237,.32) 60deg, transparent 135deg, rgba(155,107,255,.28) 225deg, transparent 320deg);
+  filter: blur(60px); opacity: .9; mix-blend-mode: screen; animation: hero-spin 26s linear infinite;
+}
+@keyframes hero-spin { to { transform: rotate(360deg); } }
+
+/* --- Strong, varied card entrances (bigger flips + spring) on the card grids --- */
+.aud-grid, .svc-grid, .steps, .quotes, .videos, .results, .intro { perspective: 760px; }
+.aud.in, .svc.in, .step.in, .quote.in, .vid.in {
+  animation-duration: 1s; animation-timing-function: cubic-bezier(.34,1.56,.64,1);
+  animation-delay: calc(var(--i, 0) * .11s);
+}
+@keyframes b-flip-top   { from { opacity: 0; rotate: x -115deg; translate: 0 64px; scale: .8; } 60% { opacity: 1; } to { opacity: 1; rotate: x 0deg; translate: 0 0; scale: 1; } }
+@keyframes b-flip-left  { from { opacity: 0; rotate: y -115deg; translate: -50px 0; scale: .85; } 60% { opacity: 1; } to { opacity: 1; rotate: y 0deg; translate: 0 0; scale: 1; } }
+@keyframes b-flip-right { from { opacity: 0; rotate: y 115deg; translate: 50px 0; scale: .85; } 60% { opacity: 1; } to { opacity: 1; rotate: y 0deg; translate: 0 0; scale: 1; } }
+@keyframes b-zoom       { from { opacity: 0; scale: .35; translate: 0 50px; } to { opacity: 1; scale: 1; translate: 0 0; } }
+@keyframes b-slide-l    { from { opacity: 0; translate: -150px 0; rotate: y 38deg; } to { opacity: 1; translate: 0 0; rotate: y 0deg; } }
+@keyframes b-slide-r    { from { opacity: 0; translate: 150px 0; rotate: y -38deg; } to { opacity: 1; translate: 0 0; rotate: y 0deg; } }
+
+/* --- Results / "Numbers that moved": each stat flips up from its top edge --- */
+.results li.in { animation: b-flip-top 1s cubic-bezier(.34,1.56,.64,1) calc(var(--i, 0) * .1s) both; transform-origin: center top; }
+
+/* --- FAQ rows: slide in, alternating sides --- */
+.faq-sec { perspective: 900px; }
+.faq-sec details.in { animation: b-slide-l .9s cubic-bezier(.22,1,.36,1) both; }
+.faq-sec details.in:nth-of-type(even) { animation-name: b-slide-r; }
+
+/* --- Meet-me: photo slides in from the left, text from the right --- */
+.intro-photo.in { animation: b-slide-l 1.05s cubic-bezier(.22,1,.36,1) both; }
+.intro-body.in  { animation: b-slide-r 1.05s cubic-bezier(.22,1,.36,1) both; }
+
+/* --- Final CTA block springs in --- */
+.final.in { animation: b-zoom .95s cubic-bezier(.34,1.56,.64,1) both; }
+/* ===== A LITTLE MORE MOTION (layered on top of the "full" version) ===== */
+
+/* --- Perpetual gentle float on every card AFTER it lands. Second animation on the standalone
+       `translate` channel so it composes with the entrance and never fights the hover tilt. --- */
+@keyframes floaty { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+.aud.in, .svc.in, .step.in, .quote.in, .vid.in {
+  animation-duration: 1s, 6.5s;
+  animation-timing-function: cubic-bezier(.34,1.56,.64,1), ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: both, none;
+  animation-delay: calc(var(--i, 0) * .11s), calc(1.15s + var(--i, 0) * .3s);
+}
+.aud.in:nth-child(6n+1), .svc.in:nth-child(6n+1), .step.in:nth-child(6n+1), .quote.in:nth-child(6n+1), .vid.in:nth-child(6n+1) { animation-name: b-flip-top, floaty; }
+.aud.in:nth-child(6n+2), .svc.in:nth-child(6n+2), .step.in:nth-child(6n+2), .quote.in:nth-child(6n+2), .vid.in:nth-child(6n+2) { animation-name: b-flip-left, floaty; }
+.aud.in:nth-child(6n+3), .svc.in:nth-child(6n+3), .step.in:nth-child(6n+3), .quote.in:nth-child(6n+3), .vid.in:nth-child(6n+3) { animation-name: b-zoom, floaty; }
+.aud.in:nth-child(6n+4), .svc.in:nth-child(6n+4), .step.in:nth-child(6n+4), .quote.in:nth-child(6n+4), .vid.in:nth-child(6n+4) { animation-name: b-flip-right, floaty; }
+.aud.in:nth-child(6n+5), .svc.in:nth-child(6n+5), .step.in:nth-child(6n+5), .quote.in:nth-child(6n+5), .vid.in:nth-child(6n+5) { animation-name: b-slide-l, floaty; }
+.aud.in:nth-child(6n+6), .svc.in:nth-child(6n+6), .step.in:nth-child(6n+6), .quote.in:nth-child(6n+6), .vid.in:nth-child(6n+6) { animation-name: b-slide-r, floaty; }
+
+/* --- Hero: soft pulsing halo on top of the rotating disc --- */
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(42% 32% at 50% 68%, rgba(155,107,255,.20), transparent 70%);
+  animation: hero-pulse 6s ease-in-out infinite;
+}
+@keyframes hero-pulse { 0%, 100% { opacity: .5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+
+/* --- Hero proof chips drift gently, staggered --- */
+.chip { animation: chip-float 5s ease-in-out infinite; }
+.chip:nth-child(2) { animation-delay: .6s; }
+.chip:nth-child(3) { animation-delay: 1.2s; }
+@keyframes chip-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+/* --- Audience emoji icons bob + tilt --- */
+.aud-ico { animation: ico-bob 4.5s ease-in-out infinite; }
+.aud:nth-child(even) .aud-ico { animation-delay: .9s; }
+@keyframes ico-bob { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-5px) rotate(5deg); } }
+
+/* --- Process step numbers drift --- */
+.step .n { display: inline-block; animation: ico-bob 5.5s ease-in-out infinite; }
+
+/* --- Kicker labels get a slow shimmer sweep --- */
+.kicker {
+  background: linear-gradient(90deg, var(--violet-2), #E9DEFF, var(--violet-2));
+  background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: kicker-shine 5s linear infinite;
+}
+@keyframes kicker-shine { to { background-position: 200% center; } }
