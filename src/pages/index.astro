@@ -6,12 +6,12 @@ const EMAIL = 'coaching@vandanaagarwal.in';
 const LINKEDIN = 'https://www.linkedin.com/in/meet-vandana/';
 const APAC = 'https://www.linkedin.com/company/sdr-leaders-of-apac/';
 
-// Who she helps (4 audiences)
+// Who she helps (4 audiences) - led with the pain, then the outcome
 const audiences = [
-  { icon: '🚀', title: 'New & ramping SDRs', body: 'First 30, 60, 90 days. We turn your activity into conversations, and conversations into booked meetings.' },
-  { icon: '🎯', title: 'Breaking into SaaS', body: 'Positioning, outreach, and interview prep that actually gets you hired as an SDR.' },
-  { icon: '🛠️', title: 'Founders & SDR leaders', body: 'Build or fix the SDR engine: onboarding, process, outbound systems, and GTM alignment.' },
-  { icon: '🧭', title: 'Feeling stuck', body: 'An honest read on where you are, a clear next move, and a plan you actually follow.' },
+  { icon: '🚀', title: 'New & ramping SDRs', pain: 'Busy all day, but the meetings still aren’t coming?', body: 'Your first 30, 60, 90 days, sorted. We turn activity into conversations, and conversations into booked meetings.' },
+  { icon: '🎯', title: 'Breaking into SaaS', pain: 'Sure you’d be great in sales, but no one calls back?', body: 'Positioning, outreach, and interview prep that actually gets you hired as an SDR.' },
+  { icon: '🛠️', title: 'Founders & SDR leaders', pain: 'Pipeline is leaking and you cannot see where?', body: 'Build or fix the SDR engine: onboarding, process, outbound systems, and GTM alignment.' },
+  { icon: '🧭', title: 'Feeling stuck', pain: 'Plateaued, and the next move just is not obvious?', body: 'An honest read on where you are, a clear next move, and a plan you actually follow.' },
 ];
 
 // ALL live Topmate services, grouped. No prices on the site, booking happens on Topmate.
@@ -55,12 +55,12 @@ const results = [
 ];
 
 const testimonials = [
-  { quote: 'She was very open about what I needed to improve and what my strengths were, so I could pitch myself better. Anyone breaking into SaaS should get a session with Vandana.', who: 'Bharath S' },
-  { quote: 'The absolute observer who will give excellent mentorship. I got clarity about where I am and what I need to do. Thanks, Vandana.', who: 'Shivam Pandey' },
-  { quote: 'The demo interview was very helpful. The pattern was so similar to the real thing that it felt like the interviewer had consulted Vandana. I highly recommend it.', who: 'Udit Sharma' },
-  { quote: 'I reached out to Vandana for insights on SDR hiring. She was super helpful and gave good, actionable insights.', who: 'Sandeep Gupta' },
-  { quote: 'Vandana guided me with a practical path to move forward in SaaS, and her insights were both eye-opening and immensely helpful.', who: 'SDR, via Topmate' },
-  { quote: 'She gave me good insights and clarity on the things I was stuck on.', who: 'Mohit Dhanwani' },
+  { quote: 'She was very open about what I needed to improve and what my strengths were, so I could pitch myself better. Anyone breaking into SaaS should get a session with Vandana.', who: 'Bharath S', initials: 'BS' },
+  { quote: 'The absolute observer who will give excellent mentorship. I got clarity about where I am and what I need to do. Thanks, Vandana.', who: 'Shivam Pandey', initials: 'SP' },
+  { quote: 'The demo interview was very helpful. The pattern was so similar to the real thing that it felt like the interviewer had consulted Vandana. I highly recommend it.', who: 'Udit Sharma', initials: 'US' },
+  { quote: 'I reached out to Vandana for insights on SDR hiring. She was super helpful and gave good, actionable insights.', who: 'Sandeep Gupta', initials: 'SG' },
+  { quote: 'Vandana guided me with a practical path to move forward in SaaS, and her insights were both eye-opening and immensely helpful.', who: 'SDR, via Topmate', initials: 'SD' },
+  { quote: 'She gave me good insights and clarity on the things I was stuck on.', who: 'Mohit Dhanwani', initials: 'MD' },
 ];
 
 const faqs = [
@@ -80,10 +80,10 @@ const faqs = [
   <meta name="description" content="Vandana Agarwal Nik is a Sales Development Leader and SDR coach. Ramp faster, book more meetings, and build outbound systems that stick. Book a session on Topmate." />
   <link rel="canonical" href="https://vandanaagarwal.in/" />
   <meta property="og:title" content="Vandana Agarwal Nik | Global SDR Coach" />
-  <meta property="og:description" content="Ramp faster. Book more meetings. Build outbound systems that actually stick." />
+  <meta property="og:description" content="Booking meetings shouldn't feel this hard. SDR coaching that turns activity into booked meetings." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vandanaagarwal.in/" />
-  <meta property="og:image" content="/assets/headshot.jpg" />
+  <meta property="og:image" content="/assets/va-portrait.jpg" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -91,22 +91,34 @@ const faqs = [
 </head>
 <body>
 
-<a href="#offers" class="skip-link">Skip to content</a>
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-spin"></div>
+  <div class="pl-label">Loading</div>
+</div>
+<div class="aurora" aria-hidden="true">
+  <span class="a1"></span>
+  <span class="a2"></span>
+  <span class="a3"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
+<a href="#who" class="skip-link">Skip to content</a>
 
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
     <a href="#top" class="logo">
-      <img src="/assets/headshot.jpg" alt="" width="34" height="34" aria-hidden="true" />
+      <img src="/assets/va-square.jpg" alt="" width="36" height="36" aria-hidden="true" />
       <span>Vandana Agarwal Nik</span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="#story">My story</a>
-      <a href="#offers">Work with me</a>
-      <a href="#featured">Featured</a>
-      <a href="#about">About</a>
+      <a href="#who">Who I help</a>
+      <a href="#intro">Meet me</a>
+      <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
+      <a href="#offers">Services</a>
     </nav>
-    <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary nav-cta">Book on Topmate</a>
+    <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary nav-cta magnetic">Book on Topmate</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
       <span></span>
     </button>
@@ -115,60 +127,48 @@ const faqs = [
 
 <a id="top"></a>
 
-<!-- HERO -->
+<!-- HERO (Anima style: dark, centered, purple glow; pain-led copy) -->
 <section class="hero">
-  <span class="orb orb-1" aria-hidden="true"></span>
-  <span class="orb orb-2" aria-hidden="true"></span>
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="hello reveal">Hi, I'm Vandana <span aria-hidden="true">👋</span></span>
-      <h1 class="reveal">Ramp faster. Book more meetings. Build outbound systems that <em>actually stick.</em></h1>
-      <p class="sub reveal">I'm a Sales Development Leader and SDR coach. I help SDRs in their ramp, people breaking into SDR, and founders and leaders who want repeatable pipeline without the chaos. Think of me as the mentor in your corner I wish I'd had.</p>
-      <div class="hero-cta reveal">
-        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book a session on Topmate</a>
-        <a href="#offers" class="btn btn-ghost-l">See how I can help</a>
-      </div>
-      <div class="chips reveal">
-        <div class="chip"><b>8+ yrs</b><small>SaaS sales development</small></div>
-        <div class="chip"><b>APAC &middot; EMEA &middot; AMER</b><small>Cross-border leadership</small></div>
-        <div class="chip"><b>100 Powerful Women in Sales</b><small>Demandbase &amp; WIS, '25</small></div>
-      </div>
+  <span class="hero-glow" aria-hidden="true"></span>
+  <span class="hero-glow g2" aria-hidden="true"></span>
+  <div class="wrap hero-inner">
+    <span class="kicker reveal">Global SDR coaching &middot; APAC-built</span>
+    <h1 class="reveal-text">Booking meetings shouldn't feel this <em>hard.</em></h1>
+    <p class="sub reveal" data-d="2">You're sending the emails and making the calls, but the calendar stays quiet. I help SDRs ramp and book more meetings, people <b>break into SaaS</b>, and founders build outbound that actually sticks.</p>
+    <div class="hero-cta reveal" data-d="3">
+      <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book a session on Topmate</a>
+      <a href="#who" class="btn btn-ghost-l magnetic">See how I can help</a>
     </div>
-    <div class="hero-photo reveal">
-      <img src="/assets/headshot.jpg" alt="Vandana Agarwal Nik, Sales Development Leader and SDR coach" width="400" height="400" />
-      <span class="hero-photo-tag">Founder, SDR Leaders of APAC</span>
+    <div class="chips reveal" data-d="3">
+      <div class="chip"><b>8+ yrs</b><small>SaaS sales development</small></div>
+      <div class="chip"><b>APAC &middot; EMEA &middot; AMER</b><small>Cross-border leadership</small></div>
+      <div class="chip"><b>100 Powerful Women in Sales</b><small>Demandbase &amp; WIS, '25</small></div>
     </div>
   </div>
 </section>
 
-<!-- MY STORY (personal, why I coach) -->
-<section id="story">
-  <div class="wrap story">
-    <span class="kicker reveal">Why I coach</span>
-    <blockquote class="story-quote reveal">
-      Early in my career, I did not have someone in my corner who had done the job and could show me the way. I figured out outbound the hard way, one rejection at a time. That is exactly why I coach now.
-    </blockquote>
-    <p class="story-p reveal">If you are an SDR just getting started, I have got you. If you are trying to break into SaaS, let's get you hired. And if you are a founder or leader building a team, I will help you build it right. I love giving back, and I would genuinely love to help you win.</p>
-    <div class="signoff reveal">
-      <span class="signature">Vandana</span>
-      <span class="signoff-meta">Vandana Agarwal Nik &middot; Bangalore, works globally</span>
-    </div>
+<!-- MARQUEE RIBBON -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span><b>Ramp faster</b></span><span>Book more meetings</span><span><b>Break into SaaS</b></span><span>Outbound that sticks</span><span><b>SDR Leaders of APAC</b></span><span>AI-forward coaching</span><span><b>APAC · EMEA · AMER</b></span><span>Interview-ready</span>
+    <span><b>Ramp faster</b></span><span>Book more meetings</span><span><b>Break into SaaS</b></span><span>Outbound that sticks</span><span><b>SDR Leaders of APAC</b></span><span>AI-forward coaching</span><span><b>APAC · EMEA · AMER</b></span><span>Interview-ready</span>
   </div>
-</section>
+</div>
 
-<!-- WHO I HELP -->
-<section id="who" class="alt">
+<!-- WHO I HELP (the pain points, first) -->
+<section id="who">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="kicker">Who I help</span>
-      <h2>Wherever you are in the SDR journey</h2>
-      <p>Find yourself below, then pick the session that fits. If you are not sure, we will figure it out together.</p>
+      <span class="kicker">Sound familiar?</span>
+      <h2>Wherever you're stuck in the SDR journey</h2>
+      <p>Find yourself below, then pick the path that fits. If you are not sure, we figure it out together.</p>
     </div>
     <div class="aud-grid">
-      {audiences.map((a) => (
-        <div class="aud reveal">
+      {audiences.map((a, i) => (
+        <div class="aud reveal" style={`--i:${i}`}>
           <span class="aud-ico" aria-hidden="true">{a.icon}</span>
           <h3>{a.title}</h3>
+          <p class="pain">{a.pain}</p>
           <p>{a.body}</p>
         </div>
       ))}
@@ -176,53 +176,64 @@ const faqs = [
   </div>
 </section>
 
-<!-- WAYS TO WORK WITH ME (all services, no prices) -->
-<section id="offers">
+<!-- HOW I HELP / MEET ME (intro: story + about merged, this is where "Hi, I'm Vandana" lives) -->
+<section id="intro" class="alt">
+  <div class="wrap intro">
+    <div class="intro-photo reveal" data-rev="l">
+      <img src="/assets/va-portrait.jpg" alt="Vandana Agarwal Nik, SDR coach and Sales Development Leader" width="1000" height="1250" class="img-reveal" />
+      <div class="sig-card">
+        <span class="signature">Vandana</span>
+        <small>works globally</small>
+      </div>
+    </div>
+    <div class="intro-body reveal" data-rev="r" data-d="1">
+      <span class="hello">Hi, I'm Vandana <span aria-hidden="true">👋</span></span>
+      <h2>The mentor I wish I'd had, now in your corner</h2>
+      <p class="lead-q">Early in my career, I didn't have someone who had done the job and could show me the way. I figured out outbound the hard way, one rejection at a time. That is exactly why I coach now.</p>
+      <p>I build and scale high-performing SDR teams across APAC, EMEA, and AMER, from an early-stage startup at Clickpost to growth and scale at Rubrik and JumpCloud. I am obsessed with coaching systems that turn effort into booked meetings.</p>
+      <p class="ai-line">I am also AI-forward, coaching on the real tools reps win with today: Gong, Hyperbound, Orum, 6sense, and Salesforce. So you learn to win in an AI-shaped sales world, not around it.</p>
+      <ul class="cred">
+        <li>Founder, <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a> (250+ members)</li>
+        <li>100 Powerful Women in Sales, 2025</li>
+        <li>GrowthX Fellow</li>
+        <li>8+ years in SaaS sales development</li>
+      </ul>
+      <div class="intro-cta">
+        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
+        <a href={`mailto:${EMAIL}`} class="btn btn-ghost">Email me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS BAND (success stories) -->
+<section class="results-band">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="kicker">Ways to work with me</span>
-      <h2>Pick what feels right for you</h2>
-      <p>Single sessions, longer programs, or a quick async review. Everything is booked on Topmate, where you can see times and details.</p>
+      <span class="kicker" style="color: var(--lav)">A few things we've done together</span>
+      <h2>Numbers that moved</h2>
     </div>
-
-    <div class="tabs reveal" role="tablist" aria-label="Ways to work together">
-      {groups.map((g, i) => (
-        <button class={`tab${i === 0 ? ' active' : ''}`} role="tab" data-tab={g} aria-selected={i === 0 ? 'true' : 'false'}>
-          {g}
-        </button>
+    <ul class="results">
+      {results.map((r, i) => (
+        <li class="reveal" style={`--i:${i}`}>
+          <b>{r.stat}</b>
+          <small>{r.label}</small>
+        </li>
       ))}
-    </div>
-
-    {groups.map((g, i) => (
-      <div class={`svc-panel${i === 0 ? ' active' : ''}`} data-panel={g}>
-        <div class="svc-grid">
-          {services[g].map((s) => (
-            <a href={TOPMATE} target="_blank" rel="noopener" class="svc reveal">
-              <div class="svc-top">
-                <span class="svc-format">{s.format} &middot; {s.dur}</span>
-                {s.badge && <span class="badge">{s.badge}</span>}
-              </div>
-              <h3>{s.title}</h3>
-              <p class="d">{s.desc}</p>
-              <span class="svc-link">Book on Topmate <span aria-hidden="true">&rarr;</span></span>
-            </a>
-          ))}
-        </div>
-      </div>
-    ))}
+    </ul>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section id="process" class="alt">
+<section id="process">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="kicker">How we work together</span>
       <h2>A simple system that removes the guesswork</h2>
     </div>
     <div class="steps">
-      {steps.map((s) => (
-        <div class="step reveal">
+      {steps.map((s, i) => (
+        <div class="step reveal" style={`--i:${i}`}>
           <span class="n">{s.n}</span>
           <h3>{s.title}</h3>
           <p>{s.body}</p>
@@ -237,6 +248,34 @@ const faqs = [
   <img src="/assets/banner.jpg" alt="Vandana Agarwal Nik. Helping SDRs perform better and prepare smarter for interviews. Career clarity, growth mentorship, interview preparation, and coaching." width="1400" height="350" loading="lazy" />
 </section>
 
+<!-- TESTIMONIALS / SUCCESS STORIES -->
+<section id="reviews" class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Kind words &bull; 5/5 on Topmate</span>
+      <h2>What people say after a session</h2>
+    </div>
+    <div class="quotes">
+      {testimonials.map((t, i) => (
+        <figure class="quote reveal" style={`--i:${i % 3}`}>
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>{t.quote}</blockquote>
+          <div class="quote-by">
+            <span class="avatar" aria-hidden="true">{t.initials}</span>
+            <span class="quote-meta">
+              <span class="who">{t.who}</span>
+              <span class="verified">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+                Verified on Topmate
+              </span>
+            </span>
+          </div>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
 <!-- FEATURED -->
 <section id="featured">
   <div class="wrap">
@@ -246,7 +285,7 @@ const faqs = [
     </div>
     <div class="videos">
       {videos.map((v, i) => (
-        <div class="vid reveal">
+        <div class="vid reveal" style={`--i:${i}`}>
           <div class="vframe">
             <iframe
               src={`https://www.youtube.com/embed/${v.id}`}
@@ -258,56 +297,6 @@ const faqs = [
           </div>
           <p>{v.caption}</p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="alt">
-  <div class="wrap about">
-    <div class="about-photo reveal">
-      <img src="/assets/headshot.jpg" alt="Vandana Agarwal Nik" width="400" height="400" />
-    </div>
-    <div class="about-body reveal">
-      <span class="kicker">A bit more about me</span>
-      <h2 class="about-h2">I build SDR teams from zero to pipeline</h2>
-      <p>I build and scale high-performing sales development teams across APAC, EMEA, and AMER, from an early-stage startup at Clickpost to growth and scale at Rubrik and JumpCloud. I am obsessed with coaching systems that help SDRs win consistently, because the right system turns effort into booked meetings.</p>
-      <p class="ai-line">I am also AI-forward, coaching on the real tools reps win with today: Gong, Hyperbound, Orum, 6sense, and Salesforce. So you learn to win in an AI-shaped sales world, not around it.</p>
-      <ul class="cred">
-        <li>Founder, <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a> (250+ members)</li>
-        <li>100 Powerful Women in Sales, 2025</li>
-        <li>GrowthX Fellow</li>
-        <li>8+ years in SaaS sales development</li>
-      </ul>
-      <p class="results-lead">A few things we have done together:</p>
-      <ul class="results">
-        {results.map((r) => (
-          <li><b>{r.stat}</b><small>{r.label}</small></li>
-        ))}
-      </ul>
-      <div class="about-cta">
-        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
-        <a href={`mailto:${EMAIL}`} class="btn btn-ghost">Email me</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="reviews">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="kicker">Kind words &bull; 5/5 on Topmate</span>
-      <h2>What people say after a session</h2>
-    </div>
-    <div class="quotes">
-      {testimonials.map((t) => (
-        <figure class="quote reveal">
-          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>{t.quote}</blockquote>
-          <figcaption class="who">{t.who}</figcaption>
-        </figure>
       ))}
     </div>
   </div>
@@ -329,16 +318,53 @@ const faqs = [
   </div>
 </section>
 
+<!-- WAYS TO WORK WITH ME / SERVICES (the offer, after trust is built) -->
+<section id="offers">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Ways to work with me</span>
+      <h2>Pick what feels right for you</h2>
+      <p>Single sessions, longer programs, or a quick async review. Everything is booked on Topmate, where you can see times and details.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Ways to work together">
+      {groups.map((g, i) => (
+        <button class={`tab${i === 0 ? ' active' : ''}`} role="tab" data-tab={g} aria-selected={i === 0 ? 'true' : 'false'}>
+          {g}
+        </button>
+      ))}
+    </div>
+
+    {groups.map((g, i) => (
+      <div class={`svc-panel${i === 0 ? ' active' : ''}`} data-panel={g}>
+        <div class="svc-grid">
+          {services[g].map((s, si) => (
+            <a href={TOPMATE} target="_blank" rel="noopener" class="svc reveal" style={`--i:${si}`}>
+              <div class="svc-top">
+                <span class="svc-format">{s.format} &middot; {s.dur}</span>
+                {s.badge && <span class="badge">{s.badge}</span>}
+              </div>
+              <h3>{s.title}</h3>
+              <p class="d">{s.desc}</p>
+              <span class="svc-link">Book on Topmate <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 <!-- FINAL CTA BANNER -->
 <section class="final-band">
-  <span class="orb orb-4" aria-hidden="true"></span>
+  <span class="hero-glow" aria-hidden="true"></span>
   <div class="wrap">
     <div class="final reveal">
       <span class="kicker">Let's get to work</span>
       <h2>Ready to move from busy to booked?</h2>
       <p>Let's make your pipeline predictable, one week at a time. I would love to help.</p>
       <div class="final-cta">
-        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
+        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
         <a href={`mailto:${EMAIL}`} class="btn btn-ghost-l">{EMAIL}</a>
       </div>
     </div>
@@ -348,16 +374,16 @@ const faqs = [
 <!-- FOOTER -->
 <footer class="site">
   <div class="wrap foot">
-    <span class="logo foot-logo">Vandana Agarwal Nik</span>
+    <span class="foot-logo">Vandana Agarwal Nik</span>
     <nav class="foot-nav" aria-label="Footer">
-      <a href="#story">My story</a>
-      <a href="#offers">Work with me</a>
-      <a href="#about">About</a>
+      <a href="#who">Who I help</a>
+      <a href="#intro">Meet me</a>
+      <a href="#offers">Services</a>
       <a href="#faq">FAQ</a>
       <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
       <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a>
     </nav>
-    <span>&copy; 2026 Vandana Agarwal Nik</span>
+    <span>&copy; 2026 &middot; vandanaagarwal.in</span>
   </div>
 </footer>
 
@@ -380,13 +406,130 @@ const faqs = [
     });
   }
 
-  // Sticky nav scroll state
-  const nav = document.getElementById('siteNav');
-  const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 12);
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
 
-  // Service tabs
+  // Sticky nav scroll state + scroll progress bar
+  const nav = document.getElementById('siteNav');
+  const prog = document.getElementById('scrollProg');
+
+  // Masked word reveal for headings (isolated in try/catch — DOM surgery must never break the page)
+  try {
+    document.querySelectorAll('.sec-head h2, .intro-body h2, .final h2').forEach((h) => h.classList.add('reveal-text'));
+    document.querySelectorAll('.reveal-text').forEach((el) => {
+      const out = [];
+      el.childNodes.forEach((node) => {
+        if (node.nodeType === 3) {
+          node.textContent.split(/(\s+)/).forEach((tok) => {
+            if (tok.trim() === '') { out.push(document.createTextNode(tok)); return; }
+            const line = document.createElement('span'); line.className = 'w-line';
+            const w = document.createElement('span'); w.className = 'w'; w.textContent = tok;
+            line.appendChild(w); out.push(line);
+          });
+        } else {
+          const line = document.createElement('span'); line.className = 'w-line';
+          node.classList && node.classList.add('w');
+          line.appendChild(node); out.push(line);
+        }
+      });
+      el.textContent = '';
+      out.forEach((n) => el.appendChild(n));
+      el.querySelectorAll('.w').forEach((w, i) => { w.style.transitionDelay = (i * 0.055) + 's'; });
+    });
+  } catch (e) { /* headings just won't get the masked effect */ }
+
+  // Reveal via IntersectionObserver (reliable, fires once per element)
+  const revealAll = () => document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => el.classList.add('in'));
+  let io = null;
+  const startReveals = () => {
+    // Run for everyone — even under reduce-motion the CSS keeps a gentle opacity fade (no movement).
+    if (!('IntersectionObserver' in window)) { revealAll(); return; }
+    io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => io.observe(el));
+  };
+
+  // Sticky nav + scroll progress
+  let ticking = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (nav) nav.classList.toggle('scrolled', y > 12);
+    if (prog) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    }
+    ticking = false;
+  };
+  const requestScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
+  onScroll();
+  window.addEventListener('scroll', requestScroll, { passive: true });
+
+  // Subtle pointer tilt on cards (restrained, premium)
+  if (!reduceMotion && finePointer) {
+    document.querySelectorAll('.aud, .svc, .step, .quote, .vid').forEach((card) => {
+      card.classList.add('tilt');
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateX(${py * -2.5}deg) rotateY(${px * 3}deg) translateY(-5px)`;
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+  }
+
+  // Magnetic buttons (cursor pull)
+  if (!reduceMotion && finePointer) {
+    document.querySelectorAll('.magnetic').forEach((btn) => {
+      btn.addEventListener('pointermove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const mx = e.clientX - r.left - r.width / 2;
+        const my = e.clientY - r.top - r.height / 2;
+        btn.style.transform = `translate(${mx * 0.28}px, ${my * 0.4}px)`;
+      });
+      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  // Custom cursor (desktop, lerped follow + grow on interactive hover)
+  const cursor = document.getElementById('cursorDot');
+  if (cursor && !reduceMotion && finePointer) {
+    document.body.classList.add('has-cursor');
+    let cx = window.innerWidth / 2, cy = window.innerHeight / 2, tx = cx, ty = cy;
+    window.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+    const cloop = () => { cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22; cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`; requestAnimationFrame(cloop); };
+    cloop();
+    document.querySelectorAll('a, button, .svc, .aud, .quote, .vid, .chip, details summary').forEach((el) => {
+      el.addEventListener('pointerenter', () => cursor.classList.add('big'));
+      el.addEventListener('pointerleave', () => cursor.classList.remove('big'));
+    });
+  }
+
+  // Preloader — simple "loading", fades out fast, then content reveals
+  const pre = document.getElementById('preloader');
+  let revealsStarted = false;
+  const begin = () => { if (revealsStarted) return; revealsStarted = true; startReveals(); };
+  const finish = () => { if (pre) pre.classList.add('done'); document.body.style.overflow = ''; begin(); };
+  if (pre && !reduceMotion) {
+    document.body.style.overflow = 'hidden';
+    let done = false;
+    const go = () => { if (done) return; done = true; finish(); };
+    // Finish shortly after the page is ready, capped so it can never feel stuck.
+    if (document.readyState === 'complete') { setTimeout(go, 200); }
+    else { window.addEventListener('load', () => setTimeout(go, 200)); }
+    setTimeout(go, 900); // hard cap
+  } else {
+    finish();
+  }
+
+  // Service tabs — re-fire the 3D card cascade on every switch (lots of motion in the booking area)
+  const cascade = (panel) => {
+    const cards = panel.querySelectorAll('.svc');
+    cards.forEach((c) => c.classList.remove('in'));
+    void panel.offsetWidth; // force reflow so the animation restarts
+    cards.forEach((c) => c.classList.add('in'));
+  };
   document.querySelectorAll('.tab').forEach((btn) => {
     btn.addEventListener('click', () => {
       const key = btn.getAttribute('data-tab');
@@ -396,24 +539,25 @@ const faqs = [
         b.setAttribute('aria-selected', String(on));
       });
       document.querySelectorAll('.svc-panel').forEach((p) => {
-        p.classList.toggle('active', p.getAttribute('data-panel') === key);
+        const on = p.getAttribute('data-panel') === key;
+        p.classList.toggle('active', on);
+        if (on && !reduceMotion) cascade(p);
       });
     });
   });
 
-  // Scroll reveal
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const reveals = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)) {
-    reveals.forEach((el) => el.classList.add('in'));
-  } else {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach((el) => io.observe(el));
-  }
+  // Native scroll only — no external smooth-scroll library (faster, fully offline, nothing to hang on).
+  // In-page anchor smoothness is handled by CSS `html { scroll-behavior: smooth }`.
+</script>
+
+<!-- Failsafe: a separate script so a thrown error above can never leave the page hidden -->
+<script>
+  setTimeout(function () {
+    var p = document.getElementById('preloader');
+    if (p) p.classList.add('done');
+    document.body.style.overflow = '';
+    document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach(function (el) { el.classList.add('in'); });
+  }, 2200);
 </script>
 
 </body>

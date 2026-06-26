@@ -1,17 +1,19 @@
 # CLAUDE.md — vandanaagarwal.in build brief
 
-Instructions for building Vandana Agarwal Nik's personal website with Claude Code. Read this file first, then read `About-Vandana-and-Services.md` for all the content, facts, services, assets, and links. Build only what is specified here. Ask before adding scope.
+The single source of intent for Vandana Agarwal Nik's personal website. Read this first, then
+`About-Vandana-and-Services.md` for all content, facts, services, assets, and links. Build only
+what is specified here. Ask before adding scope.
+
+> This brief was consolidated from the original v1 spec and the v2 redesign notes into one
+> document. Where the as-built site evolved past the original spec, this file describes **what is
+> actually built** (a dark "Anima" theme with Lusion-grade motion), not the discarded light-theme v1.
 
 ---
 
-## Status: BUILT & LIVE (last updated 2026-06-02)
+## Status: BUILT, DEPLOYED & LIVE
 
-The site is built, deployed, and live with HTTPS at **https://vandanaagarwal.in**. See `PROGRESS.md` for the full build/deploy/DNS record. This brief is kept as the source of intent; where the as-built site has evolved past the original v1 spec, this file has been updated inline (sections 0, 2, 5, 6) and the changes are flagged "as built". Key evolutions from the original v1 spec:
-
-- **Tech stack is Astro (static)**, deployed on Vercel (not Netlify/Squarespace hosting). DNS A record to `76.76.21.21`.
-- **All 10 live Topmate services are listed** on the site (not just 4 offer cards), grouped into Sessions / Packages / Async tabs.
-- **No prices anywhere on the site.** Pricing lives only on Topmate. Confirmed preference, do not add prices.
-- **Personal-coach feel, not corporate.** Removed company-logo marquees and count-up stat bands. Added a first-person "Why I coach" story with a handwritten signature.
+Live with HTTPS at **https://vandanaagarwal.in**, deployed on Vercel, auto-deploying from GitHub
+(`connectwithvandy/vandanaagarwal-in`, branch `main`). See `PROGRESS.md` for the full build/deploy/DNS record.
 
 ---
 
@@ -19,131 +21,173 @@ The site is built, deployed, and live with HTTPS at **https://vandanaagarwal.in*
 
 This is a hard rule. Do not skip it.
 
-1. **Ask 5 questions first.** Before building anything, ask Vandy 5 sharp, specific questions to make sure you understand exactly what she needs built. Cover the real forks: tech stack and hosting, look and feel and color direction, must-have versus nice-to-have sections, how she wants to update and deploy it, and anything ambiguous in this brief. Do not ask vague questions. Make them count.
-2. **Show your plan, then stop.** After her answers, lay out a clear plan: the approach, the file structure, the sections you will build, and the order you will build them in. Present the plan and wait.
-3. **Do not build until she approves.** No code, no files, until Vandy says go. If she changes something, update the plan and re-confirm before building.
-4. **Build in reviewable steps.** Once approved, build in clear stages so she can see progress and redirect early, rather than dropping a finished site all at once.
+1. **Ask sharp questions first.** Before building anything new, ask Vandy specific questions on the
+   real forks (look and feel, must-have vs nice-to-have, how she updates/deploys, anything ambiguous).
+   Make them count. No vague questions.
+2. **Show your plan, then stop.** Lay out the approach, file structure, sections, and build order. Wait.
+3. **Do not build until she approves.** If she changes something, update the plan and re-confirm.
+4. **Build in reviewable steps** so she can see progress and redirect early.
 
 ---
 
-## 0) Decisions to confirm before coding
+## Tech stack & deploy (as built)
 
-Defaults are marked. Confirm with Vandy, then proceed.
-
-1. **Tech stack (as built: Astro, static output, no client framework).** Source in `src/pages/index.astro` + `src/styles/global.css`, vanilla JS for the mobile menu, service tabs, sticky nav, and scroll reveal. Build with `npm run build` to `dist/`. (The original default was plain HTML/CSS; Astro was chosen for easier data-driven sections. Do not add React or Next.)
-2. **Hosting (as built: Vercel, project `vandanaagarwal-in`).** Deploy with `npx vercel@latest deploy --prod --yes`. Custom domain `vandanaagarwal.in` (apex primary, www attached). DNS lives at Google Domains / Squarespace nameservers, with an **A record to `76.76.21.21`**. HTTPS is live. See `PROGRESS.md`.
-3. **Monetization scope (confirmed: Topmate now, packages later).** Every CTA points to Topmate. **No prices on the site** (confirmed preference): all 10 live Topmate services are listed by title and description only, with booking on Topmate. Do not build pricing tables, a subscription flow, or a team-coaching package page.
+- **Astro, static output, no client framework.** Source is `src/pages/index.astro` (markup + data) and
+  `src/styles/global.css` (all styles). Vanilla JS in the page handles the mobile menu, service tabs,
+  sticky nav, scroll reveal, custom cursor, and motion. Do not add React/Next/Tailwind.
+- **Build** `npm run build` → `dist/`. **Preview** `npm run preview`. **Dev** `npm run dev`.
+- **Hosting: Vercel**, project `vandanaagarwal-in`. Auto-deploys on push to GitHub `main`
+  (GitHub → Vercel integration). Custom domain `vandanaagarwal.in` (apex primary, www attached),
+  DNS at Google/Squarespace nameservers with an **A record to `76.76.21.21`**. See the `vercel-deploy` memory.
+- Self-contained except Google Fonts. No backend, auth, or analytics unless Vandy asks.
 
 ---
 
 ## 1) The job
 
-Build a clean, warm, credible **one-page** site that positions Vandana as a global SDR coach with APAC-built execution, and routes every visitor to book on Topmate.
+A clean, warm, credible **one-page** site that positions Vandana as a global SDR coach with
+APAC-built execution, and routes every visitor to book on Topmate.
 
-All copy, facts, services, and links live in `About-Vandana-and-Services.md`. Pull from that file. Do not invent details.
+All copy, facts, services, and links live in `About-Vandana-and-Services.md`. Pull from that file.
+Do not invent details.
 
-### About Vandana (use this for the About section and the overall tone)
+### About Vandana (for the About/Meet-me section and overall tone)
 
-Vandana Agarwal Nik is a Sales Development Leader and SDR coach who builds and scales BDR teams from zero to pipeline across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. She has done it from an early-stage startup (Clickpost) through to scale (Rubrik, JumpCloud). She is the Founder of SDR Leaders of APAC (250+ members), was named to the 100 Powerful Women in Sales (2025), and is a GrowthX Fellow.
+Vandana Agarwal Nik is a Sales Development Leader and SDR coach who builds and scales BDR teams from
+zero to pipeline across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. She
+has done it from an early-stage startup (Clickpost) through to scale (Rubrik, JumpCloud). She is the
+Founder of SDR Leaders of APAC (250+ members), was named to the 100 Powerful Women in Sales (2025),
+and is a GrowthX Fellow.
 
-Why she coaches: to give the next generation of SDRs the kind of support she did not have early in her own career. That pay-it-forward motive is the heart of the brand and should come through in the About copy, warmly and without overhyping.
+Why she coaches: to give the next generation of SDRs the support she did not have early in her own
+career. That pay-it-forward motive is the heart of the brand and should come through warmly, without overhyping.
 
-What makes her current: she is AI-forward, running and coaching on real tools (Gong, Hyperbound, Orum, 6sense, Salesforce), so she coaches SDRs to win in an AI-shaped sales world, not around it.
+What makes her current: she is AI-forward, coaching on real tools (Gong, Hyperbound, Orum, 6sense,
+Salesforce), so she coaches SDRs to win in an AI-shaped sales world, not around it.
 
 Keep all private life out (family, health, finances). This is a public coaching site.
 
 ---
 
-## 2) Page structure (one page) — as built
+## 2) Page structure (one page, pain-first flow as built)
 
-1. **Header / Nav.** Logo is a small round headshot + "Vandana Agarwal Nik" (not the old "Vandana." wordmark). Links: My story, Work with me, Featured, About, FAQ. Primary button: Book on Topmate. Sticky, reacts on scroll, collapses to a menu on mobile.
-2. **Hero.** Handwritten "Hi, I'm Vandana 👋" eyebrow, H1 ("Ramp faster. Book more meetings. Build outbound systems that actually stick."), warm first-person subhead, two CTAs (Book on Topmate, See how I can help), three proof chips (8+ yrs; APAC · EMEA · AMER; 100 Powerful Women in Sales, Demandbase & WIS '25), headshot with a "Founder, SDR Leaders of APAC" tag. Dark violet hero with soft animated blobs.
-3. **My story (Why I coach).** First-person, pay-it-forward motive, closed with a handwritten "Vandana" signature. This is the warmth anchor that keeps the site personal, not corporate.
-4. **Who I help.** Four audience cards: new/ramping SDRs, breaking into SaaS, founders & SDR leaders, feeling stuck.
-5. **Work with me (services).** All 10 live Topmate services, grouped in tabs: Sessions (6), Packages (3), Async (1). Each is a card with title, format/duration, and description, NO price. Whole card links to Topmate ("Book on Topmate →"). Cross-check titles/durations against the live Topmate page when editing.
-6. **Process.** Three steps: Diagnose, Playbook, Coach and iterate.
-7. **Photo banner.** Full-bleed dark LinkedIn banner ("Helping SDRs Perform Better and Prepare Smarter for Interviews"), `public/assets/banner.jpg`, lazy-loaded. (Do NOT use `linkedin BG.jpeg`, it says "10+ years" which breaks the writing rule.)
-8. **Featured video podcasts.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
-9. **About.** Short bio, AI-forward note, credibility bullets, and 3-4 hard results from the proof bank (57% to 91% SAL, 0% to 105% ramp, 17% to 49% SQL-to-S1, 2x SQLs). Two CTAs (Book on Topmate, Email me).
-10. **Testimonials.** Six real, attributed 5-star reviews from her Topmate page, with the "5/5 on Topmate" note.
-11. **FAQ.** How to book, do you work globally, how to pick a session, can the booking link change later.
-12. **Final CTA.** Dark band, strong close, Book on Topmate plus the email.
-13. **Footer.** Nav links, LinkedIn, SDR Leaders of APAC, copyright.
+The flow leads with the reader's pain, introduces Vandana second, builds trust, then presents the
+offer last (peer-feedback driven; do not revert to name-first).
 
----
-
-## 3) CTAs and contact
-
-- Primary CTA everywhere: Book on Topmate, https://topmate.io/vandana_agarwal, open in a new tab.
-- Secondary CTA: "See coaching offers", anchored to the Offers section.
-- Display email: coaching@vandanaagarwal.in, as a `mailto:` link.
-- No other forms or schedulers in v1.
-
----
-
-## Key links (all relevant URLs)
-
-On the site:
-- Topmate (booking, every primary CTA): https://topmate.io/vandana_agarwal
-- LinkedIn profile (footer and About): https://www.linkedin.com/in/meet-vandana/
-- Contact email: coaching@vandanaagarwal.in
-- SDR Leaders of APAC (LinkedIn page, optional link in About or footer): https://www.linkedin.com/company/sdr-leaders-of-apac/
-- Featured videos (3 YouTube embeds): see the About file.
-
-Reference only (do not put on the site unless asked):
-- Website domain (owned, DNS at Squarespace): https://vandanaagarwal.in
-- Google Drive (brand and content root): https://drive.google.com/drive/u/1/folders/0APG0gVRByAMGUk9PVA
-- Lunacal (alternate scheduler, not used in v1): https://lunacal.ai/vandana/10min
-- Template inspiration: Coacher, Personal Coach, Coachify (full links in section 5).
+1. **Header / Nav.** Round avatar (`va-square.jpg`) + "Vandana Agarwal Nik". Links: Who I help, Meet
+   me, Reviews, FAQ, Services. Primary button: Book on Topmate. Sticky, reacts on scroll, mobile menu.
+2. **Hero (Anima style).** Dark, centered, big serif headline with an accent-gradient highlight word
+   ("Booking meetings shouldn't feel this *hard*."), centered pain-led subhead, two CTAs, three proof
+   chips (8+ yrs; APAC · EMEA · AMER; 100 Powerful Women in Sales). Large purple glow blooming from the
+   bottom. **No large photo in the hero** (Anima-faithful + keeps the pain-first promise).
+3. **Marquee ribbon.** Scrolling brand phrases.
+4. **Who I help.** Four audience cards, each led with the pain then the outcome.
+5. **Meet me (intro).** Where "Hi, I'm Vandana 👋" lives. First-person, pay-it-forward story, AI-forward
+   note, credibility bullets, two CTAs. Portrait (`va-portrait.jpg`) with a signature card.
+6. **Numbers that moved (results band).** 3–4 hard results from the proof bank (57%→91% SAL, 0%→105%
+   ramp, 17%→49% SQL-to-S1, 2x SQLs).
+7. **Process.** Three steps: Diagnose, Playbook, Coach & iterate.
+8. **Photo banner.** Full-bleed dark LinkedIn banner, `public/assets/banner.jpg`, lazy-loaded.
+   (Do NOT use the old `linkedin BG.jpeg` — it says "10+ years", which breaks the writing rule.)
+9. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
+10. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
+11. **FAQ.** How to book, do you work globally, how to pick a session, can the booking link change.
+12. **Services ("Work with me").** All 10 live Topmate services, grouped in tabs: Sessions (6),
+    Packages (3), Async (1). Each card has title, format/duration, description, **no price**. Whole
+    card links to Topmate. Cross-check titles/durations against the live Topmate page when editing.
+13. **Final CTA.** Dark band, strong close, Book on Topmate + the email.
+14. **Footer.** Nav links, LinkedIn, SDR Leaders of APAC, copyright.
 
 ---
 
-## 4) Writing rules (apply to all copy)
+## 3) Design direction (as built)
 
-1. **No overhyping.** Experience is **8+ years**, never "10+". Lead with real outcomes and recognition (100 Powerful Women in Sales, Founder of SDR Leaders of APAC, GrowthX Fellow, hard pipeline numbers) alongside the 8+ years figure. Use only the figures in the proof bank in the About file. Do not invent or round up.
+- **Theme = "Anima" dark.** Charcoal base `#181818`, near-white text `#F5F3F8`, vivid purple glow
+  accent (`--violet #7C3AED`, highlight `#9B6BFF`, lavender `#B9A3FF`). Fonts: **Fraunces** (display
+  headings), **Inter** (body), **Caveat** (handwritten "Hi, I'm Vandana" + signature). Soft rounded
+  cards with subtle borders. The earlier warm light-lavender theme was discarded — it fought both the
+  photos and the references.
+- **Motion = "Lusion" grade**, tuned for speed + reliability:
+  - Simple "Loading" preloader (spinner + word), fades ~200ms after load, hard-capped, never locks scroll long.
+  - **Site-wide aurora background**: large violet light-blobs that slowly drift/breathe behind every
+    section (sections are transparent so the light flows through the whole page).
+  - Reveal-on-scroll via IntersectionObserver, using the standalone `translate`/`scale`/`rotate`
+    properties (not `transform`) so reveals never fight the hover/tilt transform.
+  - Masked word-rise on every major heading; 3D `card3d` entrance on the Who-I-help + Services cards
+    (re-fires on tab switch); **animated gradient rings** on cards; custom cursor; film grain;
+    magnetic buttons; scroll-progress bar; parallax glows; marquee; subtle 3D card tilt; button shine.
+  - The **Meet-me portrait** is edge-feathered with a mask + violet duotone wash + breathing halo so the
+    studio backdrop dissolves into the dark page instead of reading as a pasted-on poster.
+  - **No external scroll library** (Lenis was removed — slow feel + CDN hang risk). Native scroll + CSS
+    `scroll-behavior: smooth` + `scroll-margin-top` for anchor offset.
+  - **Robustness:** masked-heading DOM surgery wrapped in try/catch; a separate-script failsafe
+    force-reveals everything + clears the preloader after 2.2s so a thrown error can never leave a blank page.
+  - **`prefers-reduced-motion` safe, but not dead:** big movement (3D, parallax, marquee, cursor,
+    aurora drift, card rings) is suppressed under reduce-motion, yet reveals keep a gentle opacity fade.
+- It must read as a **solo coach's personal site**, not a company/SaaS page. No company-logo marquees,
+  count-up stat bands, or pricing-table grids. Lead with her face, voice, and the pay-it-forward motive.
+- Design references (for feel only): **lusion.co/about** (kinetic, full-bleed, premium motion) and
+  **animaapp.com** (dark charcoal, big serif, purple glow, centered hero). Layout structure follows the
+  Coacher-style offer-led one-pager. The original purple light mockup is kept in `extras/inspiration-mockup.html`.
+
+---
+
+## 4) CTAs, contact & key links
+
+- **Primary CTA everywhere:** Book on Topmate, `https://topmate.io/vandana_agarwal`, new tab.
+- **Display email:** `coaching@vandanaagarwal.in`, as a `mailto:` link.
+- LinkedIn (footer + Meet me): `https://www.linkedin.com/in/meet-vandana/`
+- SDR Leaders of APAC: `https://www.linkedin.com/company/sdr-leaders-of-apac/`
+- Featured videos (3 YouTube embeds): see `About-Vandana-and-Services.md`.
+- No other forms or schedulers.
+
+Reference only (do not put on the site unless asked): domain `https://vandanaagarwal.in`; Topmate
+service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler Lunacal (unused).
+
+---
+
+## 5) Writing rules (apply to all copy)
+
+1. **No overhyping.** Experience is **8+ years**, never "10+". Lead with real outcomes and recognition
+   (100 Powerful Women in Sales, Founder of SDR Leaders of APAC, GrowthX Fellow, hard pipeline numbers)
+   alongside the 8+ years figure. Use only the figures in the proof bank. Do not invent or round up.
 2. **No em dashes in sentences.** Use commas, periods, or restructure. Hyphenated compounds are fine.
-3. Voice: confident operator plus supportive coach. Direct, practical, positive. The reader should leave having learned something and feeling lighter.
-
----
-
-## 5) Design direction
-
-- **Visual template to match: `inspiration-mockup.html`** in this folder. It is a purple-brand, one-page mockup with the exact sections, layout, and feel to build toward. Treat it as the color and feel target.
-- **Real template inspiration (for layout and structure), these three only:**
-  - Coacher (primary): https://www.framer.com/marketplace/templates/coacher/
-  - Personal Coach, one-page: https://personalcoach.framer.website/
-  - Coachify: https://coachify.framer.website/
-  Build the Coacher-style offer-led structure, colored with the purple palette below.
-- Warm operator blend: approachable and human, but sharp and outcome-driven. Stay grounded as a GTM and sales-development leader, avoid generic life-coach visuals.
-- Dark violet-black hero and final CTA (echoing her LinkedIn interview banner), light lavender and white sections in between.
-- Clean type, generous spacing, strong and obvious CTA buttons.
-- Brand colors (purple, from her LinkedIn and Topmate thumbnails): primary violet #7C2FD4, light lavender background #F4ECFB, deep violet-black #140A1E for high-contrast sections, deep purple-charcoal text #241934, light violet accent #B98BEA. Lead with violet on a light base, use the deep violet-black for the hero or footer.
-- **As built (personal-coach feel, confirmed preference):** it must read as a solo coach's personal site, NOT a company/SaaS page. Do not add company-logo marquees, count-up stat bands, or pricing-table grids. Lead with her face and voice, first-person story, and the pay-it-forward motive. Fonts: Fraunces (headings), Inter (body), Caveat (handwritten signature and "Hi, I'm Vandana" eyebrow). Soft rounded cards, gentle scroll-reveal animations that respect `prefers-reduced-motion`. See the `site-design-preferences` memory.
+3. Voice: confident operator plus supportive coach. Direct, practical, positive. The reader should
+   leave having learned something and feeling lighter.
 
 ---
 
 ## 6) Definition of done
 
-- One-page site with all sections from section 2, in order.
-- Every CTA points to Topmate (https://topmate.io/vandana_agarwal), opening in a new tab.
-- All 10 live Topmate services listed (Sessions/Packages/Async), titles and durations matching the live Topmate page, with **no prices shown anywhere**.
-- Contact email is coaching@vandanaagarwal.in via `mailto:`.
-- Exactly three featured video podcasts embedded with the provided links, `loading="lazy"`.
-- A testimonials section with real, attributed reviews from the About file (currently six).
-- Experience stated as 8+ years, used consistently. No "10+". No overhyping anywhere.
-- No em dashes in any sentence of the copy.
-- Fully responsive. Test at 375px, 768px, and 1280px.
-- Positioning is unmistakable on first scroll: global SDR coach, APAC-built execution.
-- Headshot downloaded and hosted locally, not hotlinked.
-- Accessibility basics: real `alt` text, sufficient contrast, one H1, semantic headings, keyboard-focusable links and buttons.
-- No backend, no auth, no analytics in v1 unless Vandy asks.
+- One-page site with all sections from section 2, in order (pain-first flow).
+- Every CTA → Topmate (`https://topmate.io/vandana_agarwal`), new tab.
+- All 10 live Topmate services listed (Sessions/Packages/Async), titles/durations matching the live
+  Topmate page, **no prices anywhere**.
+- Contact email `coaching@vandanaagarwal.in` via `mailto:`.
+- Exactly three featured video podcasts embedded with `loading="lazy"`.
+- Six real, attributed testimonials.
+- Experience stated as 8+ years, consistently. No "10+". No overhyping. No em dashes in copy.
+- One H1, semantic headings, real `alt` text, sufficient contrast, keyboard-focusable controls.
+- Fully responsive. Test at 375px, 768px, 1280px.
+- Positioning unmistakable on first scroll: global SDR coach, APAC-built execution.
+- All images hosted locally in `public/assets/` (not hotlinked).
 
 ---
 
-## 7) Out of scope for v1 (roadmap)
+## 7) Out of scope (roadmap)
 
-1. A larger testimonials wall with quantified case studies (v1 already includes a short testimonials section).
+1. Larger testimonials wall with quantified case studies.
 2. Lead magnet plus newsletter sign-up.
-3. Paid packages with pricing: mentorship subscription and a 1 to 2 day team coaching package.
+3. Paid packages with pricing (mentorship subscription, 1–2 day team coaching).
 4. Dedicated pages: /coaching, /consulting, /resources.
-5. Substack, X, and a separate personal Instagram. These live outside this site.
+5. Substack, X, separate personal Instagram (these live outside this site).
+
+---
+
+## Assets in use
+
+- `public/assets/va-square.jpg` — nav avatar.
+- `public/assets/va-portrait.jpg` — Meet-me portrait (studio headshot).
+- `public/assets/banner.jpg` — full-bleed photo banner.
+- `public/favicon.svg` — favicon.
+- Spares and raw source images are parked in `extras/` (not used by the site).
