@@ -85,7 +85,8 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
 3. **Marquee ribbon.** Scrolling brand phrases.
 4. **Who I help.** Four audience cards, each led with the pain then the outcome.
 5. **Meet me (intro).** Where "Hi, I'm Vandana 👋" lives. First-person, pay-it-forward story, AI-forward
-   note, credibility bullets, two CTAs. Portrait (`va-portrait.jpg`) with a signature card.
+   note, credibility bullets, two CTAs. Portrait (`va-portrait.jpg`), edge-feathered into the page.
+   (The handwritten "Vandana" signature card was removed at owner request as repetitive.)
 6. **Numbers that moved (results band).** 3–4 hard results from the proof bank (57%→91% SAL, 0%→105%
    ramp, 17%→49% SQL-to-S1, 2x SQLs).
 7. **Process.** Three steps: Diagnose, Playbook, Coach & iterate.
@@ -98,7 +99,8 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
     not the main profile. Cross-check titles/durations/ids against the live Topmate page when editing.
 10. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
 11. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
-12. **FAQ.** How to book, do you work globally, how to pick a session, can the booking link change.
+12. **FAQ.** Objection-led (worth it at my stage, am I ready, will you get my market outside APAC) plus
+    how to pick a session. Pure logistics like "how to book" were dropped as they belong in a booking email.
 13. **Final CTA.** Dark band, strong close, Book on Topmate + the email.
 14. **Footer.** Nav links, LinkedIn, SDR Leaders of APAC, copyright.
 

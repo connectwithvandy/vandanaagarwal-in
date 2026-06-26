@@ -321,6 +321,8 @@ section { padding: 112px 0; }
 .final h2 { color: #fff; font-size: clamp(2.2rem, 4.6vw, 3.4rem); margin: 14px 0 14px; }
 .final p { color: var(--soft); font-size: 1.18rem; margin-bottom: 32px; }
 .final-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.final .final-mail { font-size: .98rem; color: var(--soft); margin: 22px 0 0; }
+.final .final-mail a { color: var(--lav); text-decoration: underline; text-underline-offset: 3px; }
 
 /* Footer */
 footer.site { padding: 44px 0; border-top: 1px solid var(--line); background: var(--bg); }

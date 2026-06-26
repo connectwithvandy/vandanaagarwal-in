@@ -10,7 +10,7 @@ const APAC = 'https://www.linkedin.com/company/sdr-leaders-of-apac/';
 const audiences = [
   { icon: '🚀', title: 'New & ramping SDRs', pain: 'Busy all day, but the meetings still aren’t coming?', body: 'Your first 30, 60, 90 days, sorted. We turn activity into conversations, and conversations into booked meetings.' },
   { icon: '🎯', title: 'Breaking into SaaS', pain: 'Sure you’d be great in sales, but no one calls back?', body: 'Positioning, outreach, and interview prep that actually gets you hired as an SDR.' },
-  { icon: '🛠️', title: 'Founders & SDR leaders', pain: 'Pipeline is leaking and you cannot see where?', body: 'Build or fix the SDR engine: onboarding, process, outbound systems, and GTM alignment.' },
+  { icon: '🛠️', title: 'Founders & SDR leaders', pain: 'Hired SDRs, but the pipeline still isn’t predictable?', body: 'Build or fix the SDR engine: onboarding, process, outbound systems, and GTM alignment.' },
   { icon: '🧭', title: 'Feeling stuck', pain: 'Plateaued, and the next move just isn’t obvious?', body: 'An honest read on where you are, a clear next move, and a plan you actually follow.' },
 ];
 
@@ -34,9 +34,9 @@ const services = {
 const groups = Object.keys(services);
 
 const steps = [
-  { n: '01', title: 'Diagnose', body: 'We find where you are stuck: messaging, activity, confidence, process, or prioritization.' },
-  { n: '02', title: 'Playbook', body: 'We build your operating system: ICP, cadences, scripts, and a daily rhythm you can run.' },
-  { n: '03', title: 'Coach & iterate', body: 'Weekly feedback loops. Real calls, real edits, real improvements you can see.' },
+  { n: '01', title: 'Diagnose', body: 'Session one, we pull apart your real calls, emails, and pipeline to find the actual leak. You leave knowing exactly what is costing you meetings, no guesswork.' },
+  { n: '02', title: 'Playbook', body: 'We build your operating system together: ICP, cadences, call openers, and a daily rhythm you can run on a busy Monday. You walk away with the scripts, not theory.' },
+  { n: '03', title: 'Coach & iterate', body: 'Then we run it. I listen to your real calls, mark the moments that win or lose the meeting, and we fix them one at a time until the numbers move.' },
 ];
 
 const videos = [
@@ -62,10 +62,10 @@ const testimonials = [
 ];
 
 const faqs = [
-  { q: 'How do I book?', a: 'Book directly on Topmate. Pick any session, choose a slot that works for you, and we meet over video. Payment and scheduling are handled there.', open: true },
-  { q: 'Do you work with SDRs globally?', a: 'Yes. Coaching is global, grounded in APAC execution and cross-border experience across APAC, EMEA, and AMER.', open: false },
-  { q: 'How do I pick the right session?', a: 'If you are unsure, start with Let’s connect. We figure out where you are and choose the right path together. New SDRs usually start with Ramp Coaching, job seekers with Break into SDR, and leaders with Consulting.', open: false },
-  { q: 'Can the booking link change later?', a: 'Yes. Topmate is the booking surface for now, and it can be swapped for another scheduler later without changing how you reach me.', open: false },
+  { q: 'Is coaching worth it at my stage?', a: 'If you are doing the work and the meetings still are not coming, a focused session usually pays for itself fast. We fix the specific thing holding you back instead of guessing for weeks. If it is not the right fit, I will tell you on the intro call.', open: true },
+  { q: 'I am not sure I am ready for coaching.', a: 'You do not need it all figured out first. Most people arrive stuck or unsure, that is the whole point. Start with a short Let’s connect call, we find where you are, and you decide if going further makes sense. No pressure either way.', open: false },
+  { q: 'Will you get my market if I am not in APAC?', a: 'Yes. I have built and scaled SDR teams across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. The fundamentals of booking meetings travel, and I tailor the playbook to your region and motion.', open: false },
+  { q: 'How do I pick the right session?', a: 'If you are unsure, start with Let’s connect and we choose together. New SDRs usually start with Ramp Coaching, job seekers with Break into SDR, and founders or leaders with Consulting.', open: false },
 ];
 ---
 
@@ -181,9 +181,6 @@ const faqs = [
   <div class="wrap intro">
     <div class="intro-photo reveal" data-rev="l">
       <img src="/assets/va-portrait.jpg" alt="Vandana Agarwal Nik, SDR coach and Sales Development Leader" width="1000" height="1250" class="img-reveal" />
-      <div class="sig-card">
-        <span class="signature">Vandana</span>
-      </div>
     </div>
     <div class="intro-body reveal" data-rev="r" data-d="1">
       <span class="hello">Hi, I'm Vandana <span aria-hidden="true">👋</span></span>
@@ -361,11 +358,12 @@ const faqs = [
     <div class="final reveal">
       <span class="kicker">Let's get to work</span>
       <h2>Ready to move from busy to booked?</h2>
-      <p>Let's make your pipeline predictable, one week at a time. I would love to help.</p>
+      <p>Let's make your pipeline predictable, one week at a time. I would love to help, whenever you are ready.</p>
       <div class="final-cta">
         <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
-        <a href={`mailto:${EMAIL}`} class="btn btn-ghost-l">{EMAIL}</a>
+        <a href={APAC} target="_blank" rel="noopener" class="btn btn-ghost-l">Join SDR Leaders of APAC</a>
       </div>
+      <p class="final-mail">Not ready to book? Come join the community, or just say hello at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
     </div>
   </div>
 </section>
