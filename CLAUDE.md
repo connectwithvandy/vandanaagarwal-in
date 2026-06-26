@@ -40,6 +40,11 @@ This is a hard rule. Do not skip it.
   (GitHub → Vercel integration). Custom domain `vandanaagarwal.in` (apex primary, www attached),
   DNS at Google/Squarespace nameservers with an **A record to `76.76.21.21`**. See the `vercel-deploy` memory.
 - Self-contained except Google Fonts. No backend, auth, or analytics unless Vandy asks.
+- **SEO + AI discoverability (GEO) is a standing priority** (owner wants AI answer engines and Google to
+  cite her). Keep these in sync when content changes: JSON-LD `@graph` in `index.astro` (Person, WebSite,
+  ProfessionalService, FAQPage), `public/llms.txt`, `public/robots.txt` (explicitly allows AI crawlers:
+  GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.), and `public/sitemap.xml`. Plus the usual head
+  tags (title, meta description, canonical, Open Graph, Twitter card, absolute `og:image`).
 
 ---
 
@@ -97,11 +102,14 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
     tab was folded in at owner request). Each card has title, format/duration, description, **no
     price**, and **deep-links to its own Topmate booking page** (`topmate.io/vandana_agarwal/<id>`),
     not the main profile. Cross-check titles/durations/ids against the live Topmate page when editing.
+    "Consulting for Founders & Leaders" sits **last** in Sessions and renders as a **full-width banner
+    card** (`svc-wide`). Audience cards use inline lavender **stroke line-icons** (no emoji).
 10. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
 11. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
 12. **FAQ.** Objection-led (worth it at my stage, am I ready, will you get my market outside APAC) plus
     how to pick a session. Pure logistics like "how to book" were dropped as they belong in a booking email.
-13. **Final CTA.** Dark band, strong close, Book on Topmate + the email.
+13. **Final CTA.** Dark band, strong close. Eyebrow "In your corner". Primary Book on Topmate + a
+    secondary "Connect on LinkedIn" (low-commitment), with the email on a quiet line below.
 14. **Footer.** Nav links, LinkedIn, SDR Leaders of APAC, copyright.
 
 ---

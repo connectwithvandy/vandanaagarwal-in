@@ -108,6 +108,34 @@ Driven by two references (lusion.co/about, animaapp.com) and peer feedback (lead
 
 ---
 
+## 2026-06-27 — flow reorder, copy polish, icons, mobile fix, SEO/GEO
+
+- **Section reorder (owner request):** nav + page flow now Who I help → Meet me → Numbers → Process →
+  banner → **Services** → Reviews → Featured → FAQ. Services is no longer dead-last (brief's "offer last"
+  note updated accordingly).
+- **Copy upgrades (from an expert review, owner-approved subset):** sharper founder hook ("Hired SDRs,
+  but the pipeline still isn't predictable?"), process steps rewritten with real texture/voice,
+  objection-led FAQ (worth it at my stage / am I ready / market fit) replacing logistics, final-band
+  eyebrow "Let's get to work" → "In your corner". Removed the handwritten "Vandana" signature card as
+  repetitive. Award attribution spelled out: "Demandbase & Women in Sales, 2025".
+- **Final CTA:** secondary button is now "Connect on LinkedIn" (a low-commitment path), not the
+  community group; not-ready line reworded to drop the community reference.
+- **Icons:** replaced the audience-card emoji with minimal lavender stroke line-icons
+  (ramp/door/layers/compass) to match the dark/serif aesthetic; dropped the wave emoji.
+- **Services:** "Consulting for Founders & Leaders" moved to last in Sessions and rendered as a
+  full-width horizontal banner card (`svc-wide`).
+- **Mobile fix (real bug):** the Meet-me portrait halo (`.intro-photo::before`, inset -16% + blur) bled
+  ~31px past the right edge at 375px, causing horizontal scroll. Clipped with `#intro overflow-x: clip`.
+  Verified zero overflow at 375/768/1280 and sticky nav still pins, via headless Chromium (Playwright).
+- **SEO + AI discoverability (GEO):** JSON-LD `@graph` (Person, WebSite, ProfessionalService, FAQPage);
+  `public/robots.txt` that explicitly ALLOWS AI crawlers (GPTBot, ClaudeBot, PerplexityBot,
+  Google-Extended, Applebot-Extended, CCBot, OAI-SearchBot, …) + sitemap ref; `public/llms.txt`
+  (llmstxt.org); `public/sitemap.xml`; absolute `og:image`, Twitter `summary_large_image`, og:site_name,
+  og:image:alt, author, theme-color, robots max-image-preview. Foundation already had title, meta
+  description, canonical, OG, one H1, alt text, `lang`.
+
+---
+
 ## How to update & redeploy
 
 1. Edit `src/pages/index.astro` and/or `src/styles/global.css`.
