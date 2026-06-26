@@ -378,13 +378,20 @@ footer.site { padding: 44px 0; border-top: 1px solid var(--line); background: va
 @property --ang { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 
 .aurora { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: var(--bg); }
-.aurora span { position: absolute; display: block; border-radius: 50%; filter: blur(90px); mix-blend-mode: screen; will-change: transform; }
-.aurora .a1 { width: 62vw; height: 62vw; top: -16vw; left: -12vw; background: radial-gradient(circle, rgba(124,58,237,.55), transparent 62%); animation: au1 28s ease-in-out infinite; }
-.aurora .a2 { width: 50vw; height: 50vw; top: 26vh; right: -16vw; background: radial-gradient(circle, rgba(155,107,255,.40), transparent 62%); animation: au2 34s ease-in-out infinite; }
-.aurora .a3 { width: 56vw; height: 56vw; bottom: -20vw; left: 16vw; background: radial-gradient(circle, rgba(105,38,217,.48), transparent 64%); animation: au3 40s ease-in-out infinite; }
-@keyframes au1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(13vw, 9vh) scale(1.16); } }
-@keyframes au2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-12vw, 7vh) scale(1.1); } }
-@keyframes au3 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(10vw, -10vh) scale(1.2); } }
+/* Flowing aurora ribbons — wide blurred light bands that wave and drift across the page non-stop */
+.aurora .rb {
+  position: absolute; left: 50%; width: 172vw; height: 48vh;
+  border-radius: 46% 54% 50% 50% / 50%; filter: blur(60px); mix-blend-mode: screen;
+  transform-origin: center; will-change: transform; opacity: .8;
+}
+.aurora .r1 { top: -8%;  background: radial-gradient(58% 50% at 50% 50%, rgba(140, 74, 255, .72), transparent 72%); animation: rib1 22s ease-in-out infinite; }
+.aurora .r2 { top: 22%;  height: 40vh; background: radial-gradient(58% 50% at 50% 50%, rgba(167, 122, 255, .60), transparent 72%); animation: rib2 28s ease-in-out infinite; }
+.aurora .r3 { top: 50%;  height: 54vh; background: radial-gradient(58% 50% at 50% 50%, rgba(124, 58, 237, .66), transparent 72%); animation: rib3 33s ease-in-out infinite; }
+.aurora .r4 { top: 74%;  height: 38vh; background: radial-gradient(58% 50% at 50% 50%, rgba(193, 152, 255, .50), transparent 74%); animation: rib4 39s ease-in-out infinite; }
+@keyframes rib1 { 0%, 100% { transform: translate(-55%, 0) rotate(-14deg) scaleY(1); } 50% { transform: translate(-45%, 10%) rotate(11deg) scaleY(1.24); } }
+@keyframes rib2 { 0%, 100% { transform: translate(-45%, 0) rotate(10deg) scaleY(1.15); } 50% { transform: translate(-55%, -11%) rotate(-13deg) scaleY(1); } }
+@keyframes rib3 { 0%, 100% { transform: translate(-50%, 7%) rotate(-11deg) scaleY(1); } 50% { transform: translate(-50%, -9%) rotate(14deg) scaleY(1.28); } }
+@keyframes rib4 { 0%, 100% { transform: translate(-48%, 0) rotate(13deg) scaleY(1.08); } 50% { transform: translate(-52%, 11%) rotate(-11deg) scaleY(1); } }
 
 /* Lift content above the aurora (nav keeps its own higher z-index) */
 .hero, .marquee, section, .banner-strip, footer.site { position: relative; z-index: 1; }
@@ -420,4 +427,51 @@ footer.site { background: transparent; }
 @media (prefers-reduced-motion: reduce) {
   .aurora span, .intro-photo::before, .hero-glow:not(.g2) { animation: none; }
   .aud::after, .svc::after, .step::after { animation: none; opacity: .3; }
+}
+
+/* ============== MORE MOTION: cursor spotlight + scroll-driven parallax + scroll cue ============== */
+
+/* Cursor-follow spotlight glow on every card (Framer-grade hover) */
+.aud, .svc, .step, .quote, .vid { overflow: hidden; }
+.aud::before, .svc::before, .step::before, .quote::before, .vid::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 0; pointer-events: none;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(155, 107, 255, .20), transparent 62%);
+  opacity: 0; transition: opacity .35s ease;
+}
+.aud:hover::before, .svc:hover::before, .step:hover::before, .quote:hover::before, .vid:hover::before { opacity: 1; }
+.quote > *, .vid > * { position: relative; z-index: 1; }
+
+/* Scroll-driven parallax (native CSS scroll/view timelines; progressive enhancement, motion-safe) */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .aurora { animation: aurora-par linear both; animation-timeline: scroll(root); }
+    @keyframes aurora-par { to { transform: translateY(-11vh); } }
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .banner-strip { overflow: hidden; }
+    .banner-strip img { animation: banner-par linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    @keyframes banner-par { from { transform: scale(1.16) translateY(-4.5%); } to { transform: scale(1.16) translateY(4.5%); } }
+    .sec-head { animation: head-par linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+    @keyframes head-par { from { transform: translateY(34px); opacity: .55; } to { transform: translateY(0); opacity: 1; } }
+  }
+}
+
+/* Animated scroll cue in the hero */
+.scroll-cue { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 9px; color: var(--soft); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; }
+.scroll-cue .mouse { width: 24px; height: 38px; border: 1.5px solid var(--line-2); border-radius: 14px; position: relative; }
+.scroll-cue .mouse::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 7px; border-radius: 2px; background: var(--violet-2); transform: translateX(-50%); animation: cue 1.7s ease-in-out infinite; }
+@keyframes cue { 0% { opacity: 0; transform: translate(-50%, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, 13px); } }
+@media (max-width: 860px) { .scroll-cue { display: none; } }
+@media (prefers-reduced-motion: reduce) { .scroll-cue .mouse::after { animation: none; } }
+
+/* Owner-requested: the signature flowing background stays alive even when macOS "Reduce Motion" is
+   ON. It is gentle, slow, non-flashing light drift (no jarring movement), so it is safe to keep.
+   The heavier effects (parallax, 3D card swings, cursor, scroll cue) remain disabled under reduce-motion. */
+@media (prefers-reduced-motion: reduce) {
+  .aurora .r1 { animation: rib1 46s ease-in-out infinite !important; }
+  .aurora .r2 { animation: rib2 54s ease-in-out infinite !important; }
+  .aurora .r3 { animation: rib3 60s ease-in-out infinite !important; }
+  .aurora .r4 { animation: rib4 66s ease-in-out infinite !important; }
 }

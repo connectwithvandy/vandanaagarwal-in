@@ -32,7 +32,7 @@ is the **dark "Anima" theme with Lusion-grade motion** (the v2 redesign), not th
 
 Nav → Hero (Anima, pain headline, no photo) → Marquee → Who I help (4 pains) → Meet me ("Hi, I'm
 Vandana", portrait) → Numbers that moved → Process (3 steps) → Photo banner → Reviews (6, 5/5) →
-Featured (3 podcasts) → FAQ → Services (all 10, tabbed Sessions/Packages/Async, no prices) → Final CTA → Footer.
+Featured (3 podcasts) → FAQ → Services (all 10, tabbed Sessions/Packages, no prices) → Final CTA → Footer.
 
 ---
 
@@ -88,6 +88,23 @@ Driven by two references (lusion.co/about, animaapp.com) and peer feedback (lead
   this single log. Moved spare photos, raw source images, and design references into `extras/` (kept, not deleted).
   Committed the previously-untracked `va-portrait.jpg` / `va-square.jpg` (the site needs them).
 - **Deployed**: pushed to GitHub `main` → Vercel auto-deploy.
+
+### Session 5 — deep links, flowing ribbons, services regroup (2026-06-27)
+- **Per-service Topmate deep links**: each service card now links to its own booking page
+  (`topmate.io/vandana_agarwal/<id>`) instead of the main profile. IDs captured by rendering the live
+  Topmate page headless and reading each card's route. Deployed directly (owner-approved).
+- **Flowing aurora ribbons**: replaced the drifting blobs with wide blurred violet light bands that
+  wave/drift across the page non-stop (owner-chosen direction: "constant background motion, not basic").
+  Tuned bolder (higher opacity, less blur, wider sweep) so the motion is unmistakable.
+- **Reduce-motion resilience**: the owner could not find macOS "Reduce Motion" and earlier rounds read
+  as "static". The ribbons now keep a gentle, slow, non-flashing version running even under reduce-motion,
+  so the background is never fully dead. Heavier effects (parallax, 3D, cursor, scroll cue) still respect it.
+- **More motion**: cursor-follow spotlight glow on every card, hero "Scroll" cue, and native
+  scroll-driven parallax (background, photo banner, section headings) via CSS scroll/view timelines.
+- **Copy/structure**: removed the "APAC-built" label from the hero eyebrow and the page title
+  (owner request). Folded the Async tab into Sessions, so Services is now Sessions (7) + Packages (3),
+  still all 10 services.
+- Docs updated (`CLAUDE.md` + this log) to match. Verified on localhost (screenshots), then deployed.
 
 ---
 

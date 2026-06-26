@@ -92,9 +92,11 @@ offer last (peer-feedback driven; do not revert to name-first).
 9. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
 10. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
 11. **FAQ.** How to book, do you work globally, how to pick a session, can the booking link change.
-12. **Services ("Work with me").** All 10 live Topmate services, grouped in tabs: Sessions (6),
-    Packages (3), Async (1). Each card has title, format/duration, description, **no price**. Whole
-    card links to Topmate. Cross-check titles/durations against the live Topmate page when editing.
+12. **Services ("Work with me").** All 10 live Topmate services, grouped in two tabs: Sessions (7)
+    and Packages (3). The async "Resume & LinkedIn Review" lives under Sessions (the separate Async
+    tab was folded in at owner request). Each card has title, format/duration, description, **no
+    price**, and **deep-links to its own Topmate booking page** (`topmate.io/vandana_agarwal/<id>`),
+    not the main profile. Cross-check titles/durations/ids against the live Topmate page when editing.
 13. **Final CTA.** Dark band, strong close, Book on Topmate + the email.
 14. **Footer.** Nav links, LinkedIn, SDR Leaders of APAC, copyright.
 
@@ -109,8 +111,11 @@ offer last (peer-feedback driven; do not revert to name-first).
   photos and the references.
 - **Motion = "Lusion" grade**, tuned for speed + reliability:
   - Simple "Loading" preloader (spinner + word), fades ~200ms after load, hard-capped, never locks scroll long.
-  - **Site-wide aurora background**: large violet light-blobs that slowly drift/breathe behind every
-    section (sections are transparent so the light flows through the whole page).
+  - **Flowing aurora ribbons (signature constant background)**: wide blurred violet light bands that
+    wave and drift across the whole page non-stop (sections are transparent so the light flows behind
+    everything). Owner-confirmed direction. It is bold and clearly in motion, and it keeps a gentle,
+    slow, non-flashing version running **even when macOS "Reduce Motion" is on**, so the background is
+    never fully static (the heavier effects below still respect reduce-motion).
   - Reveal-on-scroll via IntersectionObserver, using the standalone `translate`/`scale`/`rotate`
     properties (not `transform`) so reveals never fight the hover/tilt transform.
   - Masked word-rise on every major heading; 3D `card3d` entrance on the Who-I-help + Services cards
@@ -160,16 +165,20 @@ service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler L
 ## 6) Definition of done
 
 - One-page site with all sections from section 2, in order (pain-first flow).
-- Every CTA → Topmate (`https://topmate.io/vandana_agarwal`), new tab.
-- All 10 live Topmate services listed (Sessions/Packages/Async), titles/durations matching the live
-  Topmate page, **no prices anywhere**.
+- Every CTA → Topmate, new tab. The main/hero/nav CTAs point at the profile
+  (`https://topmate.io/vandana_agarwal`); each **service card** deep-links to its own booking page
+  (`https://topmate.io/vandana_agarwal/<id>`).
+- All 10 live Topmate services listed (Sessions/Packages), titles/durations matching the live Topmate
+  page, **no prices anywhere**.
 - Contact email `coaching@vandanaagarwal.in` via `mailto:`.
 - Exactly three featured video podcasts embedded with `loading="lazy"`.
 - Six real, attributed testimonials.
 - Experience stated as 8+ years, consistently. No "10+". No overhyping. No em dashes in copy.
 - One H1, semantic headings, real `alt` text, sufficient contrast, keyboard-focusable controls.
 - Fully responsive. Test at 375px, 768px, 1280px.
-- Positioning unmistakable on first scroll: global SDR coach, APAC-built execution.
+- Positioning unmistakable on first scroll: global SDR coach (APAC, EMEA, AMER). Note: the literal
+  "APAC-built" label was removed from the visible hero/title at owner request; the cross-border
+  positioning still comes through via the proof chip and the Meet-me copy. Do not re-add "APAC-built".
 - All images hosted locally in `public/assets/` (not hotlinked).
 
 ---
