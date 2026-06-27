@@ -133,6 +133,13 @@ Driven by two references (lusion.co/about, animaapp.com) and peer feedback (lead
   (llmstxt.org); `public/sitemap.xml`; absolute `og:image`, Twitter `summary_large_image`, og:site_name,
   og:image:alt, author, theme-color, robots max-image-preview. Foundation already had title, meta
   description, canonical, OG, one H1, alt text, `lang`.
+- **Copy/flow refresh (owner feedback):** hero reframed from pain-first to a positive, SaaS-entry-led
+  promise ("Become the SDR who books meetings, consistently"; lead with breaking into SaaS; "predictable
+  pipeline" replaces "outbound that sticks", in the hero and the marquee). Process ("How we work
+  together") moved to **after testimonials, before FAQ** (Numbers stays in the early trust-build). Nav
+  avatar swapped to a real headshot (`va-headshot.jpg`); the large Meet-me portrait intentionally kept
+  as the existing studio image per owner call. SEO copy synced to the new hero (meta description, og +
+  twitter descriptions, `llms.txt`). Note: the hero is now positive-led, not pain-led.
 
 ---
 
