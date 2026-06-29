@@ -14,7 +14,7 @@ export const visuals = [
     readMins: 3,
     img: '/assets/resources/multi-channel-outreach.webp',
     alt: 'Infographic of a two-day multi-channel outreach flow combining email on day one and LinkedIn on day two, with tips by seniority.',
-    substackUrl: '',
+    substackUrl: 'https://coachingbyvandy.substack.com/p/the-email-and-linkedin-rhythm-that',
     intro: 'Most reps treat email and LinkedIn as two separate jobs. The reps who book meetings treat them as one motion, spread across a couple of days, so the prospect sees the same human on both channels instead of two cold strangers.',
     sections: [
       {
@@ -60,7 +60,7 @@ export const visuals = [
     readMins: 4,
     img: '/assets/resources/cold-calling-breakdown.webp',
     alt: 'Infographic of a six-step cold call structure and a three-step method for handling a no, with an example script.',
-    substackUrl: '',
+    substackUrl: 'https://coachingbyvandy.substack.com/p/the-cold-call-in-six-moves-and-how',
     intro: 'The fear in cold calling usually comes from not knowing what comes next. Break the call into six moves and you always know your next step, even when the prospect pushes back.',
     sections: [
       {
@@ -105,7 +105,7 @@ export const visuals = [
     readMins: 4,
     img: '/assets/resources/regional-nuances-selling.webp',
     alt: 'Infographic comparing how SDRs sell in NAMER and EMEA versus APAC, with buyer mindsets and tactics for each region.',
-    substackUrl: '',
+    substackUrl: 'https://coachingbyvandy.substack.com/p/selling-as-an-sdr-namer-and-emea',
     intro: 'A lot of reps run one playbook everywhere and wonder why response rates fall off a cliff in some markets. The motion is not broken. It is being applied to a buyer who decides differently.',
     sections: [
       {
@@ -153,7 +153,7 @@ export const visuals = [
     readMins: 3,
     img: '/assets/resources/ae-sdr-alignment.webp',
     alt: 'Infographic contrasting the noise SDRs usually pass to AEs with the signal AEs actually need for a clean handoff.',
-    substackUrl: '',
+    substackUrl: 'https://coachingbyvandy.substack.com/p/ae-and-sdr-alignment-pass-signal',
     intro: 'The fastest way to lose a meeting you worked hard to book is a thin handoff. If the AE walks in and has to start discovery from zero, the prospect feels it, and your show-to-opportunity rate pays for it.',
     sections: [
       {
@@ -200,7 +200,7 @@ export const visuals = [
     readMins: 3,
     img: '/assets/resources/sdr-feedback-loop.webp',
     alt: 'Infographic of a weekly SDR feedback loop: come prepared, review real work, pick one thing, apply it, check the numbers, and repeat.',
-    substackUrl: '',
+    substackUrl: 'https://coachingbyvandy.substack.com/p/the-weekly-feedback-loop-that-compounds',
     intro: 'Improvement does not come from a quarterly reset. It comes from a small, honest loop you run every week, where you look at real calls and real emails, pick one thing to change, and watch whether the metric moves.',
     sections: [
       {
@@ -283,7 +283,7 @@ export const visuals = [
     readMins: 3,
     img: '/assets/resources/sdr-top-kpis.webp',
     alt: 'Infographic listing the top KPIs of an SDR, including opportunities sourced, meetings completed, and meeting-to-opportunity ratio.',
-    substackUrl: '',
+    substackUrl: 'https://coachingbyvandy.substack.com/p/the-kpis-that-actually-tell-you-an',
     intro: 'It is easy to look busy as an SDR. The metrics that matter are the ones that tie effort to pipeline, not the ones that just prove you were online. Here are the few I watch.',
     sections: [
       {
@@ -319,7 +319,7 @@ export const visuals = [
     readMins: 3,
     img: '/assets/resources/sdr-winning-habits.webp',
     alt: 'Infographic of five winning habits of an SDR: relentless curiosity, resilience, obsession with metrics, passion for the role, and always improving.',
-    substackUrl: '',
+    substackUrl: 'https://coachingbyvandy.substack.com/p/five-habits-of-sdrs-who-keep-hitting',
     intro: 'After building and coaching BDR teams for 8+ years, I can tell you the reps who last are rarely the ones with the slickest script. They share a handful of habits that keep them steady when the month gets hard.',
     sections: [
       {
