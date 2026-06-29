@@ -65,10 +65,10 @@ const jsonLd = {
       name: 'SDR Playbook Visuals',
       description: 'One-page SDR and BDR infographics with a short written breakdown for each, published on Substack.',
       url: SUBSTACK,
-      itemListElement: visuals.map((v, i) => ({
+      itemListElement: visuals.filter((v) => v.substackUrl).map((v, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: v.substackUrl || SUBSTACK,
+        url: v.substackUrl,
         name: v.title,
       })),
     },
@@ -185,9 +185,9 @@ const jsonLd = {
       <p>Eight field notes from years of building SDR teams, drawn up as infographics. Each one opens on Substack.</p>
     </div>
     <ol class="listcard reveal" aria-label="SDR Playbook Visuals">
-      {visuals.map((v, i) => (
+      {visuals.filter((v) => v.substackUrl).map((v, i) => (
         <li>
-          <a href={v.substackUrl || SUBSTACK} target="_blank" rel="noopener">
+          <a href={v.substackUrl} target="_blank" rel="noopener">
             <span class="lc-n">{String(i + 1).padStart(2, '0')}</span>
             <span class="lc-t">{v.title}</span>
             <span class="lc-go" aria-hidden="true">&rarr;</span>
