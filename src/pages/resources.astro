@@ -161,34 +161,40 @@ const jsonLd = {
       <h2>Build pipeline where the playbook doesn't travel</h2>
       <p>Read them in order or jump to what you need. Each one is a short, practical breakdown with the full framework as an infographic.</p>
     </div>
-    <div class="res-grid">
-      {posts.map((p, i) => (
-        <a class="res reveal" style={`--i:${i % 4}`} href={`${P}/${p.slug}`} target="_blank" rel="noopener">
-          <span class="res-eyebrow"><span class="res-num">{p.n}</span> SDR Field Guide</span>
-          <h3>{p.title}</h3>
-          <p>{p.dek}</p>
-          <span class="res-more">Read on Substack <span aria-hidden="true">&rarr;</span></span>
-        </a>
+    <ol class="listcard reveal" aria-label="The SDR Field Guide, APAC Edition">
+      {posts.map((p) => (
+        <li>
+          <a href={`${P}/${p.slug}`} target="_blank" rel="noopener">
+            <span class="lc-n">{p.n}</span>
+            <span class="lc-t">{p.title}</span>
+            <span class="lc-go" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
       ))}
-    </div>
+    </ol>
     <p class="res-foot reveal">More editions are on the way. <a href={SUBSTACK} target="_blank" rel="noopener">Follow on Substack</a> to get the next one.</p>
   </div>
 </section>
 
-<!-- SDR PLAYBOOK VISUALS (one bundled page) -->
+<!-- SDR PLAYBOOK VISUALS (compact list, links out to Substack) -->
 <section id="visuals">
   <div class="wrap">
-    <a class="viz-card reveal" href="/resources/sdr-playbook-visuals">
-      <div class="viz-card-text">
-        <span class="kicker">SDR Playbook Visuals</span>
-        <h2>One-page breakdowns you can actually use</h2>
-        <p>Eight field notes from years of building SDR teams, drawn up as infographics with a short read on each: outreach, cold calling, regional selling, the AE handoff, the feedback loop, the inbound funnel, KPIs, and winning habits.</p>
-        <span class="res-more">See all eight <span aria-hidden="true">&rarr;</span></span>
-      </div>
-      <ol class="viz-card-list" aria-hidden="true">
-        {visuals.map((v) => (<li>{v.title}</li>))}
-      </ol>
-    </a>
+    <div class="sec-head center reveal">
+      <span class="kicker">SDR Playbook Visuals</span>
+      <h2>One-page breakdowns you can actually use</h2>
+      <p>Eight field notes from years of building SDR teams, drawn up as infographics. Each one opens on Substack.</p>
+    </div>
+    <ol class="listcard reveal" aria-label="SDR Playbook Visuals">
+      {visuals.map((v, i) => (
+        <li>
+          <a href={v.substackUrl || `/resources/sdr-playbook-visuals#${v.slug}`} target={v.substackUrl ? '_blank' : null} rel={v.substackUrl ? 'noopener' : null}>
+            <span class="lc-n">{String(i + 1).padStart(2, '0')}</span>
+            <span class="lc-t">{v.title}</span>
+            <span class="lc-go" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      ))}
+    </ol>
   </div>
 </section>
 
