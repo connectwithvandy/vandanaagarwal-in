@@ -13,9 +13,9 @@ const P = 'https://coachingbyvandy.substack.com/p';
 
 // The SDR Field Guide · APAC Edition — the 10-part series, published on Substack.
 const posts = [
-  { n: '01', slug: 'stop-prospecting-bad-leads-an-outbound', title: 'Stop Prospecting Bad Leads: An Outbound Validation Checklist', dek: 'The fastest way to waste an SDR’s week is a list that was never going to convert.', img: '/assets/resources/outbound-lead-enrichment.webp', alt: 'Infographic of an outbound lead enrichment checklist: persona identification, LinkedIn and email verification, disqualification triggers, and the toolstack.' },
-  { n: '02', slug: 'apac-is-not-one-market-rethinking', title: 'APAC Is Not One Market: Rethinking ICP and Territory Mapping', dek: 'A “Director” in Japan is not a “Director” in the US. Target by title and you are talking to the wrong people.', img: '/assets/resources/icp-territory-mapping.webp', alt: 'Infographic comparing ICP definition and territory mapping for APAC versus NA and EMEA across market structure, verticals, and decision-maker profile.' },
-  { n: '03', slug: 'how-to-tier-apac-accounts-when-the', title: 'How to Tier APAC Accounts (When the Global Playbook Doesn’t Fit)', dek: 'In the US you tier in minutes with intent data. In APAC you stitch signals together, market by market.', img: '/assets/resources/account-research-tiering.webp', alt: 'Infographic of account research and tiering for APAC, with Tier 1 to Tier 3 definitions by sub-market and research time per account.' },
+  { n: '01', slug: 'stop-prospecting-bad-leads-an-outbound', title: 'Stop Prospecting Bad Leads: An Outbound Validation Checklist', dek: 'The fastest way to waste an SDR’s week is a list that was never going to convert.' },
+  { n: '02', slug: 'apac-is-not-one-market-rethinking', title: 'APAC Is Not One Market: Rethinking ICP and Territory Mapping', dek: 'A “Director” in Japan is not a “Director” in the US. Target by title and you are talking to the wrong people.' },
+  { n: '03', slug: 'how-to-tier-apac-accounts-when-the', title: 'How to Tier APAC Accounts (When the Global Playbook Doesn’t Fit)', dek: 'In the US you tier in minutes with intent data. In APAC you stitch signals together, market by market.' },
   { n: '04', slug: 'relationship-before-transaction-personalising', title: 'Relationship Before Transaction: Personalising Outreach for APAC', dek: 'Western playbooks lead with the hook. APAC leads with trust. Here is the difference, line by line.' },
   { n: '05', slug: 'the-apac-channel-matrix-where-to', title: 'The APAC Channel Matrix: Where to Reach Buyers, Market by Market', dek: 'Wrong channel, perfect message, zero response. The 9 laws of multi-channel sequencing in APAC.' },
   { n: '06', slug: 'why-your-apac-cadence-should-be-longer', title: 'Why Your APAC Cadence Should Be Longer, Not Louder', dek: 'Japan and Korea take longer to trust a cold sender. That is not a problem, that is the game.' },
@@ -63,11 +63,12 @@ const jsonLd = {
       '@type': 'ItemList',
       '@id': `${SITE}/resources/#visuals`,
       name: 'SDR Playbook Visuals',
-      description: 'One-page SDR and BDR infographics with a short written breakdown for each, hosted on vandanaagarwal.in.',
+      description: 'One-page SDR and BDR infographics with a short written breakdown for each, on a single page at vandanaagarwal.in/resources/sdr-playbook-visuals.',
+      url: `${SITE}/resources/sdr-playbook-visuals`,
       itemListElement: visuals.map((v, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `${SITE}/resources/${v.slug}`,
+        url: `${SITE}/resources/sdr-playbook-visuals#${v.slug}`,
         name: v.title,
       })),
     },
@@ -162,52 +163,32 @@ const jsonLd = {
     </div>
     <div class="res-grid">
       {posts.map((p, i) => (
-        p.img ? (
-          <article class="res res-has-img reveal" style={`--i:${i % 4}`}>
-            <button class="res-thumb fig-btn" type="button" data-full={p.img} data-alt={p.alt} aria-label={`Open the infographic for ${p.title}`}>
-              <img src={p.img} alt={p.alt} loading="lazy" />
-              <span class="fig-zoom" aria-hidden="true">Click to enlarge</span>
-            </button>
-            <span class="res-eyebrow"><span class="res-num">{p.n}</span> SDR Field Guide</span>
-            <h3>{p.title}</h3>
-            <p>{p.dek}</p>
-            <a class="res-more" href={`${P}/${p.slug}`} target="_blank" rel="noopener">Read on Substack <span aria-hidden="true">&rarr;</span></a>
-          </article>
-        ) : (
-          <a class="res reveal" style={`--i:${i % 4}`} href={`${P}/${p.slug}`} target="_blank" rel="noopener">
-            <span class="res-eyebrow"><span class="res-num">{p.n}</span> SDR Field Guide</span>
-            <h3>{p.title}</h3>
-            <p>{p.dek}</p>
-            <span class="res-more">Read on Substack <span aria-hidden="true">&rarr;</span></span>
-          </a>
-        )
+        <a class="res reveal" style={`--i:${i % 4}`} href={`${P}/${p.slug}`} target="_blank" rel="noopener">
+          <span class="res-eyebrow"><span class="res-num">{p.n}</span> SDR Field Guide</span>
+          <h3>{p.title}</h3>
+          <p>{p.dek}</p>
+          <span class="res-more">Read on Substack <span aria-hidden="true">&rarr;</span></span>
+        </a>
       ))}
     </div>
     <p class="res-foot reveal">More editions are on the way. <a href={SUBSTACK} target="_blank" rel="noopener">Follow on Substack</a> to get the next one.</p>
   </div>
 </section>
 
-<!-- SDR PLAYBOOK VISUALS -->
+<!-- SDR PLAYBOOK VISUALS (one bundled page) -->
 <section id="visuals">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="kicker">SDR Playbook Visuals</span>
-      <h2>One-page breakdowns you can actually use</h2>
-      <p>Field notes from years of building SDR teams, drawn up as infographics with a short read on each. Open any card for the full breakdown.</p>
-    </div>
-    <div class="viz-grid">
-      {visuals.map((v, i) => (
-        <a class="viz reveal" style={`--i:${i % 3}`} href={`/resources/${v.slug}`}>
-          <span class="viz-thumb"><img src={v.img} alt="" loading="lazy" /></span>
-          <span class="viz-body">
-            <span class="viz-tag">{v.tag} &middot; {v.readMins} min</span>
-            <h3>{v.title}</h3>
-            <p>{v.dek}</p>
-            <span class="res-more">Read the breakdown <span aria-hidden="true">&rarr;</span></span>
-          </span>
-        </a>
-      ))}
-    </div>
+    <a class="viz-card reveal" href="/resources/sdr-playbook-visuals">
+      <div class="viz-card-text">
+        <span class="kicker">SDR Playbook Visuals</span>
+        <h2>One-page breakdowns you can actually use</h2>
+        <p>Eight field notes from years of building SDR teams, drawn up as infographics with a short read on each: outreach, cold calling, regional selling, the AE handoff, the feedback loop, the inbound funnel, KPIs, and winning habits.</p>
+        <span class="res-more">See all eight <span aria-hidden="true">&rarr;</span></span>
+      </div>
+      <ol class="viz-card-list" aria-hidden="true">
+        {visuals.map((v) => (<li>{v.title}</li>))}
+      </ol>
+    </a>
   </div>
 </section>
 
@@ -244,12 +225,6 @@ const jsonLd = {
     <span>&copy; 2026 &middot; vandanaagarwal.in</span>
   </div>
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Infographic viewer">
-  <button class="lb-close" id="lbClose" type="button" aria-label="Close">&times;</button>
-  <img id="lbImg" src="" alt="" />
-</div>
 
 <script>
   // Mobile menu
@@ -325,32 +300,9 @@ const jsonLd = {
   onScroll();
   window.addEventListener('scroll', requestScroll, { passive: true });
 
-  // Lightbox — open the full infographic, close on backdrop click, button, or Escape
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lbImg');
-  const lbClose = document.getElementById('lbClose');
-  const openLb = (src, alt) => {
-    if (!lb || !lbImg) return;
-    lbImg.src = src; lbImg.alt = alt || '';
-    lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  };
-  const closeLb = () => {
-    if (!lb) return;
-    lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    lbImg.src = '';
-  };
-  document.querySelectorAll('.fig-btn').forEach((btn) => {
-    btn.addEventListener('click', () => openLb(btn.getAttribute('data-full'), btn.getAttribute('data-alt')));
-  });
-  if (lb) lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
-  if (lbClose) lbClose.addEventListener('click', closeLb);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
-
   // Subtle pointer tilt + magnetic buttons + custom cursor (desktop only, matches the homepage feel)
   if (!reduceMotion && finePointer) {
-    document.querySelectorAll('.res, .viz').forEach((card) => {
+    document.querySelectorAll('.res').forEach((card) => {
       card.classList.add('tilt');
       card.addEventListener('pointermove', (e) => {
         const r = card.getBoundingClientRect();
@@ -378,7 +330,7 @@ const jsonLd = {
       window.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
       const cloop = () => { cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22; cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`; requestAnimationFrame(cloop); };
       cloop();
-      document.querySelectorAll('a, button, .res, .viz, .chip').forEach((el) => {
+      document.querySelectorAll('a, button, .res, .chip').forEach((el) => {
         el.addEventListener('pointerenter', () => cursor.classList.add('big'));
         el.addEventListener('pointerleave', () => cursor.classList.remove('big'));
       });

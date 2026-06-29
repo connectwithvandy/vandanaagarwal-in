@@ -11,43 +11,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vandanaagarwal.in/resources/multi-channel-outreach</loc>
+    <loc>https://vandanaagarwal.in/resources/sdr-playbook-visuals</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vandanaagarwal.in/resources/cold-calling-breakdown</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vandanaagarwal.in/resources/regional-nuances-selling</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vandanaagarwal.in/resources/ae-sdr-alignment</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vandanaagarwal.in/resources/sdr-feedback-loop</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vandanaagarwal.in/resources/sdr-metrics-funnel</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vandanaagarwal.in/resources/sdr-top-kpis</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vandanaagarwal.in/resources/sdr-winning-habits</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
