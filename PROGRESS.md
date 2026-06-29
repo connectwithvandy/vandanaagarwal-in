@@ -162,6 +162,16 @@ Driven by two references (lusion.co/about, animaapp.com) and peer feedback (lead
   builds pipeline) via a small isolated script; static fallback under reduce-motion.
 - Built locally (`npm run build`, 2 pages) and verified each section in-browser; merged to `main` and
   deployed. `/resources` live (HTTP 200).
+- **SDR Playbook Visuals + full Substack routing (later pass):** pulled the LinkedIn-era infographics
+  and carousels from the content Drives, compressed to WebP in `public/assets/resources/`, and turned
+  the 8 evergreen infographics into individual Substack posts (plus 3 carousel posts), written in
+  Vandy's voice. `/resources` was reworked into two compact numbered-list cards (APAC series + **SDR
+  Playbook Visuals**, source `src/data/visuals.js`). Per owner decision the site keeps **no on-site
+  article reading** and every row links out to its Substack post; an interim on-site bundle page
+  (`/resources/sdr-playbook-visuals`) was built then removed. 7 of 8 visuals are published and wired to
+  their exact `/p/` URLs (`substackUrl`); the Inbound Funnel post falls back to the Substack homepage
+  until it is published. Substack post images are added by the owner (browser automation cannot upload
+  files). Details in the `sdr-playbook-visuals` memory.
 
 ## How to update & redeploy
 

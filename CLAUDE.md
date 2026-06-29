@@ -33,10 +33,17 @@ This is a hard rule. Do not skip it.
 ## Tech stack & deploy (as built)
 
 - **Astro, static output, no client framework.** Source is `src/pages/index.astro` (the one-page site,
-  markup + data), `src/pages/resources.astro` (the `/resources` "SDR Field Guide" page that links the
-  Substack), and `src/styles/global.css` (all styles, shared by both pages). Vanilla JS in each page
-  handles the mobile menu, service tabs, sticky nav, scroll reveal, custom cursor, and motion. Do not
-  add React/Next/Tailwind.
+  markup + data), `src/pages/resources.astro` (the `/resources` page) backed by `src/data/visuals.js`
+  (the SDR Playbook Visuals list + each one's `substackUrl`), and `src/styles/global.css` (all styles,
+  shared by both pages). Vanilla JS in each page handles the mobile menu, service tabs, sticky nav,
+  scroll reveal, custom cursor, and motion. Do not add React/Next/Tailwind.
+  - **`/resources` routes everything to Substack** (owner decision: keep the site light, no article
+    reading on-site). It has two compact numbered-list cards: the **SDR Field Guide · APAC Edition**
+    (10 posts) and **SDR Playbook Visuals** (8 posts, drawn from the Drive infographics). Every row
+    links out to its Substack post (`src/data/visuals.js` `substackUrl`; empty falls back to the
+    Substack homepage until that post is published). There is no on-site article/breakdown page
+    (an earlier `/resources/sdr-playbook-visuals` bundle page was removed). Infographics in
+    `public/assets/resources/*.webp` are the media for the Substack posts, not shown on the site.
 - **Build** `npm run build` → `dist/`. **Preview** `npm run preview`. **Dev** `npm run dev`.
 - **Hosting: Vercel**, project `vandanaagarwal-in`. Auto-deploys on push to GitHub `main`
   (GitHub → Vercel integration). Custom domain `vandanaagarwal.in` (apex primary, www attached),
@@ -204,7 +211,8 @@ service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler L
 2. Lead magnet plus newsletter sign-up.
 3. Paid packages with pricing (mentorship subscription, 1–2 day team coaching).
 4. Dedicated pages: /coaching, /consulting. (**/resources is now BUILT** — `src/pages/resources.astro`,
-   "The SDR Field Guide", linking the Substack. Substack is the canonical content hub; the site links to it.)
+   two list cards: the APAC Field Guide series and SDR Playbook Visuals, every item linking out to its
+   Substack post. Substack is the canonical content hub; the site only routes to it, no on-site reading.)
 5. Substack, X, separate personal Instagram (these live outside this site).
 
 ---
