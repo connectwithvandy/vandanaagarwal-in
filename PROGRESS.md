@@ -1,6 +1,6 @@
 # Build & Deploy Progress — vandanaagarwal.in
 
-_Last updated: 2026-06-27. Single consolidated log (v1 + v2 redesign + deploy)._
+_Last updated: 2026-06-29. Single consolidated log (v1 + v2 redesign + deploy)._
 
 ## Summary
 
@@ -19,8 +19,9 @@ is the **dark "Anima" theme with Lusion-grade motion** (the v2 redesign), not th
 
 ## Source layout
 
-- `src/pages/index.astro` — page markup + data (services, audiences, steps, videos, results, testimonials, faqs) + the inline motion JS
-- `src/styles/global.css` — all styles (theme, layout, motion layer, aurora)
+- `src/pages/index.astro` — one-page site markup + data (services, audiences, steps, videos, results, testimonials, faqs) + the inline motion JS
+- `src/pages/resources.astro` — the `/resources` "SDR Field Guide" page; lists the 10-part Substack series as cards that deep-link to each post on `coachingbyvandy.substack.com`
+- `src/styles/global.css` — all styles (theme, layout, motion layer, aurora), shared by both pages; `.res-*` block styles the resources page
 - `public/assets/va-square.jpg` — nav avatar
 - `public/assets/va-portrait.jpg` — Meet-me portrait
 - `public/assets/banner.jpg` — full-bleed photo banner
@@ -143,6 +144,25 @@ Driven by two references (lusion.co/about, animaapp.com) and peer feedback (lead
 
 ---
 
+## 2026-06-29 — Substack content hub + /resources page
+
+- **Substack content hub:** published the **SDR Field Guide · APAC Edition** (10-part series) on
+  `coachingbyvandy.substack.com` from source material in a separate Google Drive (infographics +
+  LinkedIn captions, lightly cleaned). Substack is the **canonical content hub**; the site links to it
+  (owner decision). Posts published web-only. Method notes are in the `substack-content-hub` memory.
+- **New `/resources` page** (`src/pages/resources.astro`), "The SDR Field Guide", on-brand with the
+  dark Anima theme (aurora, sticky nav, masked-heading reveal, card tilt, magnetic buttons, custom
+  cursor). Hero + a 2-col grid of 10 cards deep-linking to each Substack post, plus Read-on-Substack
+  and Book-on-Topmate CTAs and a closing CTA band. `.res-*` styles added to `global.css`.
+- **Wiring + GEO:** homepage nav and footer get a **Resources** link; footer gets a **Substack** link.
+  Person JSON-LD `sameAs` now includes the Substack; the resources page ships `CollectionPage` + `Blog`
+  JSON-LD for the series. `public/sitemap.xml` adds `/resources`; `public/llms.txt` adds a Resources
+  section + Substack/resources links.
+- **Hero headline:** the hero outcome word now cycles (books meetings → breaks into SaaS → hits quota →
+  builds pipeline) via a small isolated script; static fallback under reduce-motion.
+- Built locally (`npm run build`, 2 pages) and verified each section in-browser; merged to `main` and
+  deployed. `/resources` live (HTTP 200).
+
 ## How to update & redeploy
 
 1. Edit `src/pages/index.astro` and/or `src/styles/global.css`.
@@ -155,4 +175,4 @@ Driven by two references (lusion.co/about, animaapp.com) and peer feedback (lead
 - Optional: `www` → apex 308 redirect for a single canonical URL.
 - Optional: place spare `extras/va-candid.jpg` (JumpCloud working shot) in the Process or Results area.
 - Roadmap (out of scope for now): pricing/packages pages, lead magnet + newsletter, dedicated
-  /coaching /consulting /resources pages, larger case-study testimonial wall.
+  /coaching /consulting pages, larger case-study testimonial wall. (/resources is now built.)

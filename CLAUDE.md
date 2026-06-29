@@ -32,9 +32,11 @@ This is a hard rule. Do not skip it.
 
 ## Tech stack & deploy (as built)
 
-- **Astro, static output, no client framework.** Source is `src/pages/index.astro` (markup + data) and
-  `src/styles/global.css` (all styles). Vanilla JS in the page handles the mobile menu, service tabs,
-  sticky nav, scroll reveal, custom cursor, and motion. Do not add React/Next/Tailwind.
+- **Astro, static output, no client framework.** Source is `src/pages/index.astro` (the one-page site,
+  markup + data), `src/pages/resources.astro` (the `/resources` "SDR Field Guide" page that links the
+  Substack), and `src/styles/global.css` (all styles, shared by both pages). Vanilla JS in each page
+  handles the mobile menu, service tabs, sticky nav, scroll reveal, custom cursor, and motion. Do not
+  add React/Next/Tailwind.
 - **Build** `npm run build` → `dist/`. **Preview** `npm run preview`. **Dev** `npm run dev`.
 - **Hosting: Vercel**, project `vandanaagarwal-in`. Auto-deploys on push to GitHub `main`
   (GitHub → Vercel integration). Custom domain `vandanaagarwal.in` (apex primary, www attached),
@@ -155,6 +157,7 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
 - **Display email:** `coaching@vandanaagarwal.in`, as a `mailto:` link.
 - LinkedIn (footer + Meet me): `https://www.linkedin.com/in/meet-vandana/`
 - SDR Leaders of APAC: `https://www.linkedin.com/company/sdr-leaders-of-apac/`
+- Substack (content hub, linked from `/resources`, nav, and footer): `https://coachingbyvandy.substack.com`
 - Featured videos (3 YouTube embeds): see `About-Vandana-and-Services.md`.
 - No other forms or schedulers.
 
@@ -200,7 +203,8 @@ service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler L
 1. Larger testimonials wall with quantified case studies.
 2. Lead magnet plus newsletter sign-up.
 3. Paid packages with pricing (mentorship subscription, 1–2 day team coaching).
-4. Dedicated pages: /coaching, /consulting, /resources.
+4. Dedicated pages: /coaching, /consulting. (**/resources is now BUILT** — `src/pages/resources.astro`,
+   "The SDR Field Guide", linking the Substack. Substack is the canonical content hub; the site links to it.)
 5. Substack, X, separate personal Instagram (these live outside this site).
 
 ---
