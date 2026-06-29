@@ -170,6 +170,9 @@ header.nav.scrolled { background: rgba(20, 20, 20, .94); box-shadow: 0 10px 30px
   -webkit-text-fill-color: transparent; color: transparent; animation: shine 4.5s linear infinite;
 }
 @keyframes shine { to { background-position: 220% center; } }
+/* Cycling outcome word in the hero headline (JS swaps the text; this crossfades it) */
+.hero h1 em .rot-word { display: inline-block; transition: opacity .4s ease; }
+.hero h1 em .rot-word.swap { opacity: 0; }
 .hero .sub { font-size: clamp(1.12rem, 1.7vw, 1.3rem); line-height: 1.6; color: var(--soft); max-width: 40rem; margin: 0 auto; font-weight: 400; }
 .hero .sub b { color: #fff; font-weight: 600; }
 .hero-cta { display: flex; gap: 14px; margin: 34px 0 30px; flex-wrap: wrap; justify-content: center; }
@@ -590,3 +593,29 @@ footer.site { background: transparent; }
   animation: kicker-shine 5s linear infinite;
 }
 @keyframes kicker-shine { to { background-position: 200% center; } }
+
+/* ============== RESOURCES PAGE (The SDR Field Guide) ============== */
+.res-hero { position: relative; overflow: hidden; padding: 150px 0 70px; text-align: center; }
+.res-hero-inner { position: relative; z-index: 1; max-width: 50rem; margin: 0 auto; }
+.res-hero .kicker { display: inline-block; margin-bottom: 20px; }
+.res-hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); color: #fff; margin-bottom: 22px; }
+.res-hero .sub { color: var(--soft); font-size: 1.16rem; line-height: 1.65; max-width: 44rem; margin: 0 auto; }
+.res-hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
+
+.res-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; perspective: 1400px; }
+.res {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px 28px; transition: transform .18s, box-shadow .18s, border-color .18s, background .18s;
+}
+.res:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--violet); background: var(--card-2); }
+.res-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: .74rem; letter-spacing: .15em; text-transform: uppercase; color: var(--violet-2); margin-bottom: 14px; }
+.res-num { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 22px; padding: 0 7px; border-radius: 7px; background: var(--lav-bg); color: var(--lav); font-size: .78rem; letter-spacing: .06em; }
+.res h3 { font-size: 1.2rem; line-height: 1.22; color: #fff; margin-bottom: 11px; }
+.res p { color: var(--soft); font-size: .97rem; line-height: 1.55; flex: 1; }
+.res-more { margin-top: 18px; color: var(--lav); font-weight: 600; font-size: .92rem; display: inline-flex; align-items: center; gap: 7px; transition: gap .18s; }
+.res:hover .res-more { gap: 12px; }
+.res-foot { text-align: center; color: var(--soft); font-size: 1rem; margin-top: 40px; }
+.res-foot a { color: var(--lav); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 760px) { .res-grid { grid-template-columns: 1fr; } .res-hero { padding: 124px 0 56px; } }

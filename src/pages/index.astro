@@ -5,6 +5,7 @@ const TOPMATE = 'https://topmate.io/vandana_agarwal';
 const EMAIL = 'coaching@vandanaagarwal.in';
 const LINKEDIN = 'https://www.linkedin.com/in/meet-vandana/';
 const APAC = 'https://www.linkedin.com/company/sdr-leaders-of-apac/';
+const SUBSTACK = 'https://coachingbyvandy.substack.com';
 const SITE = 'https://vandanaagarwal.in';
 const OG_IMAGE = `${SITE}/assets/va-portrait.jpg`;
 
@@ -20,7 +21,7 @@ const jsonLd = {
       image: OG_IMAGE,
       jobTitle: 'SDR Coach & Sales Development Leader',
       description: 'Global SDR coach who builds and scales BDR teams from zero to pipeline across APAC, EMEA, and AMER for SaaS, identity, and cybersecurity companies.',
-      sameAs: [LINKEDIN, TOPMATE, APAC],
+      sameAs: [LINKEDIN, TOPMATE, APAC, SUBSTACK],
       knowsAbout: ['Sales Development', 'SDR coaching', 'Outbound sales', 'BDR enablement', 'SaaS sales', 'Go-to-market'],
       award: '100 Powerful Women in Sales, 2025',
     },
@@ -186,6 +187,7 @@ jsonLd['@graph'].push({
       <a href="#who">Who I help</a>
       <a href="#intro">Meet me</a>
       <a href="#offers">Services</a>
+      <a href="/resources">Resources</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -204,7 +206,7 @@ jsonLd['@graph'].push({
   <span class="hero-glow g2" aria-hidden="true"></span>
   <div class="wrap hero-inner">
     <span class="kicker reveal">Global SDR coaching</span>
-    <h1 class="reveal-text">Become the SDR who books meetings, <em>consistently.</em></h1>
+    <h1 class="reveal-text">Become the SDR who<br><em><span class="rot-word">books meetings</span></em>.</h1>
     <p class="sub reveal" data-d="2"><b>Break into SaaS</b>, ramp fast, and hit your number month after month. I coach SDRs to turn outreach into booked meetings, and founders to build predictable pipeline.</p>
     <div class="hero-cta reveal" data-d="3">
       <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book a session on Topmate</a>
@@ -448,7 +450,9 @@ jsonLd['@graph'].push({
       <a href="#who">Who I help</a>
       <a href="#intro">Meet me</a>
       <a href="#offers">Services</a>
+      <a href="/resources">Resources</a>
       <a href="#faq">FAQ</a>
+      <a href={SUBSTACK} target="_blank" rel="noopener">Substack</a>
       <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
       <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a>
     </nav>
@@ -506,6 +510,23 @@ jsonLd['@graph'].push({
       el.querySelectorAll('.w').forEach((w, i) => { w.style.transitionDelay = (i * 0.055) + 's'; });
     });
   } catch (e) { /* headings just won't get the masked effect */ }
+
+  // Cycling outcome word in the hero headline (off under reduce-motion; isolated so it can never break the page)
+  try {
+    const rot = document.querySelector('.hero h1 em .rot-word');
+    if (rot && !reduceMotion) {
+      const words = ['books meetings', 'breaks into SaaS', 'hits quota', 'builds pipeline'];
+      let i = 0;
+      setInterval(() => {
+        rot.classList.add('swap');
+        setTimeout(() => {
+          i = (i + 1) % words.length;
+          rot.textContent = words[i];
+          rot.classList.remove('swap');
+        }, 420);
+      }, 2600);
+    }
+  } catch (e) { /* headline just stays static */ }
 
   // Reveal via IntersectionObserver (reliable, fires once per element)
   const revealAll = () => document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => el.classList.add('in'));

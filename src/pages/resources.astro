@@ -1,0 +1,318 @@
+---
+import '../styles/global.css';
+
+const TOPMATE = 'https://topmate.io/vandana_agarwal';
+const EMAIL = 'coaching@vandanaagarwal.in';
+const LINKEDIN = 'https://www.linkedin.com/in/meet-vandana/';
+const APAC = 'https://www.linkedin.com/company/sdr-leaders-of-apac/';
+const SUBSTACK = 'https://coachingbyvandy.substack.com';
+const SITE = 'https://vandanaagarwal.in';
+const OG_IMAGE = `${SITE}/assets/va-portrait.jpg`;
+const P = 'https://coachingbyvandy.substack.com/p';
+
+// The SDR Field Guide · APAC Edition — the 10-part series, published on Substack.
+const posts = [
+  { n: '01', slug: 'stop-prospecting-bad-leads-an-outbound', title: 'Stop Prospecting Bad Leads: An Outbound Validation Checklist', dek: 'The fastest way to waste an SDR’s week is a list that was never going to convert.' },
+  { n: '02', slug: 'apac-is-not-one-market-rethinking', title: 'APAC Is Not One Market: Rethinking ICP and Territory Mapping', dek: 'A “Director” in Japan is not a “Director” in the US. Target by title and you are talking to the wrong people.' },
+  { n: '03', slug: 'how-to-tier-apac-accounts-when-the', title: 'How to Tier APAC Accounts (When the Global Playbook Doesn’t Fit)', dek: 'In the US you tier in minutes with intent data. In APAC you stitch signals together, market by market.' },
+  { n: '04', slug: 'relationship-before-transaction-personalising', title: 'Relationship Before Transaction: Personalising Outreach for APAC', dek: 'Western playbooks lead with the hook. APAC leads with trust. Here is the difference, line by line.' },
+  { n: '05', slug: 'the-apac-channel-matrix-where-to', title: 'The APAC Channel Matrix: Where to Reach Buyers, Market by Market', dek: 'Wrong channel, perfect message, zero response. The 9 laws of multi-channel sequencing in APAC.' },
+  { n: '06', slug: 'why-your-apac-cadence-should-be-longer', title: 'Why Your APAC Cadence Should Be Longer, Not Louder', dek: 'Japan and Korea take longer to trust a cold sender. That is not a problem, that is the game.' },
+  { n: '07', slug: 'same-words-different-meaning-reading', title: 'Same Words, Different Meaning: Reading APAC Communication', dek: 'Global BDR success is not just scripts and frameworks. It is understanding how people communicate, decide, and object.' },
+  { n: '08', slug: 'silence-and-pushback-are-invitations', title: 'Silence and Pushback Are Invitations (If You Know How to Read Them)', dek: 'Pause, proof, pressure. Get these three right and conversion starts to feel almost effortless.' },
+  { n: '09', slug: 'discovery-calls-are-vibe-checks-in', title: 'Discovery Calls Are Vibe Checks in Disguise (Especially in APAC)', dek: 'The best deck still loses if you come in too fast. Relationship first, agenda second.' },
+  { n: '10', slug: 'the-scariest-sound-in-a-long-sales', title: 'The Scariest Sound in a Long Sales Cycle Isn’t “No”. It’s Silence.', dek: 'A quiet prospect is not waiting for a reminder. They are waiting for a reason.' },
+];
+
+// Structured data so search + AI answer engines can read the resource library and cite it.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE}/resources/#page`,
+      url: `${SITE}/resources`,
+      name: 'Resources — The SDR Field Guide | Vandana Agarwal Nik',
+      description: 'Free SDR and BDR field notes from Vandana Agarwal Nik, including the SDR Field Guide (APAC Edition): a 10-part series on ICP, tiering, cadence, channels, discovery, objections, and follow-up.',
+      isPartOf: { '@id': `${SITE}/#website` },
+      about: { '@id': `${SITE}/#vandana` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${SITE}/#vandana`,
+      name: 'Vandana Agarwal Nik',
+      url: SITE,
+      sameAs: [LINKEDIN, TOPMATE, APAC, SUBSTACK],
+    },
+    {
+      '@type': 'Blog',
+      '@id': `${SUBSTACK}/#blog`,
+      name: 'The SDR Field Guide',
+      url: SUBSTACK,
+      author: { '@id': `${SITE}/#vandana` },
+      blogPost: posts.map((p) => ({
+        '@type': 'BlogPosting',
+        headline: p.title,
+        url: `${P}/${p.slug}`,
+        author: { '@id': `${SITE}/#vandana` },
+        about: 'SDR and BDR outbound for APAC markets',
+      })),
+    },
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources — The SDR Field Guide | Vandana Agarwal Nik</title>
+  <meta name="description" content="Free SDR and BDR field notes from Vandana Agarwal Nik. Read the SDR Field Guide (APAC Edition): a 10-part series on ICP, account tiering, cadence, channels, discovery, objections, and long-cycle follow-up." />
+  <link rel="canonical" href="https://vandanaagarwal.in/resources" />
+  <meta property="og:title" content="Resources — The SDR Field Guide | Vandana Agarwal Nik" />
+  <meta property="og:description" content="Practical, no-fluff SDR and BDR playbooks. Start with the SDR Field Guide, APAC Edition: 10 lessons on building pipeline in markets a Western playbook misses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vandanaagarwal.in/resources" />
+  <meta property="og:image" content={OG_IMAGE} />
+  <meta property="og:image:alt" content="Vandana Agarwal Nik, Global SDR Coach" />
+  <meta property="og:site_name" content="Vandana Agarwal Nik" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Resources — The SDR Field Guide | Vandana Agarwal Nik" />
+  <meta name="twitter:description" content="Practical, no-fluff SDR and BDR playbooks from a global SDR leader. Start with the SDR Field Guide, APAC Edition." />
+  <meta name="twitter:image" content={OG_IMAGE} />
+  <meta name="author" content="Vandana Agarwal Nik" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#181818" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true">
+  <span class="rb r1"></span>
+  <span class="rb r2"></span>
+  <span class="rb r3"></span>
+  <span class="rb r4"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
+<a href="#library" class="skip-link">Skip to content</a>
+
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo">
+      <img src="/assets/va-headshot.jpg" alt="" width="36" height="36" aria-hidden="true" />
+      <span>Vandana Agarwal Nik</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="/#who">Who I help</a>
+      <a href="/#intro">Meet me</a>
+      <a href="/#offers">Services</a>
+      <a href="/resources" aria-current="page">Resources</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary nav-cta magnetic">Book on Topmate</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- RESOURCES HERO -->
+<section class="res-hero">
+  <span class="hero-glow" aria-hidden="true"></span>
+  <div class="wrap res-hero-inner">
+    <span class="kicker reveal">Resources</span>
+    <h1 class="reveal-text">The SDR Field Guide</h1>
+    <p class="sub reveal" data-d="2">Field notes I have shared with SDRs and BDRs over the years, written up to keep. We are starting with the <b>APAC Edition</b>: ten lessons on building pipeline in markets a Western playbook quietly misses, from ICP and tiering to cadence, discovery, objections, and follow-up.</p>
+    <div class="res-hero-cta reveal" data-d="3">
+      <a href={SUBSTACK} target="_blank" rel="noopener" class="btn btn-primary magnetic">Read on Substack</a>
+      <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-ghost-l magnetic">Work with me</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE LIBRARY -->
+<section id="library">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">APAC Edition &middot; 10 parts</span>
+      <h2>Build pipeline where the playbook doesn't travel</h2>
+      <p>Read them in order or jump to what you need. Each one is a short, practical breakdown with the full framework as an infographic.</p>
+    </div>
+    <div class="res-grid">
+      {posts.map((p, i) => (
+        <a class="res reveal" style={`--i:${i % 4}`} href={`${P}/${p.slug}`} target="_blank" rel="noopener">
+          <span class="res-eyebrow"><span class="res-num">{p.n}</span> SDR Field Guide</span>
+          <h3>{p.title}</h3>
+          <p>{p.dek}</p>
+          <span class="res-more">Read on Substack <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      ))}
+    </div>
+    <p class="res-foot reveal">More editions are on the way. <a href={SUBSTACK} target="_blank" rel="noopener">Follow on Substack</a> to get the next one.</p>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="final-band">
+  <span class="hero-glow" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="final reveal">
+      <span class="kicker">In your corner</span>
+      <h2>Want this applied to your team or your career?</h2>
+      <p>The guides are the what. Coaching is where we make it work for your market, your motion, and your numbers.</p>
+      <div class="final-cta">
+        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
+        <a href={SUBSTACK} target="_blank" rel="noopener" class="btn btn-ghost-l">Read on Substack</a>
+      </div>
+      <p class="final-mail">Prefer email? Say hello at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap foot">
+    <span class="foot-logo">Vandana Agarwal Nik</span>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#who">Who I help</a>
+      <a href="/#intro">Meet me</a>
+      <a href="/#offers">Services</a>
+      <a href="/resources">Resources</a>
+      <a href={SUBSTACK} target="_blank" rel="noopener">Substack</a>
+      <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
+      <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a>
+    </nav>
+    <span>&copy; 2026 &middot; vandanaagarwal.in</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+  const nav = document.getElementById('siteNav');
+  const prog = document.getElementById('scrollProg');
+
+  // Masked word reveal for headings (isolated in try/catch — DOM surgery must never break the page)
+  try {
+    document.querySelectorAll('.res-hero h1, .sec-head h2, .final h2').forEach((h) => h.classList.add('reveal-text'));
+    document.querySelectorAll('.reveal-text').forEach((el) => {
+      const out = [];
+      el.childNodes.forEach((node) => {
+        if (node.nodeType === 3) {
+          node.textContent.split(/(\s+)/).forEach((tok) => {
+            if (tok.trim() === '') { out.push(document.createTextNode(tok)); return; }
+            const line = document.createElement('span'); line.className = 'w-line';
+            const w = document.createElement('span'); w.className = 'w'; w.textContent = tok;
+            line.appendChild(w); out.push(line);
+          });
+        } else {
+          const line = document.createElement('span'); line.className = 'w-line';
+          node.classList && node.classList.add('w');
+          line.appendChild(node); out.push(line);
+        }
+      });
+      el.textContent = '';
+      out.forEach((n) => el.appendChild(n));
+      el.querySelectorAll('.w').forEach((w, i) => { w.style.transitionDelay = (i * 0.055) + 's'; });
+    });
+  } catch (e) { /* headings just won't get the masked effect */ }
+
+  // Reveal on scroll
+  const revealAll = () => document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => el.classList.add('in'));
+  if (!('IntersectionObserver' in window)) { revealAll(); }
+  else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => io.observe(el));
+  }
+
+  // Sticky nav + scroll progress
+  let ticking = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (nav) nav.classList.toggle('scrolled', y > 12);
+    if (prog) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    }
+    ticking = false;
+  };
+  const requestScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
+  onScroll();
+  window.addEventListener('scroll', requestScroll, { passive: true });
+
+  // Subtle pointer tilt + magnetic buttons + custom cursor (desktop only, matches the homepage feel)
+  if (!reduceMotion && finePointer) {
+    document.querySelectorAll('.res').forEach((card) => {
+      card.classList.add('tilt');
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateX(${py * -2.5}deg) rotateY(${px * 3}deg) translateY(-5px)`;
+        card.style.setProperty('--mx', ((px + 0.5) * 100) + '%');
+        card.style.setProperty('--my', ((py + 0.5) * 100) + '%');
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+    document.querySelectorAll('.magnetic').forEach((btn) => {
+      btn.addEventListener('pointermove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const mx = e.clientX - r.left - r.width / 2;
+        const my = e.clientY - r.top - r.height / 2;
+        btn.style.transform = `translate(${mx * 0.28}px, ${my * 0.4}px)`;
+      });
+      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+    });
+    const cursor = document.getElementById('cursorDot');
+    if (cursor) {
+      document.body.classList.add('has-cursor');
+      let cx = window.innerWidth / 2, cy = window.innerHeight / 2, tx = cx, ty = cy;
+      window.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+      const cloop = () => { cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22; cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`; requestAnimationFrame(cloop); };
+      cloop();
+      document.querySelectorAll('a, button, .res, .chip').forEach((el) => {
+        el.addEventListener('pointerenter', () => cursor.classList.add('big'));
+        el.addEventListener('pointerleave', () => cursor.classList.remove('big'));
+      });
+    }
+  }
+</script>
+
+<!-- Failsafe: a separate script so a thrown error above can never leave content hidden -->
+<script>
+  setTimeout(function () {
+    document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach(function (el) { el.classList.add('in'); });
+  }, 2000);
+</script>
+
+</body>
+</html>
