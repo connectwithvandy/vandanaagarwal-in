@@ -1,0 +1,389 @@
+---
+import '../../styles/global.css';
+import { visuals } from '../../data/visuals.js';
+
+export function getStaticPaths() {
+  return visuals.map((v) => ({ params: { slug: v.slug }, props: { post: v } }));
+}
+
+const { post } = Astro.props;
+
+const TOPMATE = 'https://topmate.io/vandana_agarwal';
+const EMAIL = 'coaching@vandanaagarwal.in';
+const LINKEDIN = 'https://www.linkedin.com/in/meet-vandana/';
+const APAC = 'https://www.linkedin.com/company/sdr-leaders-of-apac/';
+const SUBSTACK = 'https://coachingbyvandy.substack.com';
+const SITE = 'https://vandanaagarwal.in';
+const url = `${SITE}/resources/${post.slug}`;
+const ogImage = `${SITE}${post.img}`;
+
+// Up to three sibling visuals to keep readers moving through the library.
+const related = visuals.filter((v) => v.slug !== post.slug).slice(0, 3);
+
+// Structured data: an Article + the infographic as an ImageObject, plus a breadcrumb,
+// so search and AI answer engines can read and cite the piece (GEO is a standing priority).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      '@id': `${url}/#article`,
+      headline: post.title,
+      description: post.dek,
+      url,
+      image: ogImage,
+      articleSection: post.tag,
+      inLanguage: 'en',
+      isPartOf: { '@id': `${SITE}/resources/#page` },
+      author: { '@id': `${SITE}/#vandana` },
+      publisher: { '@id': `${SITE}/#vandana` },
+      about: 'SDR and BDR sales development',
+    },
+    {
+      '@type': 'ImageObject',
+      '@id': `${url}/#infographic`,
+      contentUrl: ogImage,
+      url: ogImage,
+      caption: post.alt,
+      creator: { '@id': `${SITE}/#vandana` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${SITE}/#vandana`,
+      name: 'Vandana Agarwal Nik',
+      url: SITE,
+      sameAs: [LINKEDIN, TOPMATE, APAC, SUBSTACK],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Resources', item: `${SITE}/resources` },
+        { '@type': 'ListItem', position: 2, name: post.title, item: url },
+      ],
+    },
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{post.title} | Vandana Agarwal Nik</title>
+  <meta name="description" content={post.dek} />
+  <link rel="canonical" href={url} />
+  <meta property="og:title" content={`${post.title} | Vandana Agarwal Nik`} />
+  <meta property="og:description" content={post.dek} />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:alt" content={post.alt} />
+  <meta property="og:site_name" content="Vandana Agarwal Nik" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${post.title} | Vandana Agarwal Nik`} />
+  <meta name="twitter:description" content={post.dek} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="author" content="Vandana Agarwal Nik" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#181818" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true">
+  <span class="rb r1"></span>
+  <span class="rb r2"></span>
+  <span class="rb r3"></span>
+  <span class="rb r4"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
+<a href="#article" class="skip-link">Skip to content</a>
+
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo">
+      <img src="/assets/va-square.jpg" alt="" width="36" height="36" aria-hidden="true" />
+      <span>Vandana Agarwal Nik</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="/#who">Who I help</a>
+      <a href="/#intro">Meet me</a>
+      <a href="/#offers">Services</a>
+      <a href="/resources" aria-current="page">Resources</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary nav-cta magnetic">Book on Topmate</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- POST HERO -->
+<section class="post-hero">
+  <span class="hero-glow" aria-hidden="true"></span>
+  <div class="wrap post-hero-inner">
+    <nav class="crumb reveal" aria-label="Breadcrumb">
+      <a href="/resources">Resources</a>
+      <span aria-hidden="true">/</span>
+      <span>SDR Playbook Visuals</span>
+    </nav>
+    <span class="kicker reveal" data-d="1">{post.tag} &middot; {post.readMins} min read</span>
+    <h1 class="reveal-text">{post.title}</h1>
+    <p class="post-dek reveal" data-d="2">{post.dek}</p>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<article id="article" class="post-body">
+  <div class="wrap post-wrap">
+    <figure class="post-fig img-reveal reveal">
+      <button class="fig-btn" type="button" data-full={post.img} data-alt={post.alt} aria-label="Open full-size infographic">
+        <img src={post.img} alt={post.alt} loading="eager" width="1600" height="2000" />
+        <span class="fig-zoom" aria-hidden="true">Click to enlarge</span>
+      </button>
+    </figure>
+
+    <div class="prose">
+      <p class="lede reveal">{post.intro}</p>
+
+      {post.sections.map((s) => (
+        <section class="prose-sec reveal">
+          <h2>{s.h}</h2>
+          {s.body && s.body.map((para) => <p>{para}</p>)}
+          {s.list && (
+            <ul class="prose-list">
+              {s.list.map((li) => <li>{li}</li>)}
+            </ul>
+          )}
+        </section>
+      ))}
+
+      <aside class="takeaways reveal" aria-label="Key takeaways">
+        <h2>The short version</h2>
+        <ul>
+          {post.takeaways.map((t) => <li>{t}</li>)}
+        </ul>
+      </aside>
+
+      {post.substackUrl && (
+        <p class="post-substack reveal">
+          Prefer to read it on Substack? <a href={post.substackUrl} target="_blank" rel="noopener">Open this post on The SDR Field Guide</a>.
+        </p>
+      )}
+    </div>
+  </div>
+</article>
+
+<!-- RELATED -->
+<section class="related">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Keep reading</span>
+      <h2>More from the playbook</h2>
+    </div>
+    <div class="viz-grid">
+      {related.map((v, i) => (
+        <a class="viz reveal" style={`--i:${i}`} href={`/resources/${v.slug}`}>
+          <span class="viz-thumb"><img src={v.img} alt="" loading="lazy" /></span>
+          <span class="viz-body">
+            <span class="viz-tag">{v.tag}</span>
+            <h3>{v.title}</h3>
+            <span class="res-more">Read <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="final-band">
+  <span class="hero-glow" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="final reveal">
+      <span class="kicker">In your corner</span>
+      <h2>Want this applied to your team or your career?</h2>
+      <p>The visuals are the what. Coaching is where we make it work for your market, your motion, and your numbers.</p>
+      <div class="final-cta">
+        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
+        <a href="/resources" class="btn btn-ghost-l">Back to Resources</a>
+      </div>
+      <p class="final-mail">Prefer email? Say hello at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap foot">
+    <span class="foot-logo">Vandana Agarwal Nik</span>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#who">Who I help</a>
+      <a href="/#intro">Meet me</a>
+      <a href="/#offers">Services</a>
+      <a href="/resources">Resources</a>
+      <a href={SUBSTACK} target="_blank" rel="noopener">Substack</a>
+      <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
+      <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a>
+    </nav>
+    <span>&copy; 2026 &middot; vandanaagarwal.in</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Infographic viewer">
+  <button class="lb-close" id="lbClose" type="button" aria-label="Close">&times;</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<script>
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+  const nav = document.getElementById('siteNav');
+  const prog = document.getElementById('scrollProg');
+
+  // Masked word reveal for headings (isolated in try/catch — DOM surgery must never break the page)
+  try {
+    document.querySelectorAll('.post-hero h1, .sec-head h2, .final h2').forEach((h) => h.classList.add('reveal-text'));
+    document.querySelectorAll('.reveal-text').forEach((el) => {
+      const out = [];
+      el.childNodes.forEach((node) => {
+        if (node.nodeType === 3) {
+          node.textContent.split(/(\s+)/).forEach((tok) => {
+            if (tok.trim() === '') { out.push(document.createTextNode(tok)); return; }
+            const line = document.createElement('span'); line.className = 'w-line';
+            const w = document.createElement('span'); w.className = 'w'; w.textContent = tok;
+            line.appendChild(w); out.push(line);
+          });
+        } else {
+          const line = document.createElement('span'); line.className = 'w-line';
+          node.classList && node.classList.add('w');
+          line.appendChild(node); out.push(line);
+        }
+      });
+      el.textContent = '';
+      out.forEach((n) => el.appendChild(n));
+      el.querySelectorAll('.w').forEach((w, i) => { w.style.transitionDelay = (i * 0.055) + 's'; });
+    });
+  } catch (e) { /* headings just won't get the masked effect */ }
+
+  // Reveal on scroll
+  const revealAll = () => document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => el.classList.add('in'));
+  if (!('IntersectionObserver' in window)) { revealAll(); }
+  else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => io.observe(el));
+  }
+
+  // Sticky nav + scroll progress
+  let ticking = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (nav) nav.classList.toggle('scrolled', y > 12);
+    if (prog) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    }
+    ticking = false;
+  };
+  const requestScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
+  onScroll();
+  window.addEventListener('scroll', requestScroll, { passive: true });
+
+  // Lightbox — open the full infographic, close on backdrop click, button, or Escape
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbClose = document.getElementById('lbClose');
+  const openLb = (src, alt) => {
+    if (!lb || !lbImg) return;
+    lbImg.src = src; lbImg.alt = alt || '';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeLb = () => {
+    if (!lb) return;
+    lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  };
+  document.querySelectorAll('.fig-btn').forEach((btn) => {
+    btn.addEventListener('click', () => openLb(btn.getAttribute('data-full'), btn.getAttribute('data-alt')));
+  });
+  if (lb) lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+  if (lbClose) lbClose.addEventListener('click', closeLb);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+  // Subtle pointer tilt + magnetic buttons + custom cursor (desktop only)
+  if (!reduceMotion && finePointer) {
+    document.querySelectorAll('.viz').forEach((card) => {
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateX(${py * -2}deg) rotateY(${px * 2.5}deg) translateY(-5px)`;
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+    document.querySelectorAll('.magnetic').forEach((btn) => {
+      btn.addEventListener('pointermove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const mx = e.clientX - r.left - r.width / 2;
+        const my = e.clientY - r.top - r.height / 2;
+        btn.style.transform = `translate(${mx * 0.28}px, ${my * 0.4}px)`;
+      });
+      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+    });
+    const cursor = document.getElementById('cursorDot');
+    if (cursor) {
+      document.body.classList.add('has-cursor');
+      let cx = window.innerWidth / 2, cy = window.innerHeight / 2, tx = cx, ty = cy;
+      window.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+      const cloop = () => { cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22; cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`; requestAnimationFrame(cloop); };
+      cloop();
+      document.querySelectorAll('a, button, .viz').forEach((el) => {
+        el.addEventListener('pointerenter', () => cursor.classList.add('big'));
+        el.addEventListener('pointerleave', () => cursor.classList.remove('big'));
+      });
+    }
+  }
+</script>
+
+<!-- Failsafe: a separate script so a thrown error above can never leave content hidden -->
+<script>
+  setTimeout(function () {
+    document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach(function (el) { el.classList.add('in'); });
+  }, 2000);
+</script>
+
+</body>
+</html>
