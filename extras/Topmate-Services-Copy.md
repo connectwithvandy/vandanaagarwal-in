@@ -1,7 +1,8 @@
 # Topmate service descriptions (paste-ready)
 
 Long-form copy for each Topmate listing. Light clean-up only: no em dashes, spacing fixed,
-a few typos corrected. The words are yours.
+a few typos corrected, and bullets marked with ✅ because Topmate strips plain dashes.
+The words are yours.
 
 The website cards use short versions of this same copy. If you change a description here,
 tell Claude so the matching card in `src/pages/index.astro` stays in sync.
@@ -30,12 +31,12 @@ It's a focused, engaging conversation where you can bring your questions, doubts
 
 **What you'll get from the session:**
 
-- 30 minutes of 1:1 coaching focused entirely on your current situation
-- Answers to your specific questions so you're not left figuring things out on your own
-- A look at your current approach, from messaging and cadence to your day-to-day activity
-- Practical frameworks tailored to what you need help with
-- Real-time guidance on objections, calls, or conversations you're currently dealing with
-- Clear next steps so you know exactly what to work on after the session
+✅ 30 minutes of 1:1 coaching focused entirely on your current situation
+✅ Answers to your specific questions so you're not left figuring things out on your own
+✅ A look at your current approach, from messaging and cadence to your day-to-day activity
+✅ Practical frameworks tailored to what you need help with
+✅ Real-time guidance on objections, calls, or conversations you're currently dealing with
+✅ Clear next steps so you know exactly what to work on after the session
 
 You'll leave the session with a clearer understanding of what's working, what needs to change, and what you can do next, with a plan you can actually put into practice.
 
@@ -49,10 +50,10 @@ In this session, we'll turn your experience, strengths, and goals into a clear s
 
 **What we'll work on together:**
 
-- The right roles and companies for you, so you know exactly where to focus your search
-- Your resume and LinkedIn, positioned to clearly show the value you can bring as an SDR
-- Your outreach and pitch, so you can confidently start conversations with the right people
-- Your interview story, so you know how to talk about your experience and why you're ready for sales
+✅ The right roles and companies for you, so you know exactly where to focus your search
+✅ Your resume and LinkedIn, positioned to clearly show the value you can bring as an SDR
+✅ Your outreach and pitch, so you can confidently start conversations with the right people
+✅ Your interview story, so you know how to talk about your experience and why you're ready for sales
 
 You'll leave with a clear plan for your job search, the tools to execute it, and the confidence to start reaching out.
 
@@ -72,11 +73,11 @@ You'll go through a realistic SDR interview with me, knowing what the real conve
 
 **Here's what you'll get:**
 
-- A realistic mock interview based on the SDR role you're targeting
-- Honest, specific feedback on your answers and interview approach
-- Guidance on how to approach the most common SDR interview questions
-- A mock sales pitch so you can practice thinking on your feet
-- Practical feedback on what's already working and what you can sharpen
+✅ A realistic mock interview based on the SDR role you're targeting
+✅ Honest, specific feedback on your answers and interview approach
+✅ Guidance on how to approach the most common SDR interview questions
+✅ A mock sales pitch so you can practice thinking on your feet
+✅ Practical feedback on what's already working and what you can sharpen
 
 Think of this as your final practice run. A chance to ask questions, make mistakes, get feedback, and build confidence before you're sitting across from the actual interviewer.
 
@@ -92,10 +93,10 @@ This 1:1 call is a space to talk through your career, ask the questions you've b
 
 **Here's what we can work on together:**
 
-- Your goals and the next step that makes sense for you, whether that's becoming an AE, moving into SDR leadership, switching companies, or exploring a new direction
-- How the SDR role is changing, including the impact of AI, and what you can do to stay relevant
-- When and how to make a smart career move, and how to position yourself for it
-- Understanding an offer, evaluating what's actually worth it, and negotiating with confidence
+✅ Your goals and the next step that makes sense for you, whether that's becoming an AE, moving into SDR leadership, switching companies, or exploring a new direction
+✅ How the SDR role is changing, including the impact of AI, and what you can do to stay relevant
+✅ When and how to make a smart career move, and how to position yourself for it
+✅ Understanding an offer, evaluating what's actually worth it, and negotiating with confidence
 
 Come with your questions, your goals, or a feeling that you're ready for the next step.
 
@@ -111,11 +112,11 @@ Send me your resume and LinkedIn, and I'll review them from the perspective of s
 
 **You'll get specific feedback on:**
 
-- What to cut, change, or rewrite
-- What experience and strengths you should lead with
-- How to position yourself for SDR roles
-- How to make your resume and LinkedIn communicate your value more clearly
-- The small changes that can make a big difference in how recruiters and hiring managers see you
+✅ What to cut, change, or rewrite
+✅ What experience and strengths you should lead with
+✅ How to position yourself for SDR roles
+✅ How to make your resume and LinkedIn communicate your value more clearly
+✅ The small changes that can make a big difference in how recruiters and hiring managers see you
 
 No call. No long back-and-forth. Just practical, honest feedback you can take and apply.
 
@@ -135,11 +136,11 @@ I'll work with you throughout the process so you're not left trying to figure ev
 
 **Across the three sessions, we'll:**
 
-- Build your ramp plan and a weekly rhythm that keeps you focused on the right activities
-- Review your real calls, messaging, and outreach cadence
-- Look at your performance and numbers to understand what's working and where you're getting stuck
-- Make adjustments as you learn, improve, and start getting more data
-- Help you build the habits and confidence you need to become a strong, consistent SDR
+✅ Build your ramp plan and a weekly rhythm that keeps you focused on the right activities
+✅ Review your real calls, messaging, and outreach cadence
+✅ Look at your performance and numbers to understand what's working and where you're getting stuck
+✅ Make adjustments as you learn, improve, and start getting more data
+✅ Help you build the habits and confidence you need to become a strong, consistent SDR
 
 Three sessions. Ongoing feedback. One clear goal: getting you ramped with confidence and moving towards quota.
 
@@ -157,12 +158,12 @@ You'll have someone in your corner who can look at what you're doing, give you h
 
 **What the mentorship includes:**
 
-- A growth plan built around your goals and development areas
-- 8 private 45-minute 1:1 sessions across 6 to 8 weeks
-- Real feedback on your calls, messaging, prospecting, and overall approach
-- Support between sessions when you need help working through a challenge
-- Accountability to keep you consistent and actually implement what we work on
-- Ongoing adjustments as you improve and your challenges evolve
+✅ A growth plan built around your goals and development areas
+✅ 8 private 45-minute 1:1 sessions across 6 to 8 weeks
+✅ Real feedback on your calls, messaging, prospecting, and overall approach
+✅ Support between sessions when you need help working through a challenge
+✅ Accountability to keep you consistent and actually implement what we work on
+✅ Ongoing adjustments as you improve and your challenges evolve
 
 The goal is not just to help you hit your number once. It's to help you build the skills, confidence, and habits that make you a consistently high-performing SDR.
 
@@ -182,11 +183,11 @@ I'll look at what's happening today, identify the gaps, build what's missing, an
 
 **What the package covers:**
 
-- A full audit of your SDR process, onboarding, and outbound
-- A practical playbook your team can actually run, including ICP, cadences, messaging, and scripts
-- The metrics, processes, and weekly rituals that keep your team focused on the right activities
-- Coaching for your SDRs or team leads, with feedback and adjustments throughout the engagement
-- A clear, repeatable SDR system that doesn't depend on guesswork or individual reps figuring it out themselves
+✅ A full audit of your SDR process, onboarding, and outbound
+✅ A practical playbook your team can actually run, including ICP, cadences, messaging, and scripts
+✅ The metrics, processes, and weekly rituals that keep your team focused on the right activities
+✅ Coaching for your SDRs or team leads, with feedback and adjustments throughout the engagement
+✅ A clear, repeatable SDR system that doesn't depend on guesswork or individual reps figuring it out themselves
 
 The goal is simple: give you an SDR engine that is structured and repeatable, so your team performs on the right foundation and your leaders can actually see what's driving performance.
 
