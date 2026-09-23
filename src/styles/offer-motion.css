@@ -6,6 +6,9 @@
   overflow: hidden;
   pointer-events: none;
 }
+.hero-title em { min-height: 1.08em; }
+.hero-title .rot-word { transition: opacity .4s ease, translate .4s ease; will-change: opacity, translate; }
+.hero-title .rot-word.swap { opacity: 0; translate: 0 10px; }
 .hero-motion-core {
   position: absolute;
   width: min(46vw, 620px);
