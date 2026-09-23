@@ -90,7 +90,7 @@ process, then presents the offer, and closes with social proof and FAQ (do not r
 Note: the offer (Services) was moved up to sit right after the trust-build (Numbers/Process/banner)
 and before Reviews/FAQ at owner request, so it is no longer dead last.
 
-1. **Header / Nav.** Round avatar (`va-square.jpg`) + "Vandana Agarwal Nik". Links: Who I help, Meet
+1. **Header / Nav.** Round avatar (`va-headshot.jpg`) + "Vandana Agarwal Nik". Links: Who I help, Meet
    me, Services, Reviews, FAQ, Resources (Resources last, as it is the only link to a separate page). Primary button: Book on Topmate. Sticky, reacts on scroll, mobile menu.
 2. **Hero (Anima style).** Dark, centered, big serif headline with an accent-gradient highlight word
    ("Booking meetings shouldn't feel this *hard*."), centered pain-led subhead, two CTAs, three proof
@@ -105,7 +105,7 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
    ramp, 17%→49% SQL-to-S1, 2x SQLs).
 7. **Process.** Three steps that fit every offer: Understand, Build, Put it to work.
 8. **Photo banner.** Full-bleed dark LinkedIn banner, `public/assets/banner.jpg`, lazy-loaded.
-   (Do NOT use the old `linkedin BG.jpeg` — it says "10+ years", which breaks the writing rule.)
+   (The old LinkedIn banner that said "10+ years" was deleted; never reintroduce a "10+" image.)
 9. **Services ("Work with me").** Exactly four offers in a two-by-two grid, names and durations
     matching the live Topmate listings: Mentorship Discovery Call (15 min, `/69117`), 1:1 Mentorship
     Program (6 to 8 weeks, package `/2132282`), Build Your First AI-Powered SDR Workflow (60 min,
@@ -171,7 +171,7 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
 - No other forms or schedulers.
 
 Reference only (do not put on the site unless asked): domain `https://vandanaagarwal.in`; Topmate
-service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler Lunacal (unused).
+offer copy and image notes in `extras/Topmate-Four-Offers-Updated.md` (images in `extras/topmate-media-simple/`); alternate scheduler Lunacal (unused).
 
 ---
 
@@ -222,7 +222,7 @@ service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler L
 
 ## Assets in use
 
-- `public/assets/va-square.jpg` — nav avatar.
+- `public/assets/va-headshot.jpg` — nav avatar (both pages).
 - `public/assets/va-portrait.jpg` — Meet-me portrait (studio headshot).
 - `public/assets/banner.jpg` — full-bleed photo banner.
 - `public/favicon.svg` — favicon.
