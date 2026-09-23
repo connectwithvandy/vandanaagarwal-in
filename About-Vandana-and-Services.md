@@ -82,29 +82,16 @@ Purple is the brand. Lead with the violet on a light lavender or white base, and
 
 ## 3) Services (offers)
 
-Four offers for v1. Every offer books through Topmate.
+Three offers. Every offer books through Topmate.
 
-**Offer 1, SDR Ramp Coaching.** For new SDRs in their first 30 to 90 days. Move from activity to conversations to meetings with a repeatable plan.
-- Ramp plan plus weekly execution
-- Messaging and cadence review
-- Objection and call coaching
+**Offer 1, Mentorship Discovery Call (15 to 20 minutes).** The first step for anyone considering mentorship. Use the call to understand their goals, where they are right now, and what they need help with, then create a personalized mentorship program for them.
 
-**Offer 2, Break-into-SDR Coaching.** For people trying to enter SaaS sales. Positioning, resume and LinkedIn, outreach, and interview prep.
-- Role clarity plus target companies
-- Interview prep and mock pitch
-- Outreach templates that work
+**Offer 2, Your Next Breakthrough in Sales.** A 1:1 mentorship for aspiring SDRs and existing SDRs who want practical guidance to build the right skills, navigate challenges, and grow their sales careers. It can help someone break into their first SDR role, find their career direction, improve prospecting, cold calls, sales conversations and objection handling, build confidence, and know what to work on next. No generic advice or one-size-fits-all course. The guidance is built around their goals and real situation.
 
 **Offer 3, Consulting for Founders and SDR Leaders (limited slots).** Fix pipeline execution: onboarding, SDR process, outbound systems, and GTM alignment.
 - Process and playbook audit
 - Team coaching framework
 - Metrics that drive behavior
-
-**Offer 4, 1:1 Mentorship (one-time, or a 6 to 8 week program).** Work with me directly, at whatever depth you need. Book a single focused session to unblock something specific, or commit to a 6 or 8 week program to build clarity, skills, confidence, and your next move, then execute it step by step. Great if you feel stuck, confused, or burnt out and want a steady hand alongside you.
-- Choose a one-time session or a 6 to 8 week program
-- An honest read on where you are, and a clear next move
-- An execution plan you actually follow, with support between sessions
-
-**Roadmap offers (not in v1, for context only):** a long-form mentorship subscription and a 1 to 2 day startup team coaching package, eventually shown with pricing.
 
 ---
 

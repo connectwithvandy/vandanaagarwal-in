@@ -106,13 +106,11 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
 7. **Process.** Three steps: Diagnose, Playbook, Coach & iterate.
 8. **Photo banner.** Full-bleed dark LinkedIn banner, `public/assets/banner.jpg`, lazy-loaded.
    (Do NOT use the old `linkedin BG.jpeg` — it says "10+ years", which breaks the writing rule.)
-9. **Services ("Work with me").** All 10 live Topmate services, grouped in two tabs: Sessions (7)
-    and Packages (3). The async "Resume & LinkedIn Review" lives under Sessions (the separate Async
-    tab was folded in at owner request). Each card has title, format/duration, description, **no
-    price**, and **deep-links to its own Topmate booking page** (`topmate.io/vandana_agarwal/<id>`),
-    not the main profile. Cross-check titles/durations/ids against the live Topmate page when editing.
-    "Consulting for Founders & Leaders" sits **last** in Sessions and renders as a **full-width banner
-    card** (`svc-wide`). Audience cards use inline lavender **stroke line-icons** (no emoji).
+9. **Services ("Work with me").** Exactly three offers in one clear grid: Mentorship Discovery Call,
+    Your Next Breakthrough in Sales, and Consulting for Founders & Leaders. Each card has a title,
+    format/duration, description, **no price**, and **deep-links to its own Topmate booking page**
+    (`topmate.io/vandana_agarwal/<id>`), not the main profile. Audience cards use inline lavender
+    **stroke line-icons** (no emoji).
 10. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
 11. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
 12. **FAQ.** Objection-led (worth it at my stage, am I ready, will you get my market outside APAC) plus
@@ -190,8 +188,8 @@ service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler L
 - Every CTA → Topmate, new tab. The main/hero/nav CTAs point at the profile
   (`https://topmate.io/vandana_agarwal`); each **service card** deep-links to its own booking page
   (`https://topmate.io/vandana_agarwal/<id>`).
-- All 10 live Topmate services listed (Sessions/Packages), titles/durations matching the live Topmate
-  page, **no prices anywhere**.
+- Exactly three Topmate offers listed: Mentorship Discovery Call, Your Next Breakthrough in Sales,
+  and Consulting for Founders & Leaders, with **no prices anywhere**.
 - Contact email `coaching@vandanaagarwal.in` via `mailto:`.
 - Exactly three featured video podcasts embedded with `loading="lazy"`.
 - Six real, attributed testimonials.

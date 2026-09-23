@@ -39,7 +39,7 @@ const jsonLd = {
       name: 'Vandana Agarwal Nik, SDR Coaching',
       url: SITE,
       image: OG_IMAGE,
-      description: '1:1 SDR coaching, mock interviews, career clarity, and outbound consulting for founders and sales leaders. Booked on Topmate.',
+      description: 'Personalized 1:1 sales mentorship for aspiring and existing SDRs, plus outbound consulting for founders and sales leaders. Booked on Topmate.',
       provider: { '@id': `${SITE}/#vandana` },
       areaServed: ['APAC', 'EMEA', 'AMER'],
       serviceType: 'SDR coaching and sales development consulting',
@@ -64,24 +64,36 @@ const ICONS = {
   compass: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg>`,
 };
 
-// ALL live Topmate services, grouped. No prices on the site, booking happens on Topmate.
-const services = {
-  Sessions: [
-    { id: '69117', title: "Let's connect", format: '1:1 call', dur: '15 min', desc: 'Not sure which session is right for you, or where you need help? Fifteen focused minutes on where you are and what is getting in your way. If a session is the right next step, I point you to the one that fits. If it is not, I tell you honestly. No pitch, no pressure.', badge: 'Start here' },
-    { id: '2131890', title: 'SDR Ramp Coaching', format: '1:1 call', dur: '30 min', desc: 'Doing the calls, sending the emails, following up, and the meetings still are not coming? We look at what you are doing now, from messaging and cadence to your day-to-day activity, work through what is getting you stuck, and set clear next steps you can actually put into practice.', badge: 'Most booked' },
-    { id: '2131934', title: 'Break into SDR', format: '1:1 call', dur: '45 min', desc: 'Ready to break into SaaS sales and land your first SDR role? We turn your experience, strengths, and goals into a clear strategy: the right roles and companies to target, your resume and LinkedIn, your outreach and pitch, and your interview story. Best for students, career switchers, and aspiring SDRs.', badge: null },
-    { id: '69119', title: 'SDR Mock Interview', format: '1:1 call', dur: '45 min', desc: 'Before you sit in the real interview, let us make sure you are ready for it. A realistic mock interview run by someone who hires SDRs, with honest feedback on your answers, guidance on the questions you are likely to get, and a mock pitch so you practice thinking on your feet. Upload your resume when you book and I tailor it to your role.', badge: null },
-    { id: '69118', title: 'Career Clarity Call', format: '1:1 call', dur: '30 min', desc: 'Sometimes you just need someone who understands the sales world to look at where you are and help you figure out where to go next. Your goals and the next step that makes sense, whether that is AE, SDR leadership, or a switch, how the role is changing with AI, and how to read and negotiate an offer with confidence.', badge: null },
-    { id: '2131970', title: 'Resume & LinkedIn Review', format: 'Async', dur: 'reply in 7 days', desc: 'Want your resume and LinkedIn to actually help you get the SDR interview? I review both from the perspective of someone who hires SDRs: what to cut, change, or rewrite, what strengths to lead with, and the small changes that shift how recruiters see you. No call, no long back and forth. Just practical, honest feedback.', badge: 'No call' },
-    { id: '2131945', title: 'Consulting for Founders & Leaders', format: '1:1 call', dur: '60 min', desc: 'We diagnose what is leaking in your pipeline and design the fix: process, onboarding, outbound systems, and the metrics that matter.', badge: 'For teams', wide: true },
-  ],
-  Packages: [
-    { id: '2131963', title: 'SDR Ramp Pack', format: '3 sessions', dur: 'over 8 weeks', desc: 'The first few weeks as an SDR set the tone for everything that follows. Three 1:1 ramp sessions across your ramp: we build your ramp plan and weekly rhythm, review your real calls, messaging, and cadence, look at your numbers, and keep adjusting as you learn. Ongoing feedback, one goal, getting you ramped with confidence.', badge: null },
-    { id: '2132282', title: '1:1 Mentorship Program', format: '6 to 8 weeks', dur: 'weekly 1:1s', desc: 'Want to become one of the best SDRs on your team? Eight private 45-minute sessions over 6 to 8 weeks: a growth plan built around your goals, real feedback on your calls, messaging, and prospecting, support between sessions, and the accountability to actually implement what we work on.', badge: null },
-    { id: '2132024', title: 'SDR Engine Build', format: 'For teams', dur: 'multi-session', desc: 'Building your first SDR team, or know your current process is not working as well as it should? We build or strengthen your SDR engine from the ground up: a full audit, a playbook your team can run with ICP, cadences, messaging, and scripts, the metrics and weekly rituals that keep them focused, and coaching for your reps and leads.', badge: null },
-  ],
-};
-const groups = Object.keys(services);
+// The three ways to work together. No prices on the site; booking happens on Topmate.
+const services = [
+  {
+    id: '69117',
+    title: 'Mentorship Discovery Call',
+    format: '1:1 call',
+    dur: '15–20 min',
+    desc: 'Your first step into mentorship. I’ll understand your goals, where you are right now, and what you need help with. From there, I’ll create a personalized mentorship program for you.',
+    badge: 'Start here',
+    cta: 'Book your discovery call',
+  },
+  {
+    id: '2132282',
+    title: 'Your Next Breakthrough in Sales',
+    format: '1:1 mentorship',
+    dur: 'personalized program',
+    desc: 'For aspiring and existing SDRs who want practical guidance to break into their first role, find career direction, improve prospecting, cold calls, sales conversations and objection handling, build confidence, and know what to work on next. No generic advice or one-size-fits-all course. Just practical guidance built around your goals and your real situation.',
+    badge: 'Mentorship',
+    cta: 'Book a mentorship session',
+  },
+  {
+    id: '2131945',
+    title: 'Consulting for Founders & Leaders',
+    format: '1:1 call',
+    dur: '60 min',
+    desc: 'We diagnose what is leaking in your pipeline and design the fix: process, onboarding, outbound systems, and the metrics that matter.',
+    badge: 'For companies',
+    cta: 'Book a consultation',
+  },
+];
 
 const steps = [
   { n: '01', title: 'Diagnose', body: 'Session one, we pull apart your real calls, emails, and pipeline to find the actual leak. You leave knowing exactly what is costing you meetings, no guesswork.' },
@@ -113,9 +125,9 @@ const testimonials = [
 
 const faqs = [
   { q: 'Is coaching worth it at my stage?', a: 'If you are doing the work and the meetings still are not coming, a focused session usually pays for itself fast. We fix the specific thing holding you back instead of guessing for weeks. If it is not the right fit, I will tell you on the intro call.', open: true },
-  { q: 'I am not sure I am ready for coaching.', a: 'You do not need it all figured out first. Most people arrive stuck or unsure, that is the whole point. Start with a short Let’s connect call, we find where you are, and you decide if going further makes sense. No pressure either way.', open: false },
+  { q: 'I am not sure I am ready for mentorship.', a: 'You do not need it all figured out first. Start with a 15 to 20 minute discovery call. I will understand your goals and create a personalized mentorship program around what you need.', open: false },
   { q: 'Will you get my market if I am not in APAC?', a: 'Yes. I have built and scaled SDR teams across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. The fundamentals of booking meetings travel, and I tailor the playbook to your region and motion.', open: false },
-  { q: 'How do I pick the right session?', a: 'If you are unsure, start with Let’s connect and we choose together. New SDRs usually start with Ramp Coaching, job seekers with Break into SDR, and founders or leaders with Consulting.', open: false },
+  { q: 'How do I pick the right service?', a: 'If you are an aspiring or existing SDR, start with the mentorship discovery call. If you are looking for help for your company or sales team, choose Consulting for Founders & Leaders.', open: false },
 ];
 
 // Expose the FAQ to search and AI answer engines as machine-readable Q&A.
@@ -304,35 +316,23 @@ jsonLd['@graph'].push({
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="kicker">Ways to work with me</span>
-      <h2>Pick what feels right for you</h2>
-      <p>Single sessions, longer programs, or a quick async review. Everything is booked on Topmate, where you can see times and details.</p>
+      <h2>Three clear ways to work together</h2>
+      <p>Start with a discovery call, work with me through personalized mentorship, or bring me in to help your company. Everything is booked on Topmate.</p>
     </div>
 
-    <div class="tabs reveal" role="tablist" aria-label="Ways to work together">
-      {groups.map((g, i) => (
-        <button class={`tab${i === 0 ? ' active' : ''}`} role="tab" data-tab={g} aria-selected={i === 0 ? 'true' : 'false'}>
-          {g}
-        </button>
+    <div class="svc-grid">
+      {services.map((s, i) => (
+        <a href={`${TOPMATE}/${s.id}`} target="_blank" rel="noopener" class="svc reveal" style={`--i:${i}`}>
+          <div class="svc-top">
+            <span class="svc-format">{s.format} &middot; {s.dur}</span>
+            <span class="badge">{s.badge}</span>
+          </div>
+          <h3>{s.title}</h3>
+          <p class="d">{s.desc}</p>
+          <span class="svc-link">{s.cta} <span aria-hidden="true">&rarr;</span></span>
+        </a>
       ))}
     </div>
-
-    {groups.map((g, i) => (
-      <div class={`svc-panel${i === 0 ? ' active' : ''}`} data-panel={g}>
-        <div class="svc-grid">
-          {services[g].map((s, si) => (
-            <a href={`${TOPMATE}/${s.id}`} target="_blank" rel="noopener" class={`svc reveal${s.wide ? ' svc-wide' : ''}`} style={`--i:${si}`}>
-              <div class="svc-top">
-                <span class="svc-format">{s.format} &middot; {s.dur}</span>
-                {s.badge && <span class="badge">{s.badge}</span>}
-              </div>
-              <h3>{s.title}</h3>
-              <p class="d">{s.desc}</p>
-              <span class="svc-link">Book on Topmate <span aria-hidden="true">&rarr;</span></span>
-            </a>
-          ))}
-        </div>
-      </div>
-    ))}
   </div>
 </section>
 
@@ -615,29 +615,6 @@ jsonLd['@graph'].push({
   } else {
     finish();
   }
-
-  // Service tabs — re-fire the 3D card cascade on every switch (lots of motion in the booking area)
-  const cascade = (panel) => {
-    const cards = panel.querySelectorAll('.svc');
-    cards.forEach((c) => c.classList.remove('in'));
-    void panel.offsetWidth; // force reflow so the animation restarts
-    cards.forEach((c) => c.classList.add('in'));
-  };
-  document.querySelectorAll('.tab').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-tab');
-      document.querySelectorAll('.tab').forEach((b) => {
-        const on = b === btn;
-        b.classList.toggle('active', on);
-        b.setAttribute('aria-selected', String(on));
-      });
-      document.querySelectorAll('.svc-panel').forEach((p) => {
-        const on = p.getAttribute('data-panel') === key;
-        p.classList.toggle('active', on);
-        if (on && !reduceMotion) cascade(p);
-      });
-    });
-  });
 
   // Native scroll only — no external smooth-scroll library (faster, fully offline, nothing to hang on).
   // In-page anchor smoothness is handled by CSS `html { scroll-behavior: smooth }`.
