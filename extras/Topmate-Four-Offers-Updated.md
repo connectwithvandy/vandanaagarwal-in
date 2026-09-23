@@ -83,7 +83,7 @@ Settings to review: The existing listing was an eight-session package. Its inclu
 
 Existing listing: https://topmate.io/vandana_agarwal/69118
 
-Price to set: ₹1,499.
+Price to set: ₹1,699 (live on Topmate as of 2026-09-23).
 
 Cover: [AI cover](topmate-media-simple/ai-workflow-cover.png)
 
@@ -116,7 +116,7 @@ We’ll choose one real problem, build the workflow together, and make sure you 
 
 Booking question: Which repetitive SDR task would you like to improve, and which AI tools do you already use or have access to?
 
-Settings: ₹1,499. The website previously assumed 60 minutes; choose the duration you actually want to deliver before publishing the listing. Share its direct booking link once created.
+Settings: ₹1,699. The website previously assumed 60 minutes; choose the duration you actually want to deliver before publishing the listing. Share its direct booking link once created.
 
 ## 4. Build Your SDR & GTM Blueprint
 

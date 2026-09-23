@@ -82,18 +82,15 @@ Purple is the brand. Lead with the violet on a light lavender or white base, and
 
 ## 3) Services (offers)
 
-Four offers. Every offer books through Topmate.
+Four offers. Every offer books through Topmate. Names and durations below match the live Topmate listings (checked 2026-09-23). Prices live on Topmate only.
 
-**Offer 1, Mentorship Discovery Call (15 to 20 minutes).** The first step for anyone considering mentorship. Use the call to understand their goals, where they are right now, and what they need help with, then create a personalized mentorship program for them.
+**Offer 1, Mentorship Discovery Call (15 minutes).** The first step for anyone considering mentorship. Use the call to understand their goals, where they are right now, and what they need help with, then create a personalized mentorship program for them.
 
-**Offer 2, Your Next Breakthrough in Sales.** A 1:1 mentorship for aspiring SDRs and existing SDRs who want practical guidance to build the right skills, navigate challenges, and grow their sales careers. It can help someone break into their first SDR role, find their career direction, improve prospecting, cold calls, sales conversations and objection handling, build confidence, and know what to work on next. No generic advice or one-size-fits-all course. The guidance is built around their goals and real situation.
+**Offer 2, 1:1 Mentorship Program (6 to 8 weeks, package).** A 1:1 mentorship for aspiring SDRs and existing SDRs who want practical guidance to build the right skills, navigate challenges, and grow their sales careers. It can help someone break into their first SDR role, find their career direction, improve prospecting, cold calls, sales conversations and objection handling, build confidence, and know what to work on next. No generic advice or one-size-fits-all course. The guidance is built around their goals and real situation.
 
-**Offer 3, Build Your First AI-Powered SDR Workflow (₹1,499).** A practical 1:1 working session for SDRs who want to turn one repetitive sales task into a working AI workflow, with no coding required. Choose account research, personalized outreach, cold-call preparation, follow-ups, objection handling, or daily planning. Leave with one working workflow, reusable prompts and templates, a process that avoids generic AI-generated outreach, and a clear plan for daily use.
+**Offer 3, Build Your First AI-Powered SDR Workflow (60 minutes).** A practical 1:1 working session for SDRs who want to turn one repetitive sales task into a working AI workflow, with no coding required. Choose account research, personalized outreach, cold-call preparation, follow-ups, objection handling, or daily planning. Leave with one working workflow, reusable prompts and templates, a process that avoids generic AI-generated outreach, and a clear plan for daily use.
 
-**Offer 4, Consulting for Founders and SDR Leaders (limited slots).** Fix pipeline execution: onboarding, SDR process, outbound systems, and GTM alignment.
-- Process and playbook audit
-- Team coaching framework
-- Metrics that drive behavior
+**Offer 4, Build Your SDR Function & GTM Blueprint (60 minutes).** A working consultation for founders setting up or rethinking their sales development function. Covers target customers and go-to-market priorities, SDR setup from scratch, outbound approach, the tools and workflows the SDR function needs, where AI and automation fit, and GTM engineering. Leaves with a practical blueprint for what to build first. Strategy and planning only; hands-on implementation needs a separately agreed scope.
 
 ---
 

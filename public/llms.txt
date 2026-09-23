@@ -15,10 +15,10 @@
 - 8+ years in SaaS sales development; experience from early-stage (Clickpost) through scale (Rubrik, JumpCloud).
 
 ## Services (booked on Topmate)
-- Mentorship Discovery Call: a 15 to 20 minute first conversation to understand the mentee's goals and shape a personalized program.
-- Personalized SDR Mentorship Program: eight tailored sessions for aspiring and existing SDRs.
+- Mentorship Discovery Call: a 15 minute first conversation to understand the mentee's goals and shape a personalized program.
+- 1:1 Mentorship Program: sustained 1:1 mentorship over 6 to 8 weeks for aspiring and existing SDRs.
 - Build Your First AI-Powered SDR Workflow: a hands-on session to turn one repetitive SDR task into a useful AI workflow, with no coding required.
-- Build Your SDR & GTM Blueprint: founder consultation on setting up SDR functions from scratch, go-to-market strategy, AI workflows, and GTM engineering.
+- Build Your SDR Function & GTM Blueprint: founder consultation on setting up SDR functions from scratch, go-to-market strategy, AI workflows, and GTM engineering.
 
 ## Links
 - Website: https://vandanaagarwal.in

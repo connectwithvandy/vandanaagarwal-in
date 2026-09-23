@@ -91,7 +91,7 @@ Note: the offer (Services) was moved up to sit right after the trust-build (Numb
 and before Reviews/FAQ at owner request, so it is no longer dead last.
 
 1. **Header / Nav.** Round avatar (`va-square.jpg`) + "Vandana Agarwal Nik". Links: Who I help, Meet
-   me, Services, Reviews, FAQ. Primary button: Book on Topmate. Sticky, reacts on scroll, mobile menu.
+   me, Services, Reviews, FAQ, Resources (Resources last, as it is the only link to a separate page). Primary button: Book on Topmate. Sticky, reacts on scroll, mobile menu.
 2. **Hero (Anima style).** Dark, centered, big serif headline with an accent-gradient highlight word
    ("Booking meetings shouldn't feel this *hard*."), centered pain-led subhead, two CTAs, three proof
    chips (8+ yrs; APAC · EMEA · AMER; 100 Powerful Women in Sales). Large purple glow blooming from the
@@ -106,12 +106,14 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
 7. **Process.** Three steps that fit every offer: Understand, Build, Put it to work.
 8. **Photo banner.** Full-bleed dark LinkedIn banner, `public/assets/banner.jpg`, lazy-loaded.
    (Do NOT use the old `linkedin BG.jpeg` — it says "10+ years", which breaks the writing rule.)
-9. **Services ("Work with me").** Exactly four offers in a two-by-two grid: Mentorship Discovery Call,
-    Your Next Breakthrough in Sales, Build Your First AI-Powered SDR Workflow, and Consulting for
-    Founders & Leaders. Each card has a title, format/duration, and description. The AI workflow
-    session costs ₹1,499 on Topmate only; no offer displays a price on the website. The discovery and mentorship
-    cards both route to the discovery-call booking page. Consulting deep-links to its own booking page.
-    The AI service links to the main Topmate profile until its direct booking link exists. Audience cards
+9. **Services ("Work with me").** Exactly four offers in a two-by-two grid, names and durations
+    matching the live Topmate listings: Mentorship Discovery Call (15 min, `/69117`), 1:1 Mentorship
+    Program (6 to 8 weeks, package `/2132282`), Build Your First AI-Powered SDR Workflow (60 min,
+    `/69118`), and Build Your SDR Function & GTM Blueprint (60 min, `/2131945`). Each card has a title,
+    format/duration, and description. Prices live on Topmate only; no offer displays a price on the
+    website. The discovery and mentorship cards both route to the discovery-call booking page (owner
+    choice: mentorship starts with a discovery call). The AI and Blueprint cards deep-link to their own
+    booking pages. Topmate is the source of truth: if a name or duration changes there, update the site. Audience cards
     use inline lavender **stroke line-icons** (no emoji).
 10. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
 11. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
@@ -190,9 +192,9 @@ service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler L
 - Every CTA → Topmate, new tab. The main/hero/nav CTAs point at the profile
   (`https://topmate.io/vandana_agarwal`); each **service card** deep-links to its own booking page
   (`https://topmate.io/vandana_agarwal/<id>`).
-- Exactly four Topmate offers listed: Mentorship Discovery Call, Your Next Breakthrough in Sales,
-  Build Your First AI-Powered SDR Workflow, and Consulting for Founders & Leaders. Only the AI
-  workflow session costs ₹1,499 on Topmate only. No prices on the website.
+- Exactly four Topmate offers listed: Mentorship Discovery Call, 1:1 Mentorship Program,
+  Build Your First AI-Powered SDR Workflow, and Build Your SDR Function & GTM Blueprint.
+  No prices on the website.
 - Contact email `coaching@vandanaagarwal.in` via `mailto:`.
 - Exactly three featured video podcasts embedded with `loading="lazy"`.
 - Six real, attributed testimonials.
