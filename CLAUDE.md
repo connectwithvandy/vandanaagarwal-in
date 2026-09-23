@@ -113,7 +113,7 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
     format/duration, and description. Prices live on Topmate only; no offer displays a price on the
     website. The discovery and mentorship cards both route to the discovery-call booking page (owner
     choice: mentorship starts with a discovery call). The AI and Blueprint cards deep-link to their own
-    booking pages. Topmate is the source of truth: if a name or duration changes there, update the site. Audience cards
+    booking pages. Topmate is the source of truth: if a name or duration changes there, update the site. The Blueprint call also has a follow-on Topmate package, "SDR Engine Build, Founders and Leaders" (`/2132024`), built from that call; the founder card mentions it only as "continue across a series of working sessions" (no session count, no price, no separate card). The package covers guidance, planning, and review, not hands-on implementation, so never promise hands-on building on the site. Audience cards
     use inline lavender **stroke line-icons** (no emoji).
 10. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
 11. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.

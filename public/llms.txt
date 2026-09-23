@@ -5,7 +5,7 @@
 ## Who she helps
 - New and ramping SDRs who want to turn activity into booked meetings.
 - People breaking into SaaS sales who need positioning, outreach, and interview prep.
-- Founders who need to build or rethink their SDR and go-to-market function.
+- Founders and sales leaders who need to build or rethink their SDR and go-to-market function.
 - Anyone feeling stuck who needs an honest read and a clear next move.
 
 ## Credentials
@@ -18,7 +18,7 @@
 - Mentorship Discovery Call: a 15 minute first conversation to understand the mentee's goals and shape a personalized program.
 - 1:1 Mentorship Program: sustained 1:1 mentorship over 6 to 8 weeks for aspiring and existing SDRs.
 - Build Your First AI-Powered SDR Workflow: a hands-on session to turn one repetitive SDR task into a useful AI workflow, with no coding required.
-- Build Your SDR Function & GTM Blueprint: founder consultation on setting up SDR functions from scratch, go-to-market strategy, AI workflows, and GTM engineering.
+- Build Your SDR Function & GTM Blueprint: consultation for founders and sales leaders on setting up SDR functions from scratch, go-to-market strategy, AI workflows, and GTM engineering. It can continue into the SDR Engine Build package: a series of working sessions with ongoing guidance as the blueprint is put into practice.
 
 ## Links
 - Website: https://vandanaagarwal.in

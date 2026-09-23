@@ -99,7 +99,7 @@ const services = [
     title: 'Build Your SDR Function & GTM Blueprint',
     format: '1:1 call',
     dur: '60 min',
-    desc: 'A working consultation for founders setting up their SDR function from scratch or rethinking their approach. We’ll discuss go-to-market strategy, SDR setup, AI workflows, and GTM engineering: the tools and automation behind your outreach. Together, we’ll map the priorities into a practical blueprint for what to build next.',
+    desc: 'A working consultation for founders and sales leaders setting up their SDR function from scratch or rethinking their approach. We’ll discuss go-to-market strategy, SDR setup, AI workflows, and GTM engineering: the tools and automation behind your outreach. Together, we’ll map the priorities into a practical blueprint for what to build next. If you want ongoing guidance as you put it into practice, we can continue across a series of working sessions.',
     badge: 'For companies',
     cta: 'Discuss your SDR & GTM setup',
   },
@@ -136,7 +136,7 @@ const testimonials = [
 const faqs = [
   {
     "q": "Where should I start?",
-    "a": "For personalized mentorship, start with the discovery call. Choose the AI working session if you want help with one specific SDR task. If you’re a founder setting up your SDR function, choose the SDR Function & GTM Blueprint consultation.",
+    "a": "For personalized mentorship, start with the discovery call. Choose the AI working session if you want help with one specific SDR task. If you’re a founder or sales leader setting up your SDR function, choose the SDR Function & GTM Blueprint consultation.",
     "open": true
   },
   {
@@ -171,7 +171,7 @@ const faqs = [
   },
   {
     "q": "Does the founder consultation include building the entire system?",
-    "a": "The consultation focuses on strategy, decisions, and a blueprint for your next steps. Any hands-on implementation would need a separately agreed scope.",
+    "a": "The consultation focuses on strategy, decisions, and a blueprint for your next steps. If you want ongoing guidance as you put it into practice, we can continue across a series of working sessions. Hands-on implementation, or building systems on your behalf, needs a separately agreed scope.",
     "open": false
   },
   {
@@ -566,7 +566,7 @@ jsonLd['@graph'].push({
   try {
     const rot = document.querySelector('.hero h1 em .rot-word');
     if (rot && !reduceMotion) {
-      const words = ['books meetings.', 'breaks into SaaS.', 'hits quota.', 'builds pipeline.'];
+      const words = ['books meetings.', 'breaks into SaaS.', 'is AI-native.', 'hits quota.', 'builds pipeline.'];
       let i = 0;
       setInterval(() => {
         if (document.hidden) return;
