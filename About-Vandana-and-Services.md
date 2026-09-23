@@ -10,11 +10,11 @@ Source material for the vandanaagarwal.in website build. This file holds the fac
 **Tagline:** Global SDR Leader. SDR Coach. Multi-region BDR org builder.
 **Role:** Manager of Sales Development at JumpCloud, leading a 10-person multi-region BDR org (APAC Outbound, APAC Inbound, EMEA Inbound). Founder of SDR Leaders of APAC. SDR coach.
 **Based in:** Bangalore, India. Works globally.
-**Companies:** JumpCloud, Rubrik, Branch, Clickpost, Xoxoday, Udaan. Focus areas: SaaS, identity, and cybersecurity.
+**Companies:** JumpCloud, Rubrik, Branch, ClickPost, Xoxoday, Udaan. Focus areas: SaaS, identity, and cybersecurity.
 **Recognition:** Named to 100 Powerful Women in Sales (Demandbase and Women in Sales, 2025). GrowthX Fellow. Mental health advocate.
 
 **Short bio (site-ready):**
-I build and scale high-performing sales development teams, and I lead cross-border across APAC, EMEA, and AMER. I have done it across company stages too, from an early-stage startup at Clickpost to growth and scale at Rubrik and now JumpCloud. I am obsessed with coaching systems that help SDRs win consistently, because the right system turns effort into booked meetings.
+I build and scale high-performing sales development teams, and I lead cross-border across APAC, EMEA, and AMER. I have done it across company stages too, from an early-stage startup at ClickPost to growth and scale at Rubrik and now JumpCloud. I am obsessed with coaching systems that help SDRs win consistently, because the right system turns effort into booked meetings.
 
 **Her own words (from LinkedIn, great voice reference and an optional About or Hero block):**
 Struggling to grow your SaaS pipeline or hit ambitious revenue goals? If you are nodding right now, we might be the perfect match. Hi, I am Vandana. I build and scale high-performing sales development teams from 0 to pipeline. Over the years I have helped startups and growth-stage companies unlock revenue through smart, scalable SDR strategies, coaching and onboarding frameworks, tight alignment between GTM teams, and pipeline-building playbooks that actually work. Whether it is outbound prospecting, team ramp, or rebuilding process, I have done it, and done it well. And here is the best part: I love giving back. If you are an SDR just getting started, I have got you. If you are a founder building your first sales team, let's talk. If you are a leader looking to refine process and results, I am here for that too.
@@ -32,7 +32,7 @@ Struggling to grow your SaaS pipeline or hit ambitious revenue goals? If you are
 - Named to 100 Powerful Women in Sales (Demandbase and Women in Sales, 2025).
 - GrowthX Fellow. Mental health advocate.
 - 8+ years building and scaling BDR functions across APAC, EMEA, and AMER for SaaS, identity, and cybersecurity companies.
-- Experience across company stages, from an early-stage startup (Clickpost) to growth and scale (Rubrik, JumpCloud).
+- Experience across company stages, from an early-stage startup (ClickPost) to growth and scale (Rubrik, JumpCloud).
 - Hired and ramped 25+ BDRs across four organizations.
 - Early adopter of AI in prospecting and coaching (Claude, Hyperbound, Gong).
 - Coaching and onboarding frameworks that scale.
@@ -46,8 +46,8 @@ Struggling to grow your SaaS pipeline or hit ambitious revenue goals? If you are
 - JumpCloud: beat inbound targets, MQL at 181% APAC and 135% EMEA, SQL at 114% and 110%.
 - JumpCloud coaching wins: cut a rep's unqualified rate from 70% to 10%, ramped a new hire to 92% of target in 6 weeks, recovered two reps from a PIP in 14 and 25 days.
 - Rubrik: built the US Mid-Market SDR function from scratch with an 8-person team; hit 143%, 120%, and 105% pipeline attainment across three consecutive quarters, with $5.6M pipeline in the strongest quarter.
-- Clickpost: built outbound from scratch, delivering 2x SQLs and 80% more new account acquisition across APAC and EMEA, at roughly 170% of quota across consecutive quarters.
-- Clickpost: lifted NA inbound SAL conversion from 57% to 91% in 5 months, and outbound conversion from 3% to 9% month over month.
+- ClickPost: built outbound from scratch, delivering 2x SQLs and 80% more new account acquisition across APAC and EMEA, at roughly 170% of quota across consecutive quarters.
+- ClickPost: lifted NA inbound SAL conversion from 57% to 91% in 5 months, and outbound conversion from 3% to 9% month over month.
 - Branch: ramped a new SDR team from 0% to 105% of outbound target in 4 months.
 - XOXO Day: awarded Best SDR Performer, promoted to Enterprise AE in 6 months.
 
@@ -157,7 +157,7 @@ Embed using `https://www.youtube.com/embed/VIDEO_ID`. YouTube thumbnails cannot 
 - Lunacal.ai, GTM Advisor, Mar 2025 to Jul 2025.
 - Branch, Manager, Sales Development (NA), Jan 2024 to Jun 2024.
 - Zohort, Mentor (helping SDRs learn SaaS sales and get hired), Jun 2022 to Dec 2023.
-- Clickpost, Global Sales Development Manager, Sep 2020 to Dec 2023.
+- ClickPost, Global Sales Development Manager, Sep 2020 to Dec 2023.
 - Udaan, Business Development Manager, Apr 2020 to Aug 2020.
 - Xoxoday, Enterprise Sales Manager then Founding SDR, Apr 2019 to Mar 2020.
 - Earlier: Grasim Industries (Management Trainee), plus internships and B-school leadership at NMIMS.

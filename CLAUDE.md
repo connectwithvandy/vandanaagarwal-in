@@ -69,7 +69,7 @@ Do not invent details.
 
 Vandana Agarwal Nik is a Sales Development Leader and SDR coach who builds and scales BDR teams from
 zero to pipeline across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. She
-has done it from an early-stage startup (Clickpost) through to scale (Rubrik, JumpCloud). She is the
+has done it from an early-stage startup (ClickPost) through to scale (Rubrik, JumpCloud). She is the
 Founder of SDR Leaders of APAC (250+ members), was named to the 100 Powerful Women in Sales (2025),
 and is a GrowthX Fellow.
 

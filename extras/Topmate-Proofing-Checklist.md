@@ -12,7 +12,7 @@ I help aspiring and existing SDRs grow their skills, use AI practically, and mak
 
 Hi, I’m Vandana.
 
-I build and scale high-performing SDR functions across APAC, EMEA, and AMER, from early-stage work at Clickpost to growth and scale at Rubrik and JumpCloud.
+I build and scale high-performing SDR functions across APAC, EMEA, and AMER, from early-stage work at ClickPost to growth and scale at Rubrik and JumpCloud.
 
 I work with two groups:
 
