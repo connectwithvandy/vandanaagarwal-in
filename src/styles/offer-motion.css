@@ -1,7 +1,24 @@
 /* Hero motion copied from the approved standalone preview. */
-.hero-title em { min-height: 1.08em; }
-.hero-title .rot-word { transition: opacity .4s ease, translate .4s ease; will-change: opacity, translate; }
-.hero-title .rot-word.swap { opacity: 0; translate: 0 10px; }
+.hero h1.hero-title em {
+  min-height: 1.08em;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--violet-2);
+  animation: none;
+}
+.hero h1.hero-title em .rot-word {
+  background: linear-gradient(100deg, var(--violet-2) 10%, #E9DEFF 50%, var(--violet-2) 90%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: preview-word-shine 4.5s linear infinite;
+  transition: opacity .4s ease, translate .4s ease;
+  will-change: opacity, translate;
+}
+.hero h1.hero-title em .rot-word.swap { opacity: 0; translate: 0 10px; }
+@keyframes preview-word-shine { to { background-position: 220% center; } }
 .hero::before {
   inset: -50%;
   height: auto;
