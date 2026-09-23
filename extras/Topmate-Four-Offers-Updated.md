@@ -31,15 +31,23 @@ Booking question: Where are you in your SDR journey, and what would you most lik
 
 Settings: Keep your existing price. Choose a fixed booking duration within the 15–20 minute range.
 
-## 2. Your Next Breakthrough in Sales
+## 2. Personalized SDR Mentorship Program
 
 Existing listing: https://topmate.io/vandana_agarwal/2132282
 
-Cover: [Mentorship cover](topmate-covers/your-next-breakthrough-in-sales.png)
+Package cover: [Mentorship package cover](topmate-media-simple/mentorship-package-cover.png)
+
+Package thumbnail: [Mentorship package thumbnail](topmate-media-simple/mentorship-package-thumbnail.png)
+
+Included service name: **1:1 SDR Mentorship Session**
+
+Included service cover: [Single-session cover](topmate-media-simple/mentorship-session-cover.png)
+
+Included service thumbnail: [Single-session thumbnail](topmate-media-simple/mentorship-session-thumbnail.png)
 
 Short description:
 
-Personalized 1:1 mentorship to build SDR skills, confidence, and career direction.
+Eight personalized sessions to build SDR skills, confidence, and career direction.
 
 Full description:
 
