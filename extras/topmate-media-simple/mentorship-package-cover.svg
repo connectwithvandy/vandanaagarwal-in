@@ -11,11 +11,10 @@
   <text x="104" y="80" class="name">VANDANA AGARWAL NIK</text>
   <circle cx="1164" cy="73" r="6" fill="#7C2FD4"/>
   <circle cx="1186" cy="73" r="6" fill="#7C2FD4"/>
-  <rect x="104" y="154" width="378" height="58" rx="29" fill="#7C2FD4"/>
-  <text x="134" y="191" class="label">8-SESSION PROGRAM</text>
-  <text x="104" y="315" class="title">Personalized SDR</text>
-    <text x="104" y="395" class="title">Mentorship</text>
-    <text x="104" y="475" class="title">Program</text>
-  <rect x="104" y="573" width="92" height="7" rx="3.5" fill="#7C2FD4"/>
+  <rect x="104" y="154" width="350" height="58" rx="29" fill="#7C2FD4"/>
+  <text x="134" y="191" class="label">6 TO 8 WEEKS</text>
+  <text x="104" y="315" class="title">1:1 Mentorship</text>
+    <text x="104" y="395" class="title">Program</text>
+  <rect x="104" y="493" width="92" height="7" rx="3.5" fill="#7C2FD4"/>
   <text x="104" y="726" class="footer">SDR COACH</text>
 </svg>

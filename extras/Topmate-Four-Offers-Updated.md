@@ -33,7 +33,7 @@ Booking question: Where are you in your SDR journey, and what would you most lik
 
 Settings: Keep your existing price. Choose a fixed booking duration within the 15–20 minute range.
 
-## 2. Personalized SDR Mentorship Program
+## 2. 1:1 Mentorship Program
 
 Existing listing: https://topmate.io/vandana_agarwal/2132282
 
@@ -49,7 +49,7 @@ Included service thumbnail: [Single-session thumbnail](topmate-media-simple/ment
 
 Short description:
 
-Eight personalized sessions to build SDR skills, confidence, and career direction.
+Sustained 1:1 mentorship over 6 to 8 weeks to build SDR skills, confidence, and career direction.
 
 Full description:
 
@@ -118,7 +118,7 @@ Booking question: Which repetitive SDR task would you like to improve, and which
 
 Settings: ₹1,699. The website previously assumed 60 minutes; choose the duration you actually want to deliver before publishing the listing. Share its direct booking link once created.
 
-## 4. Build Your SDR & GTM Blueprint
+## 4. Build Your SDR Function & GTM Blueprint
 
 Existing consultation: https://topmate.io/vandana_agarwal/2131945
 

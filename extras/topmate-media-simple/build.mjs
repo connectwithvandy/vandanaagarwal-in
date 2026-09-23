@@ -8,9 +8,9 @@ await mkdir(out, { recursive: true });
 const offers = [
   { slug: 'discovery', label: 'DISCOVERY CALL', lines: ['Mentorship', 'Discovery Call'], footer: 'SDR COACH' },
   { slug: 'mentorship-session', label: 'ONE MENTORSHIP CALL', lines: ['1:1 SDR', 'Mentorship', 'Session'], footer: 'SDR COACH' },
-  { slug: 'mentorship-package', label: '8-SESSION PROGRAM', lines: ['Personalized SDR', 'Mentorship', 'Program'], footer: 'SDR COACH' },
+  { slug: 'mentorship-package', label: '6 TO 8 WEEKS', lines: ['1:1 Mentorship', 'Program'], footer: 'SDR COACH' },
   { slug: 'ai-workflow', label: 'HANDS-ON SESSION', lines: ['Build Your First', 'AI-Powered', 'SDR Workflow'], footer: 'PRACTICAL AI FOR SDRs' },
-  { slug: 'gtm-blueprint', label: 'FOR FOUNDERS', lines: ['Build Your', 'SDR & GTM', 'Blueprint'], footer: 'SDR & GTM CONSULTING' },
+  { slug: 'gtm-blueprint', label: 'FOR FOUNDERS', lines: ['Build Your SDR', 'Function & GTM', 'Blueprint'], footer: 'SDR & GTM CONSULTING' },
   { slug: 'founder-package', label: '8-SESSION PROGRAM', lines: ['Build Your', 'SDR & GTM', 'Function'], footer: 'FOR FOUNDERS' },
 ];
 
