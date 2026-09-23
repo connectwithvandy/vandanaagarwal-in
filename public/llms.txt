@@ -1,11 +1,11 @@
 # Vandana Agarwal Nik — Global SDR Coach
 
-> Vandana Agarwal Nik is a Sales Development Leader and SDR coach who builds and scales BDR/SDR teams from zero to pipeline across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. She coaches SDRs and sales leaders to ramp faster, book more meetings, break into SaaS, and build predictable pipeline. She is AI-forward, coaching on real tools (Gong, Hyperbound, Orum, 6sense, Salesforce). All sessions are booked on Topmate.
+> Vandana Agarwal Nik is a Sales Development Leader and SDR coach who builds and scales SDR functions across APAC, EMEA, and AMER. She helps aspiring and existing SDRs grow their skills, use AI practically, and make clearer career decisions. For founders, she helps design SDR functions, go-to-market strategy, AI workflows, and GTM engineering. All sessions are booked on Topmate.
 
 ## Who she helps
 - New and ramping SDRs who want to turn activity into booked meetings.
 - People breaking into SaaS sales who need positioning, outreach, and interview prep.
-- Founders and sales leaders who need to build or fix the SDR engine and pipeline.
+- Founders who need to build or rethink their SDR and go-to-market function.
 - Anyone feeling stuck who needs an honest read and a clear next move.
 
 ## Credentials
@@ -16,7 +16,7 @@
 
 ## Services (booked on Topmate)
 - Mentorship Discovery Call: a 15 to 20 minute first conversation to understand the mentee's goals and shape a personalized program.
-- Your Next Breakthrough in Sales: personalized 1:1 mentorship for aspiring and existing SDRs.
+- Personalized SDR Mentorship Program: eight tailored sessions for aspiring and existing SDRs.
 - Build Your First AI-Powered SDR Workflow: a hands-on session to turn one repetitive SDR task into a useful AI workflow, with no coding required.
 - Build Your SDR & GTM Blueprint: founder consultation on setting up SDR functions from scratch, go-to-market strategy, AI workflows, and GTM engineering.
 

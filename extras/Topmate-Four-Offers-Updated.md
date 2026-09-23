@@ -1,12 +1,14 @@
 # Topmate: four offers
 
-Paste each title, short description, and full description into the corresponding service. Covers are in `topmate-covers/` alongside this file. Prices belong on Topmate only.
+Paste each title, short description, and full description into the corresponding service. Upload-ready media is in `topmate-media-simple/` alongside this file. Prices belong on Topmate only.
 
 ## 1. Mentorship Discovery Call
 
 Existing listing: https://topmate.io/vandana_agarwal/69117
 
-Cover: [Discovery cover](topmate-covers/mentorship-discovery-call.png)
+Cover: [Discovery cover](topmate-media-simple/discovery-cover.png)
+
+Thumbnail: [Discovery thumbnail](topmate-media-simple/discovery-thumbnail.png)
 
 Short description:
 
@@ -79,9 +81,13 @@ Settings to review: The existing listing was an eight-session package. Its inclu
 
 ## 3. Build Your First AI-Powered SDR Workflow
 
-New listing. Price: ₹1,499.
+Existing listing: https://topmate.io/vandana_agarwal/69118
 
-Cover: [AI cover](topmate-covers/build-your-first-ai-powered-sdr-workflow.png)
+Price to set: ₹1,499.
+
+Cover: [AI cover](topmate-media-simple/ai-workflow-cover.png)
+
+Thumbnail: [AI thumbnail](topmate-media-simple/ai-workflow-thumbnail.png)
 
 Short description:
 
@@ -116,7 +122,9 @@ Settings: ₹1,499. The website previously assumed 60 minutes; choose the durati
 
 Existing consultation: https://topmate.io/vandana_agarwal/2131945
 
-Cover: [Founder blueprint cover](topmate-covers/build-your-sdr-gtm-blueprint.png)
+Cover: [Founder blueprint cover](topmate-media-simple/gtm-blueprint-cover.png)
+
+Thumbnail: [Founder blueprint thumbnail](topmate-media-simple/gtm-blueprint-thumbnail.png)
 
 Short description:
 

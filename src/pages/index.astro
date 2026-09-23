@@ -21,7 +21,7 @@ const jsonLd = {
       url: SITE,
       image: OG_IMAGE,
       jobTitle: 'SDR Coach & Sales Development Leader',
-      description: 'Global SDR coach who builds and scales BDR teams from zero to pipeline across APAC, EMEA, and AMER for SaaS, identity, and cybersecurity companies.',
+      description: 'Global SDR coach who builds and scales SDR functions and practical go-to-market systems across APAC, EMEA, and AMER.',
       sameAs: [LINKEDIN, TOPMATE, APAC, SUBSTACK],
       knowsAbout: ['Sales Development', 'SDR coaching', 'Outbound sales', 'AI workflows for SDRs', 'BDR enablement', 'SaaS sales', 'Go-to-market'],
       award: '100 Powerful Women in Sales, 2025',
@@ -86,7 +86,7 @@ const services = [
     cta: 'Start with a discovery call',
   },
   {
-    id: null,
+    id: '69118',
     title: 'Build Your First AI-Powered SDR Workflow',
     format: '1:1 working session',
     dur: '60 min',
@@ -202,7 +202,7 @@ jsonLd['@graph'].push({
   <meta name="description" content="Personalized SDR mentorship, hands-on AI workflow coaching, and sales development consulting with Vandana Agarwal Nik. Book on Topmate." />
   <link rel="canonical" href="https://vandanaagarwal.in/" />
   <meta property="og:title" content="Vandana Agarwal Nik | Global SDR Coach" />
-  <meta property="og:description" content="Build your sales career, create a practical AI workflow, or strengthen your company's SDR engine with Vandana Agarwal Nik." />
+  <meta property="og:description" content="Build your SDR career, create a practical AI workflow, or design your company's SDR and go-to-market function with Vandana Agarwal Nik." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vandanaagarwal.in/" />
   <meta property="og:image" content={OG_IMAGE} />
@@ -232,11 +232,9 @@ jsonLd['@graph'].push({
 <div class="aurora" aria-hidden="true">
   <span class="rb r1"></span>
   <span class="rb r2"></span>
-  <span class="rb r3"></span>
   <span class="rb r4"></span>
 </div>
 <div class="grain" aria-hidden="true"></div>
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 <div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
 <a href="#who" class="skip-link">Skip to content</a>
 
@@ -268,8 +266,8 @@ jsonLd['@graph'].push({
   <span class="hero-glow" aria-hidden="true"></span>
   <div class="wrap hero-inner">
     <span class="kicker reveal">Global SDR coaching</span>
-    <h1 class="hero-title reveal" data-d="1">Become the SDR who<br><em><span class="rot-word">books meetings</span></em>.</h1>
-    <p class="sub reveal" data-d="2"><b>Break into SaaS</b>, ramp fast, and hit your number month after month. I coach SDRs to turn outreach into booked meetings, and founders to build predictable pipeline.</p>
+    <h1 class="hero-title reveal" data-d="1">Become the SDR who<br><em><span class="rot-word">books meetings.</span></em></h1>
+    <p class="sub reveal" data-d="2"><b>Break into SaaS</b>, grow your SDR skills, and put practical AI to work. I also help founders build SDR and go-to-market functions from scratch.</p>
     <div class="hero-cta reveal" data-d="3">
       <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book a session on Topmate</a>
       <a href="#who" class="btn btn-ghost-l magnetic">See how I can help</a>
@@ -287,8 +285,8 @@ jsonLd['@graph'].push({
 <!-- MARQUEE RIBBON -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="marqueeTrack">
-    <span><b>Ramp faster</b></span><span>Book more meetings</span><span><b>Break into SaaS</b></span><span>Predictable pipeline</span><span><b>SDR Leaders of APAC</b></span><span>AI-forward coaching</span><span><b>APAC · EMEA · AMER</b></span><span>Interview-ready</span>
-    <span><b>Ramp faster</b></span><span>Book more meetings</span><span><b>Break into SaaS</b></span><span>Predictable pipeline</span><span><b>SDR Leaders of APAC</b></span><span>AI-forward coaching</span><span><b>APAC · EMEA · AMER</b></span><span>Interview-ready</span>
+    <span><b>Ramp faster</b></span><span>Book more meetings</span><span><b>Break into SaaS</b></span><span>SDR functions from scratch</span><span><b>SDR Leaders of APAC</b></span><span>Practical AI workflows</span><span><b>APAC · EMEA · AMER</b></span><span>Interview-ready</span>
+    <span><b>Ramp faster</b></span><span>Book more meetings</span><span><b>Break into SaaS</b></span><span>SDR functions from scratch</span><span><b>SDR Leaders of APAC</b></span><span>Practical AI workflows</span><span><b>APAC · EMEA · AMER</b></span><span>Interview-ready</span>
   </div>
 </div>
 
@@ -567,7 +565,7 @@ jsonLd['@graph'].push({
   try {
     const rot = document.querySelector('.hero h1 em .rot-word');
     if (rot && !reduceMotion) {
-      const words = ['books meetings', 'breaks into SaaS', 'hits quota', 'builds pipeline'];
+      const words = ['books meetings.', 'breaks into SaaS.', 'hits quota.', 'builds pipeline.'];
       let i = 0;
       setInterval(() => {
         if (document.hidden) return;
@@ -637,20 +635,6 @@ jsonLd['@graph'].push({
         btn.style.transform = `translate(${mx * 0.28}px, ${my * 0.4}px)`;
       });
       btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
-    });
-  }
-
-  // Custom cursor (desktop, lerped follow + grow on interactive hover)
-  const cursor = document.getElementById('cursorDot');
-  if (cursor && !reduceMotion && finePointer) {
-    document.body.classList.add('has-cursor');
-    let cx = window.innerWidth / 2, cy = window.innerHeight / 2, tx = cx, ty = cy;
-    window.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
-    const cloop = () => { cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22; cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`; requestAnimationFrame(cloop); };
-    cloop();
-    document.querySelectorAll('a, button, .svc, .aud, .quote, .vid, .chip, details summary').forEach((el) => {
-      el.addEventListener('pointerenter', () => cursor.classList.add('big'));
-      el.addEventListener('pointerleave', () => cursor.classList.remove('big'));
     });
   }
 

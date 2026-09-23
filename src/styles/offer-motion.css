@@ -1,4 +1,5 @@
 /* Hero motion copied from the approved standalone preview. */
+.hero { background: var(--bg); }
 .hero h1.hero-title em {
   min-height: 1.08em;
   background: none;

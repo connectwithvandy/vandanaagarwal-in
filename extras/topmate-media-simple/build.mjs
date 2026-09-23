@@ -11,6 +11,7 @@ const offers = [
   { slug: 'mentorship-package', label: '8-SESSION PROGRAM', lines: ['Personalized SDR', 'Mentorship', 'Program'], footer: 'SDR COACH' },
   { slug: 'ai-workflow', label: 'HANDS-ON SESSION', lines: ['Build Your First', 'AI-Powered', 'SDR Workflow'], footer: 'PRACTICAL AI FOR SDRs' },
   { slug: 'gtm-blueprint', label: 'FOR FOUNDERS', lines: ['Build Your', 'SDR & GTM', 'Blueprint'], footer: 'SDR & GTM CONSULTING' },
+  { slug: 'founder-package', label: '8-SESSION PROGRAM', lines: ['Build Your', 'SDR & GTM', 'Function'], footer: 'FOR FOUNDERS' },
 ];
 
 const esc = (value) => value.replaceAll('&', '&amp;');
