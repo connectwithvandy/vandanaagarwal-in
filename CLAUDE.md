@@ -109,7 +109,7 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
 9. **Services ("Work with me").** Exactly four offers in a two-by-two grid: Mentorship Discovery Call,
     Your Next Breakthrough in Sales, Build Your First AI-Powered SDR Workflow, and Consulting for
     Founders & Leaders. Each card has a title, format/duration, and description. The AI workflow
-    session displays its ₹1,499 price; the other offers do not display prices. The discovery and mentorship
+    session costs ₹1,499 on Topmate only; no offer displays a price on the website. The discovery and mentorship
     cards both route to the discovery-call booking page. Consulting deep-links to its own booking page.
     The AI service links to the main Topmate profile until its direct booking link exists. Audience cards
     use inline lavender **stroke line-icons** (no emoji).
@@ -192,7 +192,7 @@ service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler L
   (`https://topmate.io/vandana_agarwal/<id>`).
 - Exactly four Topmate offers listed: Mentorship Discovery Call, Your Next Breakthrough in Sales,
   Build Your First AI-Powered SDR Workflow, and Consulting for Founders & Leaders. Only the AI
-  workflow session displays its ₹1,499 price.
+  workflow session costs ₹1,499 on Topmate only. No prices on the website.
 - Contact email `coaching@vandanaagarwal.in` via `mailto:`.
 - Exactly three featured video podcasts embedded with `loading="lazy"`.
 - Six real, attributed testimonials.
