@@ -300,7 +300,7 @@ section { padding: 112px 0; }
 .faq-sec details .a { padding: 0 0 20px; color: var(--soft); font-size: 1.02rem; }
 
 /* Services */
-.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1040px; margin: 0 auto; perspective: 1400px; }
+.svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 920px; margin: 0 auto; perspective: 1400px; }
 .svc { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px; display: flex; flex-direction: column; transition: transform .18s, box-shadow .18s, border-color .18s, background .18s; }
 .svc:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); border-color: var(--violet); background: var(--card-2); }
 .svc-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }

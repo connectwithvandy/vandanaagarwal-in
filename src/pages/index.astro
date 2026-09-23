@@ -22,7 +22,7 @@ const jsonLd = {
       jobTitle: 'SDR Coach & Sales Development Leader',
       description: 'Global SDR coach who builds and scales BDR teams from zero to pipeline across APAC, EMEA, and AMER for SaaS, identity, and cybersecurity companies.',
       sameAs: [LINKEDIN, TOPMATE, APAC, SUBSTACK],
-      knowsAbout: ['Sales Development', 'SDR coaching', 'Outbound sales', 'BDR enablement', 'SaaS sales', 'Go-to-market'],
+      knowsAbout: ['Sales Development', 'SDR coaching', 'Outbound sales', 'AI workflows for SDRs', 'BDR enablement', 'SaaS sales', 'Go-to-market'],
       award: '100 Powerful Women in Sales, 2025',
     },
     {
@@ -39,10 +39,10 @@ const jsonLd = {
       name: 'Vandana Agarwal Nik, SDR Coaching',
       url: SITE,
       image: OG_IMAGE,
-      description: 'Personalized 1:1 sales mentorship for aspiring and existing SDRs, plus outbound consulting for founders and sales leaders. Booked on Topmate.',
+      description: 'Personalized 1:1 sales mentorship, hands-on AI workflow coaching for SDRs, and outbound consulting for founders and sales leaders. Booked on Topmate.',
       provider: { '@id': `${SITE}/#vandana` },
       areaServed: ['APAC', 'EMEA', 'AMER'],
-      serviceType: 'SDR coaching and sales development consulting',
+      serviceType: 'SDR mentorship, AI workflow coaching, and sales development consulting',
       email: EMAIL,
     },
   ],
@@ -64,7 +64,7 @@ const ICONS = {
   compass: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg>`,
 };
 
-// The three ways to work together. No prices on the site; booking happens on Topmate.
+// The four ways to work together. Booking happens on Topmate.
 const services = [
   {
     id: '69117',
@@ -76,13 +76,22 @@ const services = [
     cta: 'Book your discovery call',
   },
   {
-    id: '2132282',
+    id: '69117',
     title: 'Your Next Breakthrough in Sales',
     format: '1:1 mentorship',
     dur: 'personalized program',
     desc: 'For aspiring and existing SDRs who want practical guidance to break into their first role, find career direction, improve prospecting, cold calls, sales conversations and objection handling, build confidence, and know what to work on next. No generic advice or one-size-fits-all course. Just practical guidance built around your goals and your real situation.',
     badge: 'Mentorship',
-    cta: 'Book a mentorship session',
+    cta: 'Start with a discovery call',
+  },
+  {
+    id: null,
+    title: 'Build Your First AI-Powered SDR Workflow',
+    format: '1:1 working session',
+    dur: '60 min',
+    desc: 'Turn one repetitive sales task into a working AI workflow, with no coding required. Choose account research, personalized outreach, cold-call preparation, follow-ups, objection handling, or daily planning. You’ll leave with a workflow built around your role, reusable prompts and templates, and a clear plan for using it in your daily work.',
+    badge: '₹1,499',
+    cta: 'Build your first AI workflow',
   },
   {
     id: '2131945',
@@ -96,9 +105,9 @@ const services = [
 ];
 
 const steps = [
-  { n: '01', title: 'Diagnose', body: 'Session one, we pull apart your real calls, emails, and pipeline to find the actual leak. You leave knowing exactly what is costing you meetings, no guesswork.' },
-  { n: '02', title: 'Playbook', body: 'We build your operating system together: ICP, cadences, call openers, and a daily rhythm you can run on a busy Monday. You walk away with the scripts, not theory.' },
-  { n: '03', title: 'Coach & iterate', body: 'Then we run it. I listen to your real calls, mark the moments that win or lose the meeting, and we fix them one at a time until the numbers move.' },
+  { n: '01', title: 'Understand', body: 'We get clear on your goal, the challenge in front of you, and what is getting in your way.' },
+  { n: '02', title: 'Build', body: 'We create the plan, workflow, messaging, or sales system around your real situation.' },
+  { n: '03', title: 'Put it to work', body: 'You leave with practical next steps and something you can use immediately, not theory.' },
 ];
 
 const videos = [
@@ -127,7 +136,7 @@ const faqs = [
   { q: 'Is coaching worth it at my stage?', a: 'If you are doing the work and the meetings still are not coming, a focused session usually pays for itself fast. We fix the specific thing holding you back instead of guessing for weeks. If it is not the right fit, I will tell you on the intro call.', open: true },
   { q: 'I am not sure I am ready for mentorship.', a: 'You do not need it all figured out first. Start with a 15 to 20 minute discovery call. I will understand your goals and create a personalized mentorship program around what you need.', open: false },
   { q: 'Will you get my market if I am not in APAC?', a: 'Yes. I have built and scaled SDR teams across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. The fundamentals of booking meetings travel, and I tailor the playbook to your region and motion.', open: false },
-  { q: 'How do I pick the right service?', a: 'If you are an aspiring or existing SDR, start with the mentorship discovery call. If you are looking for help for your company or sales team, choose Consulting for Founders & Leaders.', open: false },
+  { q: 'How do I pick the right service?', a: 'If you are considering mentorship, start with the discovery call. If you want to build a practical AI workflow for your SDR role, choose the AI working session. If you need help for your company or sales team, choose Consulting for Founders & Leaders.', open: false },
 ];
 
 // Expose the FAQ to search and AI answer engines as machine-readable Q&A.
@@ -148,10 +157,10 @@ jsonLd['@graph'].push({
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vandana Agarwal Nik | Global SDR Coach</title>
-  <meta name="description" content="Vandana Agarwal Nik is a Sales Development Leader and SDR coach. Break into SaaS, ramp faster, book meetings consistently, and build predictable pipeline. Book a session on Topmate." />
+  <meta name="description" content="Personalized SDR mentorship, hands-on AI workflow coaching, and sales development consulting with Vandana Agarwal Nik. Book on Topmate." />
   <link rel="canonical" href="https://vandanaagarwal.in/" />
   <meta property="og:title" content="Vandana Agarwal Nik | Global SDR Coach" />
-  <meta property="og:description" content="Become the SDR who books meetings, consistently. Break into SaaS, ramp fast, and hit your number, with coaching from a global SDR leader." />
+  <meta property="og:description" content="Build your sales career, create a practical AI workflow, or strengthen your company's SDR engine with Vandana Agarwal Nik." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vandanaagarwal.in/" />
   <meta property="og:image" content={OG_IMAGE} />
@@ -160,7 +169,7 @@ jsonLd['@graph'].push({
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Vandana Agarwal Nik | Global SDR Coach" />
-  <meta name="twitter:description" content="Become the SDR who books meetings, consistently. Break into SaaS, ramp fast, and hit your number, with coaching from a global SDR leader." />
+  <meta name="twitter:description" content="Personalized SDR mentorship, practical AI workflow coaching, and sales development consulting with Vandana Agarwal Nik." />
   <meta name="twitter:image" content={OG_IMAGE} />
   <meta name="author" content="Vandana Agarwal Nik" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -273,7 +282,7 @@ jsonLd['@graph'].push({
       <h2>The mentor I wish I'd had, now in your corner</h2>
       <p class="lead-q">Early in my career, I didn't have someone who had done the job and could show me the way. I figured out outbound the hard way, one rejection at a time. That is exactly why I coach now.</p>
       <p>I build and scale high-performing SDR teams across APAC, EMEA, and AMER, from an early-stage startup at Clickpost to growth and scale at Rubrik and JumpCloud. I am obsessed with coaching systems that turn effort into booked meetings.</p>
-      <p class="ai-line">I am also AI-forward, coaching on the real tools reps win with today: Gong, Hyperbound, Orum, 6sense, and Salesforce. So you learn to win in an AI-shaped sales world, not around it.</p>
+      <p class="ai-line">I help SDRs use AI for account research, personalized outreach, call preparation, follow-ups, and daily planning, without producing generic AI-written spam.</p>
       <ul class="cred">
         <li>Founder, <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a> (250+ members)</li>
         <li>100 Powerful Women in Sales, 2025</li>
@@ -316,13 +325,13 @@ jsonLd['@graph'].push({
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="kicker">Ways to work with me</span>
-      <h2>Three clear ways to work together</h2>
-      <p>Start with a discovery call, work with me through personalized mentorship, or bring me in to help your company. Everything is booked on Topmate.</p>
+      <h2>Choose the support you need</h2>
+      <p>Explore personalized mentorship, build an AI workflow for your SDR role, or get help strengthening your company’s sales development engine.</p>
     </div>
 
     <div class="svc-grid">
       {services.map((s, i) => (
-        <a href={`${TOPMATE}/${s.id}`} target="_blank" rel="noopener" class="svc reveal" style={`--i:${i}`}>
+        <a href={s.id ? `${TOPMATE}/${s.id}` : TOPMATE} target="_blank" rel="noopener" class="svc reveal" style={`--i:${i}`}>
           <div class="svc-top">
             <span class="svc-format">{s.format} &middot; {s.dur}</span>
             <span class="badge">{s.badge}</span>
@@ -369,7 +378,7 @@ jsonLd['@graph'].push({
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="kicker">How we work together</span>
-      <h2>A simple system that removes the guesswork</h2>
+      <h2>From a real challenge to a practical next step</h2>
     </div>
     <div class="steps">
       {steps.map((s, i) => (
@@ -431,8 +440,8 @@ jsonLd['@graph'].push({
   <div class="wrap">
     <div class="final reveal">
       <span class="kicker">In your corner</span>
-      <h2>Ready to move from busy to booked?</h2>
-      <p>Let's make your pipeline predictable, one week at a time. I would love to help, whenever you are ready.</p>
+      <h2>Ready to make your next move clearer?</h2>
+      <p>Whether you need personalized mentorship, a working AI workflow, or a stronger SDR engine for your company, choose the support that fits.</p>
       <div class="final-cta">
         <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
         <a href={LINKEDIN} target="_blank" rel="noopener" class="btn btn-ghost-l">Connect on LinkedIn</a>

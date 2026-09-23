@@ -17,6 +17,7 @@
 ## Services (booked on Topmate)
 - Mentorship Discovery Call: a 15 to 20 minute first conversation to understand the mentee's goals and shape a personalized program.
 - Your Next Breakthrough in Sales: personalized 1:1 mentorship for aspiring and existing SDRs.
+- Build Your First AI-Powered SDR Workflow: a ₹1,499 hands-on session to turn one repetitive SDR task into a useful AI workflow, with no coding required.
 - Consulting for Founders & Leaders: help with pipeline, onboarding, SDR process, outbound systems, and GTM alignment.
 
 ## Links

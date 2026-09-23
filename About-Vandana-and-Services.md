@@ -82,13 +82,15 @@ Purple is the brand. Lead with the violet on a light lavender or white base, and
 
 ## 3) Services (offers)
 
-Three offers. Every offer books through Topmate.
+Four offers. Every offer books through Topmate.
 
 **Offer 1, Mentorship Discovery Call (15 to 20 minutes).** The first step for anyone considering mentorship. Use the call to understand their goals, where they are right now, and what they need help with, then create a personalized mentorship program for them.
 
 **Offer 2, Your Next Breakthrough in Sales.** A 1:1 mentorship for aspiring SDRs and existing SDRs who want practical guidance to build the right skills, navigate challenges, and grow their sales careers. It can help someone break into their first SDR role, find their career direction, improve prospecting, cold calls, sales conversations and objection handling, build confidence, and know what to work on next. No generic advice or one-size-fits-all course. The guidance is built around their goals and real situation.
 
-**Offer 3, Consulting for Founders and SDR Leaders (limited slots).** Fix pipeline execution: onboarding, SDR process, outbound systems, and GTM alignment.
+**Offer 3, Build Your First AI-Powered SDR Workflow (₹1,499).** A practical 1:1 working session for SDRs who want to turn one repetitive sales task into a working AI workflow, with no coding required. Choose account research, personalized outreach, cold-call preparation, follow-ups, objection handling, or daily planning. Leave with one working workflow, reusable prompts and templates, a process that avoids generic AI-generated outreach, and a clear plan for daily use.
+
+**Offer 4, Consulting for Founders and SDR Leaders (limited slots).** Fix pipeline execution: onboarding, SDR process, outbound systems, and GTM alignment.
 - Process and playbook audit
 - Team coaching framework
 - Metrics that drive behavior
@@ -97,10 +99,10 @@ Three offers. Every offer books through Topmate.
 
 ## 4) How we work (process)
 
-A simple system that removes the guesswork, in three steps:
-1. **Diagnose.** Find where you are stuck: messaging, activity, confidence, process, or prioritization.
-2. **Playbook.** Build your operating system: ICP, cadences, scripts, and a daily rhythm you can run.
-3. **Coach and iterate.** Weekly feedback loops. Real calls, real edits, real improvements.
+A simple system that turns a real challenge into a practical next step:
+1. **Understand.** Get clear on the goal, the challenge, and what is getting in the way.
+2. **Build.** Create the plan, workflow, messaging, or sales system around the real situation.
+3. **Put it to work.** Leave with practical next steps and something that can be used immediately, not theory.
 
 ---
 

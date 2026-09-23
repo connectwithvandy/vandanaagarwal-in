@@ -103,14 +103,16 @@ and before Reviews/FAQ at owner request, so it is no longer dead last.
    (The handwritten "Vandana" signature card was removed at owner request as repetitive.)
 6. **Numbers that moved (results band).** 3–4 hard results from the proof bank (57%→91% SAL, 0%→105%
    ramp, 17%→49% SQL-to-S1, 2x SQLs).
-7. **Process.** Three steps: Diagnose, Playbook, Coach & iterate.
+7. **Process.** Three steps that fit every offer: Understand, Build, Put it to work.
 8. **Photo banner.** Full-bleed dark LinkedIn banner, `public/assets/banner.jpg`, lazy-loaded.
    (Do NOT use the old `linkedin BG.jpeg` — it says "10+ years", which breaks the writing rule.)
-9. **Services ("Work with me").** Exactly three offers in one clear grid: Mentorship Discovery Call,
-    Your Next Breakthrough in Sales, and Consulting for Founders & Leaders. Each card has a title,
-    format/duration, description, **no price**, and **deep-links to its own Topmate booking page**
-    (`topmate.io/vandana_agarwal/<id>`), not the main profile. Audience cards use inline lavender
-    **stroke line-icons** (no emoji).
+9. **Services ("Work with me").** Exactly four offers in a two-by-two grid: Mentorship Discovery Call,
+    Your Next Breakthrough in Sales, Build Your First AI-Powered SDR Workflow, and Consulting for
+    Founders & Leaders. Each card has a title, format/duration, and description. The AI workflow
+    session displays its ₹1,499 price; the other offers do not display prices. The discovery and mentorship
+    cards both route to the discovery-call booking page. Consulting deep-links to its own booking page.
+    The AI service links to the main Topmate profile until its direct booking link exists. Audience cards
+    use inline lavender **stroke line-icons** (no emoji).
 10. **Reviews.** Six real, attributed 5-star testimonials from her Topmate page, "5/5 on Topmate".
 11. **Featured.** Exactly three embedded YouTube video podcasts, lazy-loaded, with real captions.
 12. **FAQ.** Objection-led (worth it at my stage, am I ready, will you get my market outside APAC) plus
@@ -188,8 +190,9 @@ service setup notes in `extras/Topmate-Services-Setup.md`; alternate scheduler L
 - Every CTA → Topmate, new tab. The main/hero/nav CTAs point at the profile
   (`https://topmate.io/vandana_agarwal`); each **service card** deep-links to its own booking page
   (`https://topmate.io/vandana_agarwal/<id>`).
-- Exactly three Topmate offers listed: Mentorship Discovery Call, Your Next Breakthrough in Sales,
-  and Consulting for Founders & Leaders, with **no prices anywhere**.
+- Exactly four Topmate offers listed: Mentorship Discovery Call, Your Next Breakthrough in Sales,
+  Build Your First AI-Powered SDR Workflow, and Consulting for Founders & Leaders. Only the AI
+  workflow session displays its ₹1,499 price.
 - Contact email `coaching@vandanaagarwal.in` via `mailto:`.
 - Exactly three featured video podcasts embedded with `loading="lazy"`.
 - Six real, attributed testimonials.
