@@ -39,7 +39,7 @@ This is a hard rule. Do not skip it.
   scroll reveal, custom cursor, and motion. Do not add React/Next/Tailwind.
   - **`/resources` routes everything to Substack** (owner decision: keep the site light, no article
     reading on-site). It has two compact numbered-list cards: the **SDR Field Guide · APAC Edition**
-    (10 posts) and **SDR Playbook Visuals** (8 posts, drawn from the Drive infographics). Every row
+    (10 posts) and **SDR Playbook Visuals** (8 posts drawn from the Drive infographics; only published ones show, and the intro count updates itself. "The Inbound SDR Funnel" is not on Substack yet). Every row
     links out to its Substack post (`src/data/visuals.js` `substackUrl`; empty falls back to the
     Substack homepage until that post is published). There is no on-site article/breakdown page
     (an earlier `/resources/sdr-playbook-visuals` bundle page was removed). Infographics in

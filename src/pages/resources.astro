@@ -10,6 +10,9 @@ const SUBSTACK = 'https://coachingbyvandy.substack.com';
 const SITE = 'https://vandanaagarwal.in';
 const OG_IMAGE = `${SITE}/assets/va-portrait.jpg`;
 const P = 'https://coachingbyvandy.substack.com/p';
+const liveVisuals = visuals.filter((v) => v.substackUrl);
+const WORDS = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
+const visualCount = WORDS[liveVisuals.length] ?? String(liveVisuals.length);
 
 // The SDR Field Guide · APAC Edition — the 10-part series, published on Substack.
 const posts = [
@@ -159,7 +162,7 @@ const jsonLd = {
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="kicker">APAC Edition &middot; 10 parts</span>
-      <h2>Build pipeline where the playbook doesn't travel</h2>
+      <h2>Build pipeline where the playbook doesn’t travel</h2>
       <p>Read them in order or jump to what you need. Each one is a short, practical breakdown with the full framework as an infographic.</p>
     </div>
     <ol class="listcard reveal" aria-label="The SDR Field Guide, APAC Edition">
@@ -183,7 +186,7 @@ const jsonLd = {
     <div class="sec-head center reveal">
       <span class="kicker">SDR Playbook Visuals</span>
       <h2>One-page breakdowns you can actually use</h2>
-      <p>Eight field notes from years of building SDR teams, drawn up as infographics. Each one opens on Substack.</p>
+      <p>{visualCount} field notes from years of building SDR teams, drawn up as infographics. Each one opens on Substack.</p>
     </div>
     <ol class="listcard reveal" aria-label="SDR Playbook Visuals">
       {visuals.filter((v) => v.substackUrl).map((v, i) => (
