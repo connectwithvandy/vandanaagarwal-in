@@ -2,6 +2,7 @@
 // Every fact comes from Vandy's resume, project notes or live sites. Never round up.
 
 export const EMAIL = 'connectwithvandanaa@gmail.com';
+export const CV = '/Vandana-Agarwal-Nik-CV.pdf';
 
 export const socials = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/meet-vandana/' },
@@ -16,7 +17,7 @@ export const socials = [
 export const proof = [
   { big: '143%', small: 'peak quarter, Rubrik SDR team' },
   { big: '$5.6M', small: 'pipeline in one quarter' },
-  { big: '17% to 49%', small: 'meeting to opportunity, one quarter at JumpCloud' },
+  { big: '17% to 49%', small: 'meeting to opportunity, JumpCloud' },
   { big: '100', small: 'people have used Ted' },
 ];
 
@@ -395,3 +396,10 @@ export const details = {
     mattered: 'Runs every morning since late September 2026.',
   },
 };
+
+// Podcast and video appearances, the same three as on /coaching.
+export const videos = [
+  { id: 'wDsukLjubus', caption: 'Inside the SDR career in SaaS: growth and salary' },
+  { id: '35mHdwO_PsI', caption: 'SDR leadership gaps in India, on the Saaspire Podcast' },
+  { id: 'b5bccZRw7YU', caption: 'The SDR Leaders Playbook' },
+];

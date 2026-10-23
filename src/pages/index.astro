@@ -2,9 +2,9 @@
 import WorkLayout from '../layouts/WorkLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ContactBand from '../components/ContactBand.astro';
-import { EMAIL, socials, proof, groups, whatIDo, highlights, about, services, recs, RECS_URL, coaching, TOPMATE, posts, SUBSTACK } from '../data/work.js';
+import SocialIcons from '../components/SocialIcons.astro';
+import { EMAIL, CV, videos, socials, proof, groups, whatIDo, highlights, about, services, recs, RECS_URL, coaching, TOPMATE, posts, SUBSTACK } from '../data/work.js';
 
-const linkedin = socials.find((s) => s.label === 'LinkedIn').href;
 const all = groups.flatMap((g) => g.projects);
 const tedCard = {
   name: 'Ted',
@@ -32,8 +32,9 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
       <span class="w-status">Open to AE and GTM roles, ideally at AI native companies</span>
       <div class="w-cta">
         <a href={`mailto:${EMAIL}`} class="btn btn-primary">Email me</a>
-        <a href={linkedin} target="_blank" rel="noopener" class="btn btn-ghost-l">LinkedIn</a>
+        <a href={CV} download class="btn btn-ghost-l">Download CV</a>
       </div>
+      <SocialIcons />
       <div class="chips">
         {proof.map((p) => (<div class="chip"><b>{p.big}</b><small>{p.small}</small></div>))}
       </div>
@@ -59,18 +60,6 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
     </div>
   </section>
 
-  <section class="w-sec" id="selected">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Selected work</span>
-        <h2>Things I built</h2>
-        <p>One for my team, one from a buildathon, one after hours.</p>
-      </div>
-      <ol class="w-grid">{picks.map((p) => <ProjectCard p={p} />)}</ol>
-      <a class="go more" href="/built">See all {all.length + 1} projects →</a>
-    </div>
-  </section>
-
   <section class="w-sec" id="recommendations">
     <div class="wrap">
       <div class="sec-head">
@@ -87,6 +76,35 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
         ))}
       </div>
       <a class="go more" href={RECS_URL} target="_blank" rel="noopener">Read all 15 on LinkedIn ↗</a>
+    </div>
+  </section>
+
+  <section class="w-sec" id="selected">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Selected work</span>
+        <h2>Things I built</h2>
+        <p>One for my team, one from a buildathon, one after hours.</p>
+      </div>
+      <ol class="w-grid">{picks.map((p) => <ProjectCard p={p} />)}</ol>
+      <a class="go more" href="/built">See all {all.length + 1} projects →</a>
+    </div>
+  </section>
+
+  <section class="w-sec" id="videos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">On the mic</span>
+        <h2>Podcasts and talks</h2>
+      </div>
+      <div class="w-grid">
+        {videos.map((v) => (
+          <a class="w-card vid-card" href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener">
+            <span class="vid-thumb"><img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" /><span class="vid-play" aria-hidden="true">▶</span></span>
+            <p>{v.caption}</p>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -130,8 +148,8 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
   <section class="w-sec" id="coaching">
     <div class="wrap">
       <div class="sec-head">
-        <span class="kicker">Coaching</span>
-        <h2>For SDRs and founders</h2>
+        <span class="kicker">On the side</span>
+        <h2>Coaching for SDRs and founders</h2>
         <p>I coach SDRs one on one, and help founders set up their SDR function. Booked through Topmate.</p>
       </div>
       <div class="w-grid two">

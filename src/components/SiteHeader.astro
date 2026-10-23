@@ -1,7 +1,7 @@
 ---
 // The one menu used on every page, so the whole site reads as one place.
 // `cta` lets a page swap the button (coaching pages book on Topmate).
-import { EMAIL } from '../data/work.js';
+import { EMAIL, CV } from '../data/work.js';
 
 const { cta = { href: `mailto:${EMAIL}`, label: 'Email me' } } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -23,6 +23,7 @@ const external = cta.href.startsWith('http');
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       {links.map((l) => <a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a>)}
+      <a href={CV} download class="nav-cv">Download CV</a>
     </nav>
     <a href={cta.href} class="btn btn-primary nav-cta" target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined}>{cta.label}</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -33,4 +34,5 @@ const external = cta.href.startsWith('http');
 
 <style is:global>
   .nav-links a[aria-current='page'] { color: #fff; }
+  .nav-links a.nav-cv { color: var(--lav); font-weight: 600; }
 </style>
