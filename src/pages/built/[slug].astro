@@ -1,0 +1,112 @@
+---
+// One page per private project: the problem, how it works, what it produces, why it mattered.
+import WorkLayout from '../../layouts/WorkLayout.astro';
+import ContactBand from '../../components/ContactBand.astro';
+import { details, groups } from '../../data/work.js';
+
+export function getStaticPaths() {
+  return Object.keys(details).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const d = details[slug];
+const card = groups.flatMap((g) => g.projects).find((p) => p.slug === slug);
+const x = d.sample;
+---
+<WorkLayout title={`${d.name} | Vandana Agarwal Nik`} description={`${d.name}: ${card.line}. ${d.problem}`}>
+  <section class="w-hero case-hero">
+    <span class="hero-glow" aria-hidden="true"></span>
+    <div class="wrap">
+      <a class="go back" href="/built">← All projects</a>
+      <h1>{d.name}</h1>
+      <p class="sub"><em class="case-line">{card.line}</em></p>
+      <div class="tags" style="justify-content:center">{card.tags.map((t) => <span>{t}</span>)}</div>
+    </div>
+  </section>
+
+  <section class="w-sec case">
+    <div class="wrap case-wrap">
+      <div class="case-block">
+        <span class="kicker">The problem</span>
+        <p class="case-text">{d.problem}</p>
+      </div>
+
+      <div class="case-block">
+        <span class="kicker">What it does</span>
+        <ol class="case-steps">{d.steps.map((st) => <li>{st}</li>)}</ol>
+      </div>
+
+      <div class="case-block">
+        <span class="kicker">What it looks like</span>
+        <p class="cap">{x.caption}</p>
+
+        {x.kind === 'table' && (
+          <div class="mock">
+            <div class="mock-scroll">
+              <table class="mock-table">
+                <thead><tr>{x.cols.map((c) => <th>{c}</th>)}</tr></thead>
+                <tbody>{x.rows.map((r) => <tr>{r.map((c) => <td>{c}</td>)}</tr>)}</tbody>
+              </table>
+            </div>
+            <div class="mock-mail">
+              <span class="mock-label">Drafted email, row 1</span>
+              <b>Subject: {x.email.subject}</b>
+              <p>{x.email.body}</p>
+            </div>
+          </div>
+        )}
+
+        {x.kind === 'pov' && (
+          <div class="mock">
+            <div class="mock-chips">{x.sections.map((c) => <span>{c}</span>)}</div>
+            <span class="mock-label">Point of view</span>
+            <p class="mock-quote">{x.pov}</p>
+            <span class="mock-label">First email subject</span>
+            <b>{x.subject}</b>
+          </div>
+        )}
+
+        {x.kind === 'brief' && (
+          <div class="mock">
+            <h3 class="mock-title">{x.company}: prospecting brief</h3>
+            <span class="mock-label">Company overview</span>
+            <p>{x.overview}</p>
+            <span class="mock-label">Recent signals</span>
+            <ul>{x.signals.map((t) => <li>{t}</li>)}</ul>
+            <span class="mock-label">Who to reach</span>
+            <p>{x.contact}</p>
+            <span class="mock-label">Suggested angle</span>
+            <p>{x.angle}</p>
+          </div>
+        )}
+
+        {x.kind === 'post' && (
+          <div class="mock mock-post">
+            {x.lines.map((t) => <p>{t}</p>)}
+            <p class="mock-more">…</p>
+          </div>
+        )}
+
+        {x.kind === 'brief-card' && (
+          <div class="mock">
+            <span class="mock-day">{x.load}</span>
+            <div class="mock-cols">
+              <div><span class="mock-label">To do</span><ul>{x.todo.map((t) => <li>{t}</li>)}</ul></div>
+              <div><span class="mock-label">Replies drafted</span><ul>{x.replies.map((t) => <li>{t}</li>)}</ul></div>
+              <div><span class="mock-label">Worth reading</span><ul>{x.reading.map((t) => <li>{t}</li>)}</ul></div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div class="case-block">
+        <span class="kicker">Why it mattered</span>
+        <p class="case-text">{d.mattered}</p>
+      </div>
+
+      <p class="case-note">Built on company data or my own inbox, so the real thing stays private. Happy to walk you through it on a call.</p>
+    </div>
+  </section>
+
+  <ContactBand />
+</WorkLayout>

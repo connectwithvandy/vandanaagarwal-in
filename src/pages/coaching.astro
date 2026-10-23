@@ -1,0 +1,676 @@
+---
+import '../styles/global.css';
+import '../styles/offer-motion.css';
+
+const TOPMATE = 'https://topmate.io/vandana_agarwal';
+const EMAIL = 'coaching@vandanaagarwal.in';
+const LINKEDIN = 'https://www.linkedin.com/in/meet-vandana/';
+const APAC = 'https://www.linkedin.com/company/sdr-leaders-of-apac/';
+const SUBSTACK = 'https://coachingbyvandy.substack.com';
+const SITE = 'https://vandanaagarwal.in';
+const OG_IMAGE = `${SITE}/assets/va-portrait.jpg`;
+
+// Structured data (JSON-LD) so search engines understand the person, site, and service.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE}/#vandana`,
+      name: 'Vandana Agarwal Nik',
+      url: SITE,
+      image: OG_IMAGE,
+      jobTitle: 'SDR Coach & Sales Development Leader',
+      description: 'Global SDR coach who builds and scales SDR functions and practical go-to-market systems across APAC, EMEA, and AMER.',
+      sameAs: [LINKEDIN, TOPMATE, APAC, SUBSTACK],
+      knowsAbout: ['Sales Development', 'SDR coaching', 'Outbound sales', 'AI workflows for SDRs', 'BDR enablement', 'SaaS sales', 'Go-to-market'],
+      award: '100 Powerful Women in Sales, 2025',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/#website`,
+      url: SITE,
+      name: 'Vandana Agarwal Nik | Global SDR Coach',
+      publisher: { '@id': `${SITE}/#vandana` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${SITE}/coaching#service`,
+      name: 'Vandana Agarwal Nik, SDR Coaching',
+      url: `${SITE}/coaching`,
+      image: OG_IMAGE,
+      description: 'Personalized SDR mentorship, practical AI workflows, and founder consulting on SDR setup, go-to-market strategy, and GTM engineering. Booked on Topmate.',
+      provider: { '@id': `${SITE}/#vandana` },
+      areaServed: ['APAC', 'EMEA', 'AMER'],
+      serviceType: 'SDR mentorship, AI workflow coaching, and sales development consulting',
+      email: EMAIL,
+    },
+  ],
+};
+
+// Who she helps (4 audiences) - led with the pain, then the outcome
+const audiences = [
+  { icon: 'door', title: 'Finding your first SDR role', pain: 'Not sure how to take the first step?', body: 'Get clear on your direction, strengthen your story, and prepare for interviews with practical guidance.' },
+  { icon: 'ramp', title: 'Growing as an SDR', pain: 'Ready to get better, but unsure what to focus on?', body: 'Work through prospecting, cold calls, objections, and career decisions with support built around your goals.' },
+  { icon: 'compass', title: 'Putting AI to work', pain: 'Unsure how AI fits into your day?', body: 'Build a repeatable way to research accounts, prepare for calls, or draft relevant outreach.' },
+  { icon: 'build', title: 'Setting up your SDR function', pain: 'Building from scratch and unsure where to start?', body: 'Work through your target customers, outbound approach, SDR setup, and AI tools, then bring them together in a practical blueprint.' },
+];
+
+// Stroke line-icons for the audience cards (inherit the lavender accent via currentColor)
+const ICONS = {
+  ramp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>`,
+  door: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>`,
+  build: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>`,
+  compass: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg>`,
+};
+
+// The four ways to work together. Booking happens on Topmate.
+const services = [
+  {
+    id: '69117',
+    title: 'Mentorship Discovery Call',
+    format: '1:1 call',
+    dur: '15 min',
+    desc: 'Your first step into mentorship. I’ll understand your goals, where you are right now, and what you need help with. From there, I’ll create a personalized mentorship program for you.',
+    badge: 'Start here',
+    cta: 'Book your discovery call',
+  },
+  {
+    id: '69117',
+    title: '1:1 Mentorship Program',
+    format: 'Mentorship program',
+    dur: '6 to 8 weeks',
+    desc: 'For aspiring and existing SDRs who want practical guidance to break into their first role, find career direction, improve prospecting, cold calls, sales conversations and objection handling, build confidence, and know what to work on next. No generic advice or one-size-fits-all course. Just practical guidance built around your goals and your real situation.',
+    badge: 'Mentorship',
+    cta: 'Start with a discovery call',
+  },
+  {
+    id: '69118',
+    title: 'Build Your First AI-Powered SDR Workflow',
+    format: '1:1 working session',
+    dur: '60 min',
+    desc: 'Turn one repetitive sales task into a working AI workflow, with no coding required. Choose account research, personalized outreach, cold-call preparation, follow-ups, objection handling, or daily planning. You’ll leave with a workflow built around your role, reusable prompts and templates, and a clear plan for using it in your daily work.',
+    badge: 'Hands-on AI',
+    cta: 'Build your first AI workflow',
+  },
+  {
+    id: '2131945',
+    title: 'Build Your SDR Function & GTM Blueprint',
+    format: '1:1 call',
+    dur: '60 min',
+    desc: 'A working consultation for founders and sales leaders setting up their SDR function from scratch or rethinking their approach. We’ll discuss go-to-market strategy, SDR setup, AI workflows, and GTM engineering: the tools and automation behind your outreach. Together, we’ll map the priorities into a practical blueprint for what to build next. If you want ongoing guidance as you put it into practice, we can continue across a series of working sessions.',
+    badge: 'For companies',
+    cta: 'Discuss your SDR & GTM setup',
+  },
+];
+
+const steps = [
+  { n: '01', title: 'Understand', body: 'We get clear on your goal, the challenge in front of you, and what is getting in your way.' },
+  { n: '02', title: 'Build', body: 'We create the plan, workflow, messaging, or sales system around your real situation.' },
+  { n: '03', title: 'Put it to work', body: 'You leave with practical next steps and something you can use immediately, not theory.' },
+];
+
+const videos = [
+  { id: 'wDsukLjubus', caption: 'Inside the SDR career in SaaS: growth and salary' },
+  { id: '35mHdwO_PsI', caption: 'SDR leadership gaps in India, on the Saaspire Podcast' },
+  { id: 'b5bccZRw7YU', caption: 'The SDR Leaders Playbook' },
+];
+
+const results = [
+  { stat: '57% → 91%', label: 'NA inbound SAL conversion, in 5 months' },
+  { stat: '0% → 105%', label: 'New SDR team to outbound target, in 4 months' },
+  { stat: '17% → 49%', label: 'APAC outbound SQL-to-S1, in one quarter' },
+  { stat: '2x SQLs', label: 'Outbound built from scratch at ClickPost' },
+];
+
+const testimonials = [
+  { quote: 'I loved that she was very open about what I needed to improve and what my strengths were, so I could pitch myself better. People who need guidance for breaking into SaaS should get a session with Vandana.', who: 'Bharath S', initials: 'BS' },
+  { quote: 'The absolute observer who will give excellent mentorship. I got clarity about where I am and what I need to do. Thanks, Vandana.', who: 'Shivam Pandey', initials: 'SP' },
+  { quote: 'The demo interview was very helpful. The pattern was so similar to the real thing that it felt like the interviewer had consulted Vandana. I highly recommend it.', who: 'Udit Sharma', initials: 'US' },
+  { quote: 'I reached out to Vandana for insights on SDR hiring. She was super helpful and gave good, actionable insights.', who: 'Sandeep Gupta', initials: 'SG' },
+  { quote: 'Vandana guided me with a practical path to move forward in SaaS, and her insights were both eye-opening and immensely helpful.', who: 'SDR, via Topmate', initials: 'SD' },
+  { quote: 'She gave me good insights and clarity on the things I was stuck on.', who: 'Mohit Dhanwani', initials: 'MD' },
+];
+
+const faqs = [
+  {
+    "q": "Where should I start?",
+    "a": "For personalized mentorship, start with the discovery call. Choose the AI working session if you want help with one specific SDR task. If you’re a founder or sales leader setting up your SDR function, choose the SDR Function & GTM Blueprint consultation.",
+    "open": true
+  },
+  {
+    "q": "What happens on the mentorship discovery call?",
+    "a": "We’ll discuss your goals, where you are right now, and what you need help with. That conversation helps me shape a personalized mentorship program and the next steps for working together.",
+    "open": false
+  },
+  {
+    "q": "What is an AI workflow?",
+    "a": "A repeatable set of steps that uses AI to help with a task, such as turning account research into a relevant first outreach draft. We’ll work on one task and check the output together so you understand how to use it.",
+    "open": false
+  },
+  {
+    "q": "Do I need coding experience for the AI session?",
+    "a": "No. We’ll start with your experience level, choose a manageable task, and explain each step as we build.",
+    "open": false
+  },
+  {
+    "q": "How is the AI session different from mentorship?",
+    "a": "The AI session focuses on one practical task. Mentorship offers broader guidance around your SDR skills, challenges, confidence, and career direction.",
+    "open": false
+  },
+  {
+    "q": "Can you help me set up an SDR function from scratch?",
+    "a": "Yes. We can work through your target customers, outbound approach, SDR setup, and go-to-market priorities, then map what to build first into a practical blueprint.",
+    "open": false
+  },
+  {
+    "q": "What do you mean by GTM and AI engineering?",
+    "a": "GTM means go-to-market: how your company reaches and wins customers. GTM and AI engineering connect the tools, data, automation, and AI workflows that support that work. In the consultation, we’ll discuss where these fit in your SDR function and what to prioritize.",
+    "open": false
+  },
+  {
+    "q": "Does the founder consultation include building the entire system?",
+    "a": "The consultation focuses on strategy, decisions, and a blueprint for your next steps. If you want ongoing guidance as you put it into practice, we can continue across a series of working sessions. Hands-on implementation, or building systems on your behalf, needs a separately agreed scope.",
+    "open": false
+  },
+  {
+    "q": "Can we work together if I’m outside APAC?",
+    "a": "Yes. I’ve built and scaled SDR teams across APAC, EMEA, and AMER. We’ll tailor the guidance to your market and goals.",
+    "open": false
+  }
+];
+
+// Expose the FAQ to search and AI answer engines as machine-readable Q&A.
+jsonLd['@graph'].push({
+  '@type': 'FAQPage',
+  '@id': `${SITE}/#faq`,
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vandana Agarwal Nik | Global SDR Coach</title>
+  <meta name="description" content="Personalized SDR mentorship, hands-on AI workflow coaching, and sales development consulting with Vandana Agarwal Nik. Book on Topmate." />
+  <link rel="canonical" href="https://vandanaagarwal.in/coaching" />
+  <meta property="og:title" content="Vandana Agarwal Nik | Global SDR Coach" />
+  <meta property="og:description" content="Build your SDR career, create a practical AI workflow, or design your company's SDR and go-to-market function with Vandana Agarwal Nik." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vandanaagarwal.in/coaching" />
+  <meta property="og:image" content={OG_IMAGE} />
+  <meta property="og:image:alt" content="Vandana Agarwal Nik, Global SDR Coach" />
+  <meta property="og:site_name" content="Vandana Agarwal Nik" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vandana Agarwal Nik | Global SDR Coach" />
+  <meta name="twitter:description" content="Personalized SDR mentorship, practical AI workflow coaching, and sales development consulting with Vandana Agarwal Nik." />
+  <meta name="twitter:image" content={OG_IMAGE} />
+  <meta name="author" content="Vandana Agarwal Nik" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#181818" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-spin"></div>
+  <div class="pl-label">Loading</div>
+</div>
+<div class="aurora" aria-hidden="true">
+  <span class="rb r1"></span>
+  <span class="rb r2"></span>
+  <span class="rb r4"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
+<a href="#who" class="skip-link">Skip to content</a>
+
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <img src="/assets/va-headshot.jpg" alt="" width="36" height="36" aria-hidden="true" />
+      <span>Vandana Agarwal Nik</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="/">About me</a>
+      <a href="#who">Who I help</a>
+      <a href="#intro">Meet me</a>
+      <a href="#offers">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="/resources">Resources</a>
+    </nav>
+    <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary nav-cta magnetic">Book on Topmate</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- HERO (Anima style: dark, centered, purple glow; pain-led copy) -->
+<section class="hero">
+  <span class="hero-glow" aria-hidden="true"></span>
+  <div class="wrap hero-inner">
+    <span class="kicker reveal">Global SDR coaching</span>
+    <h1 class="hero-title reveal" data-d="1">Become the SDR who<br><em><span class="rot-word">books meetings.</span></em></h1>
+    <p class="sub reveal" data-d="2"><b>Break into SaaS</b>, grow your SDR skills, and put practical AI to work. I also help founders and sales leaders build SDR and go-to-market functions from scratch.</p>
+    <div class="hero-cta reveal" data-d="3">
+      <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book a session on Topmate</a>
+      <a href="#who" class="btn btn-ghost-l magnetic">See how I can help</a>
+    </div>
+    <div class="chips reveal" data-d="3">
+      <div class="chip"><b>Rubrik · ClickPost · JumpCloud</b><small>Companies I’ve worked with</small></div>
+      <div class="chip"><b>8+ yrs</b><small>SaaS sales development</small></div>
+      <div class="chip"><b>APAC &middot; EMEA &middot; AMER</b><small>Cross-border leadership</small></div>
+      <div class="chip"><b>100 Powerful Women in Sales</b><small>Demandbase &amp; Women in Sales, 2025</small></div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span class="mouse"></span><span>Scroll</span></div>
+</section>
+
+<!-- MARQUEE RIBBON -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span><b>Ramp faster</b></span><span>Book more meetings</span><span><b>Break into SaaS</b></span><span>SDR functions from scratch</span><span><b>SDR Leaders of APAC</b></span><span>Practical AI workflows</span><span><b>APAC · EMEA · AMER</b></span><span>Interview-ready</span>
+    <span><b>Ramp faster</b></span><span>Book more meetings</span><span><b>Break into SaaS</b></span><span>SDR functions from scratch</span><span><b>SDR Leaders of APAC</b></span><span>Practical AI workflows</span><span><b>APAC · EMEA · AMER</b></span><span>Interview-ready</span>
+  </div>
+</div>
+
+<!-- WHO I HELP (the pain points, first) -->
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Sound familiar?</span>
+      <h2>Wherever you’re stuck in the SDR journey</h2>
+      <p>Find yourself below, then pick the path that fits. If you are not sure, we figure it out together.</p>
+    </div>
+    <div class="aud-grid">
+      {audiences.map((a, i) => (
+        <div class="aud reveal" style={`--i:${i}`}>
+          <span class="aud-ico" aria-hidden="true" set:html={ICONS[a.icon]}></span>
+          <h3>{a.title}</h3>
+          <p class="pain">{a.pain}</p>
+          <p>{a.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- HOW I HELP / MEET ME (intro: story + about merged, this is where "Hi, I'm Vandana" lives) -->
+<section id="intro" class="alt">
+  <div class="wrap intro">
+    <div class="intro-photo reveal" data-rev="l">
+      <img src="/assets/va-portrait.jpg" alt="Vandana Agarwal Nik, SDR coach and Sales Development Leader" width="1000" height="1250" class="img-reveal" />
+    </div>
+    <div class="intro-body reveal" data-rev="r" data-d="1">
+      <span class="hello">Hi, I’m Vandana</span>
+      <h2>The mentor I wish I’d had, now in your corner</h2>
+      <p class="lead-q">Early in my career, I didn’t have someone who had done the job and could show me the way. I figured out outbound the hard way, one rejection at a time. That is exactly why I coach now.</p>
+      <p>I build and scale high-performing SDR teams across APAC, EMEA, and AMER, from an early-stage startup at ClickPost to growth and scale at Rubrik and JumpCloud. I am obsessed with coaching systems that turn effort into booked meetings.</p>
+      <p class="ai-line">I help SDRs use AI for account research, personalized outreach, call preparation, follow-ups, and daily planning, without producing generic AI-written spam.</p>
+      <ul class="cred">
+        <li>Co-founder, <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a> (250+ members)</li>
+        <li>100 Powerful Women in Sales, 2025</li>
+        <li>GrowthX Fellow</li>
+        <li>8+ years in SaaS sales development</li>
+      </ul>
+      <div class="intro-cta">
+        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
+        <a href={`mailto:${EMAIL}`} class="btn btn-ghost">Email me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS BAND (success stories) -->
+<section class="results-band">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker" style="color: var(--lav)">From my SDR leadership experience</span>
+      <h2>Results from teams I’ve led</h2>
+    </div>
+    <ul class="results">
+      {results.map((r, i) => (
+        <li class="reveal" style={`--i:${i}`}>
+          <b>{r.stat}</b>
+          <small>{r.label}</small>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- PHOTO BANNER -->
+<section class="banner-strip" aria-label="Helping SDRs perform better and prepare smarter for interviews">
+  <img src="/assets/banner.jpg" alt="Vandana Agarwal Nik. Helping SDRs perform better and prepare smarter for interviews. Career clarity, growth mentorship, interview preparation, and coaching." width="1400" height="350" loading="lazy" />
+</section>
+
+<!-- WAYS TO WORK WITH ME / SERVICES (the offer) -->
+<section id="offers">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Ways to work with me</span>
+      <h2>Choose the support you need</h2>
+      <p>Start with a discovery call for personalized mentorship, book a focused AI working session, or map out your SDR and go-to-market function.</p>
+    </div>
+
+    <div class="svc-grid">
+      {services.map((s, i) => (
+        <a href={s.id ? `${TOPMATE}/${s.id}` : TOPMATE} target="_blank" rel="noopener" class="svc reveal" style={`--i:${i}`}>
+          <div class="svc-top">
+            <span class="svc-format">{s.format} &middot; {s.dur}</span>
+            <span class="badge">{s.badge}</span>
+          </div>
+          <h3>{s.title}</h3>
+          <p class="d">{s.desc}</p>
+          <span class="svc-link">{s.cta} <span aria-hidden="true">&rarr;</span></span>
+          {!s.id && <span class="svc-sweep" aria-hidden="true"></span>}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS / SUCCESS STORIES -->
+<section id="reviews" class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Kind words &bull; 5/5 on Topmate</span>
+      <h2>What people say after a session</h2>
+    </div>
+    <div class="quotes">
+      {testimonials.map((t, i) => (
+        <figure class="quote reveal" style={`--i:${i % 3}`}>
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>{t.quote}</blockquote>
+          <div class="quote-by">
+            <span class="avatar" aria-hidden="true">{t.initials}</span>
+            <span class="quote-meta">
+              <span class="who">{t.who}</span>
+              <span class="verified">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+                Verified on Topmate
+              </span>
+            </span>
+          </div>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS (how we work together: after testimonials, before FAQ) -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">How we work together</span>
+      <h2>From a real challenge to a practical next step</h2>
+    </div>
+    <div class="steps">
+      {steps.map((s, i) => (
+        <div class="step reveal" style={`--i:${i}`}>
+          <span class="n">{s.n}</span>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section id="featured">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Video podcasts</span>
+      <h2>Catch me on the mic</h2>
+    </div>
+    <div class="videos">
+      {videos.map((v, i) => (
+        <div class="vid reveal" style={`--i:${i}`}>
+          <div class="vframe">
+            <iframe
+              src={`https://www.youtube.com/embed/${v.id}`}
+              title={`Video podcast ${i + 1}: ${v.caption}`}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p>{v.caption}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt faq-sec">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">FAQ</span>
+      <h2>Good questions before we start</h2>
+    </div>
+    {faqs.map((f) => (
+      <details open={f.open} class="reveal">
+        <summary>{f.q}</summary>
+        <div class="a">{f.a}</div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<!-- FINAL CTA BANNER -->
+<section class="final-band">
+  <span class="hero-glow" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="final reveal">
+      <span class="kicker">In your corner</span>
+      <h2>Ready to make your next move clearer?</h2>
+      <p>A clearer career direction, stronger SDR skills, your first AI workflow, or a blueprint for your SDR and go-to-market function. Let’s start with what you need.</p>
+      <div class="final-cta">
+        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
+        <a href={LINKEDIN} target="_blank" rel="noopener" class="btn btn-ghost-l">Connect on LinkedIn</a>
+      </div>
+      <p class="final-mail">Not ready to book? Just say hello at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap foot">
+    <span class="foot-logo">Vandana Agarwal Nik</span>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/">About me</a>
+      <a href="#who">Who I help</a>
+      <a href="#intro">Meet me</a>
+      <a href="#offers">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="/resources">Resources</a>
+      <a href={SUBSTACK} target="_blank" rel="noopener">Substack</a>
+      <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
+      <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a>
+    </nav>
+    <span>&copy; 2026 &middot; vandanaagarwal.in</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+
+  // Sticky nav scroll state + scroll progress bar
+  const nav = document.getElementById('siteNav');
+  const prog = document.getElementById('scrollProg');
+
+  // Masked word reveal for headings (isolated in try/catch — DOM surgery must never break the page)
+  try {
+    document.querySelectorAll('.sec-head h2, .intro-body h2, .final h2').forEach((h) => h.classList.add('reveal-text'));
+    document.querySelectorAll('.reveal-text').forEach((el) => {
+      const out = [];
+      el.childNodes.forEach((node) => {
+        if (node.nodeType === 3) {
+          node.textContent.split(/(\s+)/).forEach((tok) => {
+            if (tok.trim() === '') { out.push(document.createTextNode(tok)); return; }
+            const line = document.createElement('span'); line.className = 'w-line';
+            const w = document.createElement('span'); w.className = 'w'; w.textContent = tok;
+            line.appendChild(w); out.push(line);
+          });
+        } else {
+          const line = document.createElement('span'); line.className = 'w-line';
+          node.classList && node.classList.add('w');
+          line.appendChild(node); out.push(line);
+        }
+      });
+      el.textContent = '';
+      out.forEach((n) => el.appendChild(n));
+      el.querySelectorAll('.w').forEach((w, i) => { w.style.transitionDelay = (i * 0.055) + 's'; });
+    });
+  } catch (e) { /* headings just won't get the masked effect */ }
+
+  // Cycling outcome word in the hero headline (off under reduce-motion; isolated so it can never break the page)
+  try {
+    const rot = document.querySelector('.hero h1 em .rot-word');
+    if (rot && !reduceMotion) {
+      const words = ['books meetings.', 'breaks into SaaS.', 'is AI-native.', 'hits quota.', 'builds pipeline.'];
+      let i = 0;
+      setInterval(() => {
+        if (document.hidden) return;
+        rot.classList.add('swap');
+        setTimeout(() => {
+          i = (i + 1) % words.length;
+          rot.textContent = words[i];
+          rot.classList.remove('swap');
+          const hero = document.querySelector('.hero');
+          if (hero) { hero.classList.remove('headline-pulse'); void (hero as HTMLElement).offsetWidth; hero.classList.add('headline-pulse'); }
+        }, 420);
+      }, 2600);
+    }
+  } catch (e) { /* headline just stays static */ }
+
+  // Reveal via IntersectionObserver (reliable, fires once per element)
+  const revealAll = () => document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => el.classList.add('in'));
+  let io = null;
+  const startReveals = () => {
+    // Run for everyone — even under reduce-motion the CSS keeps a gentle opacity fade (no movement).
+    if (!('IntersectionObserver' in window)) { revealAll(); return; }
+    io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach((el) => io.observe(el));
+  };
+
+  // Sticky nav + scroll progress
+  let ticking = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (nav) nav.classList.toggle('scrolled', y > 12);
+    if (prog) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    }
+    ticking = false;
+  };
+  const requestScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
+  onScroll();
+  window.addEventListener('scroll', requestScroll, { passive: true });
+
+  // Subtle pointer tilt on cards (restrained, premium)
+  if (!reduceMotion && finePointer) {
+    document.querySelectorAll('.aud, .svc, .step, .quote, .vid').forEach((card) => {
+      card.classList.add('tilt');
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateX(${py * -2.5}deg) rotateY(${px * 3}deg) translateY(-5px)`;
+        // feed the cursor-follow spotlight glow
+        card.style.setProperty('--mx', ((px + 0.5) * 100) + '%');
+        card.style.setProperty('--my', ((py + 0.5) * 100) + '%');
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+  }
+
+  // Magnetic buttons (cursor pull)
+  if (!reduceMotion && finePointer) {
+    document.querySelectorAll('.magnetic').forEach((btn) => {
+      btn.addEventListener('pointermove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const mx = e.clientX - r.left - r.width / 2;
+        const my = e.clientY - r.top - r.height / 2;
+        btn.style.transform = `translate(${mx * 0.28}px, ${my * 0.4}px)`;
+      });
+      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  // Preloader — simple "loading", fades out fast, then content reveals
+  const pre = document.getElementById('preloader');
+  let revealsStarted = false;
+  const begin = () => { if (revealsStarted) return; revealsStarted = true; startReveals(); };
+  const finish = () => { if (pre) pre.classList.add('done'); document.body.style.overflow = ''; begin(); };
+  if (pre && !reduceMotion) {
+    document.body.style.overflow = 'hidden';
+    let done = false;
+    const go = () => { if (done) return; done = true; finish(); };
+    // Finish shortly after the page is ready, capped so it can never feel stuck.
+    if (document.readyState === 'complete') { setTimeout(go, 200); }
+    else { window.addEventListener('load', () => setTimeout(go, 200)); }
+    setTimeout(go, 900); // hard cap
+  } else {
+    finish();
+  }
+
+  // Native scroll only — no external smooth-scroll library (faster, fully offline, nothing to hang on).
+  // In-page anchor smoothness is handled by CSS `html { scroll-behavior: smooth }`.
+</script>
+
+<!-- Failsafe: a separate script so a thrown error above can never leave the page hidden -->
+<script>
+  setTimeout(function () {
+    var p = document.getElementById('preloader');
+    if (p) p.classList.add('done');
+    document.body.style.overflow = '';
+    document.querySelectorAll('.reveal, .reveal-text, .img-reveal').forEach(function (el) { el.classList.add('in'); });
+  }, 2200);
+</script>
+
+</body>
+</html>

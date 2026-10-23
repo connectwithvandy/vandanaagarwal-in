@@ -1,0 +1,72 @@
+---
+import WorkLayout from '../layouts/WorkLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { ted, groups } from '../data/work.js';
+
+const work = groups.filter((g) => g.id !== 'after');
+const after = groups.filter((g) => g.id === 'after');
+---
+<WorkLayout
+  title="Things I built | Vandana Agarwal Nik"
+  description="AI tools for sales teams, GTM projects, and Ted, a WhatsApp health buddy 100 people have used."
+>
+  <section class="w-hero">
+    <span class="hero-glow" aria-hidden="true"></span>
+    <div class="wrap">
+      <span class="kicker">Projects</span>
+      <h1>Things I <em>built</em></h1>
+      <p class="sub">
+        I am not an engineer. I build with Claude. The part I bring is the problem:
+        something I have actually lived as a rep or a manager.
+      </p>
+    </div>
+  </section>
+
+  {work.map((g) => (
+    <section class="w-sec" id={g.id}>
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>{g.title}<small>{g.projects.length} projects</small></h2>
+          <p>{g.note}</p>
+        </div>
+        <ol class="w-grid">{g.projects.map((p) => <ProjectCard p={p} />)}</ol>
+      </div>
+    </section>
+  ))}
+
+  <section class="w-sec" id="ted">
+    <div class="wrap">
+      <div class="ted">
+        <div>
+          <span class="kicker">Built after hours</span>
+          <h2>Ted</h2>
+          <p class="line">{ted.line}</p>
+          <div class="story">{ted.story.map((s) => <p>{s}</p>)}</div>
+          <div class="w-cta">
+            {ted.links.map((l) => (
+              <a href={l.href} target="_blank" rel="noopener" class={l.primary ? 'btn btn-primary' : 'btn btn-ghost-l'}>{l.label}</a>
+            ))}
+          </div>
+        </div>
+        <div class="facts">
+          {ted.facts.map((f) => (<div><b>{f.big}</b><small>{f.small}</small></div>))}
+          <p class="safety">{ted.safety}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {after.map((g) => (
+    <section class="w-sec" id={g.id}>
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Also after hours</h2>
+        </div>
+        <ol class="w-grid">{g.projects.map((p) => <ProjectCard p={p} />)}</ol>
+      </div>
+    </section>
+  ))}
+
+  <ContactBand />
+</WorkLayout>

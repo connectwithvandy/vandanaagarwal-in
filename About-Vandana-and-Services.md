@@ -28,7 +28,7 @@ Struggling to grow your SaaS pipeline or hit ambitious revenue goals? If you are
 4. People feeling stuck in their career who need clarity, a next move, and an execution plan.
 
 **Credibility bullets (accurate, no overhyping):**
-- Founder of SDR Leaders of APAC, a 250+ member peer community for SDR managers across the region.
+- Co-founder of SDR Leaders of APAC, a 250+ member peer community for SDR managers across the region.
 - Named to 100 Powerful Women in Sales (Demandbase and Women in Sales, 2025).
 - GrowthX Fellow. Mental health advocate.
 - 8+ years building and scaling BDR functions across APAC, EMEA, and AMER for SaaS, identity, and cybersecurity companies.
@@ -37,7 +37,7 @@ Struggling to grow your SaaS pipeline or hit ambitious revenue goals? If you are
 - Early adopter of AI in prospecting and coaching (Claude, Hyperbound, Gong).
 - Coaching and onboarding frameworks that scale.
 
-> Title note: her resume brands her as "Founder" of SDR Leaders of APAC, while her LinkedIn role says "Co-Founder." Pick one and use it consistently. Default to "Founder" to match the resume unless she says otherwise.
+> Title note: confirmed by Vandy on 23 Oct 2026, she is **Co-founder** of SDR Leaders of APAC. Use "Co-founder" everywhere.
 > Years note: confirmed as **8+ years** (her resume header). The resume summary also says "7+", so 8+ is the figure to use everywhere. Never "10+".
 
 **Hard results (a proof bank, pull the best 3 or 4 for the site, attribution kept for accuracy):**
@@ -152,7 +152,7 @@ Embed using `https://www.youtube.com/embed/VIDEO_ID`. YouTube thumbnails cannot 
 
 **Experience (most recent first):**
 - JumpCloud, Manager of Sales Development, leading a 10-person three-region BDR org (APAC Outbound, APAC Inbound, EMEA Inbound), Nov 2025 to present.
-- SDR Leaders of APAC, Founder and Host, a 250+ member peer community, Aug 2025 to present.
+- SDR Leaders of APAC, Co-founder and Host, a 250+ member peer community, Aug 2025 to present.
 - Rubrik, Sales Development Manager (AMER Mid Market and SMB), Sep 2024 to Nov 2025.
 - Lunacal.ai, GTM Advisor, Mar 2025 to Jul 2025.
 - Branch, Manager, Sales Development (NA), Jan 2024 to Jun 2024.

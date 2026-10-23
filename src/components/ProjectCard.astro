@@ -1,0 +1,12 @@
+---
+// One project card, used on the home page highlights and the full projects page.
+const { p } = Astro.props;
+---
+<li class="w-card">
+  <h3>{p.name}</h3>
+  <p class="line">{p.line}</p>
+  <div class="tags">{p.tags.map((t) => <span>{t}</span>)}</div>
+  <p>{p.body}</p>
+  {p.slug && <a class="go" href={`/built/${p.slug}`}>See how it works →</a>}
+  {p.link && <a class="go" href={p.link.href} target="_blank" rel="noopener">{p.link.label} ↗</a>}
+</li>

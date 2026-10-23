@@ -1,0 +1,17 @@
+---
+// Closing contact band, the same on every portfolio page.
+import { EMAIL, socials } from '../data/work.js';
+---
+<section class="w-sec" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <span class="kicker">Say hello</span>
+      <h2>Let's <em>talk</em></h2>
+      <p>A role, a project, or just to compare notes on SDR teams. Email is the fastest way to reach me.</p>
+      <a class="contact-mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      <div class="w-cta">
+        {socials.map((s) => <a href={s.href} target="_blank" rel="noopener" class="btn btn-ghost-l">{s.label}</a>)}
+      </div>
+    </div>
+  </div>
+</section>

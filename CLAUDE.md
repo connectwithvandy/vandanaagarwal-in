@@ -17,6 +17,19 @@ Live with HTTPS at **https://vandanaagarwal.in**, deployed on Vercel, auto-deplo
 
 ---
 
+## Site map (changed 23 Oct 2026, read this first)
+
+The home page is now Vandy's **portfolio**, not the coaching page. She is job hunting (left JumpCloud in Oct 2026) and still sells coaching.
+
+- `/` (`src/pages/index.astro`): portfolio home. Hero, what I do, selected work, LinkedIn recommendations, about me, roles I am looking for, coaching teaser, Substack teaser, contact.
+- `/experience`, `/built`: portfolio pages. All portfolio copy lives in `src/data/work.js`; layout in `src/layouts/WorkLayout.astro`; styles in `src/styles/work.css` (on top of `global.css`).
+- `/coaching` (`src/pages/coaching.astro`): the original coaching one-pager, moved here intact. Sections 1 to 14 below now describe this page.
+- `/resources`: unchanged; its menu links point to `/coaching#...`.
+
+Portfolio rules from Vandy: her voice, not salesy; no Coachy project; never mention night shifts; role titles in Title Case; she is **Co-founder** of SDR Leaders of APAC. Jobs email is connectwithvandanaa@gmail.com; coaching email stays coaching@vandanaagarwal.in.
+
+---
+
 ## How to build (read before you write any code)
 
 This is a hard rule. Do not skip it.
@@ -70,7 +83,7 @@ Do not invent details.
 Vandana Agarwal Nik is a Sales Development Leader and SDR coach who builds and scales BDR teams from
 zero to pipeline across APAC, EMEA, and AMER, for SaaS, identity, and cybersecurity companies. She
 has done it from an early-stage startup (ClickPost) through to scale (Rubrik, JumpCloud). She is the
-Founder of SDR Leaders of APAC (250+ members), was named to the 100 Powerful Women in Sales (2025),
+Co-founder of SDR Leaders of APAC (250+ members), was named to the 100 Powerful Women in Sales (2025),
 and is a GrowthX Fellow.
 
 Why she coaches: to give the next generation of SDRs the support she did not have early in her own
@@ -178,7 +191,7 @@ offer copy and image notes in `extras/Topmate-Four-Offers-Updated.md` (images in
 ## 5) Writing rules (apply to all copy)
 
 1. **No overhyping.** Experience is **8+ years**, never "10+". Lead with real outcomes and recognition
-   (100 Powerful Women in Sales, Founder of SDR Leaders of APAC, GrowthX Fellow, hard pipeline numbers)
+   (100 Powerful Women in Sales, Co-founder of SDR Leaders of APAC, GrowthX Fellow, hard pipeline numbers)
    alongside the 8+ years figure. Use only the figures in the proof bank. Do not invent or round up.
 2. **No em dashes in sentences.** Use commas, periods, or restructure. Hyphenated compounds are fine.
 3. Voice: confident operator plus supportive coach. Direct, practical, positive. The reader should
