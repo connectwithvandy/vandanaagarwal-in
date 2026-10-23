@@ -1,0 +1,36 @@
+---
+// The one menu used on every page, so the whole site reads as one place.
+// `cta` lets a page swap the button (coaching pages book on Topmate).
+import { EMAIL } from '../data/work.js';
+
+const { cta = { href: `mailto:${EMAIL}`, label: 'Email me' } } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const links = [
+  { href: '/experience', label: 'Experience' },
+  { href: '/built', label: 'Things I built' },
+  { href: '/#recommendations', label: 'Recommendations' },
+  { href: '/coaching', label: 'Coaching' },
+  { href: '/resources', label: 'Resources' },
+];
+const isCurrent = (href) => href !== '/#recommendations' && (path === href || path.startsWith(`${href}/`));
+const external = cta.href.startsWith('http');
+---
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo">
+      <img src="/assets/va-headshot.jpg" alt="" width="36" height="36" aria-hidden="true" />
+      <span>Vandana Agarwal Nik</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      {links.map((l) => <a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a>)}
+    </nav>
+    <a href={cta.href} class="btn btn-primary nav-cta" target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined}>{cta.label}</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style is:global>
+  .nav-links a[aria-current='page'] { color: #fff; }
+</style>

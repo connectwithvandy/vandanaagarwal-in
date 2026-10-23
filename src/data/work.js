@@ -50,7 +50,7 @@ export const about = {
   chips: [
     { big: '100 Powerful Women in Sales', small: 'Demandbase and Women in Sales, 2025' },
     { big: 'GrowthX Fellow', small: 'GTM and product growth' },
-    { big: 'SDR Leaders of APAC', small: 'co-founded, Aug 2025' },
+    { big: 'SDR Leaders of APAC', small: 'Co-founded, Aug 2025' },
   ],
 };
 

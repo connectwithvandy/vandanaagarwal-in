@@ -1,0 +1,20 @@
+---
+// The one footer used on every page.
+import { EMAIL, socials } from '../data/work.js';
+---
+<footer class="w-foot">
+  <div class="wrap">
+    <span>Vandana Agarwal Nik · Bengaluru · <a href={`mailto:${EMAIL}`}>{EMAIL}</a></span>
+    <nav aria-label="Elsewhere">
+      {socials.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}
+    </nav>
+  </div>
+</footer>
+
+<style is:global>
+  .w-foot { padding: 40px 0 48px; border-top: 1px solid var(--line); position: relative; z-index: 1; }
+  .w-foot .wrap { display: flex; flex-direction: column; gap: 10px; color: var(--soft); font-size: .95rem; }
+  .w-foot nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .w-foot a { color: var(--soft); }
+  .w-foot a:hover { color: var(--lav); }
+</style>

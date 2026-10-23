@@ -77,6 +77,8 @@ const jsonLd = {
     },
   ],
 };
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
 <!DOCTYPE html>
@@ -118,30 +120,9 @@ const jsonLd = {
   <span class="rb r4"></span>
 </div>
 <div class="grain" aria-hidden="true"></div>
-<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
 <a href="#library" class="skip-link">Skip to content</a>
 
-<header class="nav" id="siteNav">
-  <div class="wrap nav-inner">
-    <a href="/" class="logo">
-      <img src="/assets/va-headshot.jpg" alt="" width="36" height="36" aria-hidden="true" />
-      <span>Vandana Agarwal Nik</span>
-    </a>
-    <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="/">About me</a>
-      <a href="/coaching#who">Who I help</a>
-      <a href="/coaching#intro">Meet me</a>
-      <a href="/coaching#offers">Services</a>
-      <a href="/coaching#reviews">Reviews</a>
-      <a href="/coaching#faq">FAQ</a>
-      <a href="/resources" aria-current="page">Resources</a>
-    </nav>
-    <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary nav-cta magnetic">Book on Topmate</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span>
-    </button>
-  </div>
-</header>
+<SiteHeader />
 
 <!-- RESOURCES HERO -->
 <section class="res-hero">
@@ -151,8 +132,8 @@ const jsonLd = {
     <h1 class="reveal-text">The SDR Field Guide</h1>
     <p class="sub reveal" data-d="2">Field notes I have shared with SDRs and BDRs over the years, written up to keep. We are starting with the <b>APAC Edition</b>: ten lessons on building pipeline in markets a Western playbook quietly misses, from ICP and tiering to cadence, discovery, objections, and follow-up.</p>
     <div class="res-hero-cta reveal" data-d="3">
-      <a href={SUBSTACK} target="_blank" rel="noopener" class="btn btn-primary magnetic">Read on Substack</a>
-      <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-ghost-l magnetic">Work with me</a>
+      <a href={SUBSTACK} target="_blank" rel="noopener" class="btn btn-primary">Read on Substack</a>
+      <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-ghost-l">Work with me</a>
     </div>
   </div>
 </section>
@@ -211,7 +192,7 @@ const jsonLd = {
       <h2>Want this applied to your team or your career?</h2>
       <p>The guides are the what. Coaching is where we make it work for your market, your motion, and your numbers.</p>
       <div class="final-cta">
-        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
+        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
         <a href={SUBSTACK} target="_blank" rel="noopener" class="btn btn-ghost-l">Read on Substack</a>
       </div>
       <p class="final-mail">Prefer email? Say hello at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
@@ -220,24 +201,7 @@ const jsonLd = {
 </section>
 
 <!-- FOOTER -->
-<footer class="site">
-  <div class="wrap foot">
-    <span class="foot-logo">Vandana Agarwal Nik</span>
-    <nav class="foot-nav" aria-label="Footer">
-      <a href="/">About me</a>
-      <a href="/coaching#who">Who I help</a>
-      <a href="/coaching#intro">Meet me</a>
-      <a href="/coaching#offers">Services</a>
-      <a href="/coaching#reviews">Reviews</a>
-      <a href="/coaching#faq">FAQ</a>
-      <a href="/resources">Resources</a>
-      <a href={SUBSTACK} target="_blank" rel="noopener">Substack</a>
-      <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
-      <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a>
-    </nav>
-    <span>&copy; 2026 &middot; vandanaagarwal.in</span>
-  </div>
-</footer>
+<SiteFooter />
 
 <script>
   // Mobile menu
@@ -313,30 +277,6 @@ const jsonLd = {
   onScroll();
   window.addEventListener('scroll', requestScroll, { passive: true });
 
-  // Subtle pointer tilt + magnetic buttons (desktop only, matches the homepage feel)
-  if (!reduceMotion && finePointer) {
-    document.querySelectorAll('.res').forEach((card) => {
-      card.classList.add('tilt');
-      card.addEventListener('pointermove', (e) => {
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width - 0.5;
-        const py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(900px) rotateX(${py * -2.5}deg) rotateY(${px * 3}deg) translateY(-5px)`;
-        card.style.setProperty('--mx', ((px + 0.5) * 100) + '%');
-        card.style.setProperty('--my', ((py + 0.5) * 100) + '%');
-      });
-      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-    });
-    document.querySelectorAll('.magnetic').forEach((btn) => {
-      btn.addEventListener('pointermove', (e) => {
-        const r = btn.getBoundingClientRect();
-        const mx = e.clientX - r.left - r.width / 2;
-        const my = e.clientY - r.top - r.height / 2;
-        btn.style.transform = `translate(${mx * 0.28}px, ${my * 0.4}px)`;
-      });
-      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
-    });
-  }
 </script>
 
 <!-- Failsafe: a separate script so a thrown error above can never leave content hidden -->

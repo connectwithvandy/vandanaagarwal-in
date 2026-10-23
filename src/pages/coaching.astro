@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import '../styles/offer-motion.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 const TOPMATE = 'https://topmate.io/vandana_agarwal';
 const EMAIL = 'coaching@vandanaagarwal.in';
@@ -225,40 +227,15 @@ jsonLd['@graph'].push({
 </head>
 <body>
 
-<div class="preloader" id="preloader" aria-hidden="true">
-  <div class="pl-spin"></div>
-  <div class="pl-label">Loading</div>
-</div>
 <div class="aurora" aria-hidden="true">
   <span class="rb r1"></span>
   <span class="rb r2"></span>
   <span class="rb r4"></span>
 </div>
 <div class="grain" aria-hidden="true"></div>
-<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
 <a href="#who" class="skip-link">Skip to content</a>
 
-<header class="nav" id="siteNav">
-  <div class="wrap nav-inner">
-    <a href="#top" class="logo">
-      <img src="/assets/va-headshot.jpg" alt="" width="36" height="36" aria-hidden="true" />
-      <span>Vandana Agarwal Nik</span>
-    </a>
-    <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="/">About me</a>
-      <a href="#who">Who I help</a>
-      <a href="#intro">Meet me</a>
-      <a href="#offers">Services</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
-      <a href="/resources">Resources</a>
-    </nav>
-    <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary nav-cta magnetic">Book on Topmate</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span>
-    </button>
-  </div>
-</header>
+<SiteHeader cta={{ href: TOPMATE, label: 'Book on Topmate' }} />
 
 <a id="top"></a>
 
@@ -270,8 +247,8 @@ jsonLd['@graph'].push({
     <h1 class="hero-title reveal" data-d="1">Become the SDR who<br><em><span class="rot-word">books meetings.</span></em></h1>
     <p class="sub reveal" data-d="2"><b>Break into SaaS</b>, grow your SDR skills, and put practical AI to work. I also help founders and sales leaders build SDR and go-to-market functions from scratch.</p>
     <div class="hero-cta reveal" data-d="3">
-      <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book a session on Topmate</a>
-      <a href="#who" class="btn btn-ghost-l magnetic">See how I can help</a>
+      <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book a session on Topmate</a>
+      <a href="#who" class="btn btn-ghost-l">See how I can help</a>
     </div>
     <div class="chips reveal" data-d="3">
       <div class="chip"><b>Rubrik · ClickPost · JumpCloud</b><small>Companies I’ve worked with</small></div>
@@ -485,7 +462,7 @@ jsonLd['@graph'].push({
       <h2>Ready to make your next move clearer?</h2>
       <p>A clearer career direction, stronger SDR skills, your first AI workflow, or a blueprint for your SDR and go-to-market function. Let’s start with what you need.</p>
       <div class="final-cta">
-        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary magnetic">Book on Topmate</a>
+        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
         <a href={LINKEDIN} target="_blank" rel="noopener" class="btn btn-ghost-l">Connect on LinkedIn</a>
       </div>
       <p class="final-mail">Not ready to book? Just say hello at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
@@ -494,24 +471,7 @@ jsonLd['@graph'].push({
 </section>
 
 <!-- FOOTER -->
-<footer class="site">
-  <div class="wrap foot">
-    <span class="foot-logo">Vandana Agarwal Nik</span>
-    <nav class="foot-nav" aria-label="Footer">
-      <a href="/">About me</a>
-      <a href="#who">Who I help</a>
-      <a href="#intro">Meet me</a>
-      <a href="#offers">Services</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
-      <a href="/resources">Resources</a>
-      <a href={SUBSTACK} target="_blank" rel="noopener">Substack</a>
-      <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
-      <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a>
-    </nav>
-    <span>&copy; 2026 &middot; vandanaagarwal.in</span>
-  </div>
-</footer>
+<SiteFooter />
 
 <script>
   // Mobile menu
@@ -610,36 +570,6 @@ jsonLd['@graph'].push({
   const requestScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
   onScroll();
   window.addEventListener('scroll', requestScroll, { passive: true });
-
-  // Subtle pointer tilt on cards (restrained, premium)
-  if (!reduceMotion && finePointer) {
-    document.querySelectorAll('.aud, .svc, .step, .quote, .vid').forEach((card) => {
-      card.classList.add('tilt');
-      card.addEventListener('pointermove', (e) => {
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width - 0.5;
-        const py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(900px) rotateX(${py * -2.5}deg) rotateY(${px * 3}deg) translateY(-5px)`;
-        // feed the cursor-follow spotlight glow
-        card.style.setProperty('--mx', ((px + 0.5) * 100) + '%');
-        card.style.setProperty('--my', ((py + 0.5) * 100) + '%');
-      });
-      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-    });
-  }
-
-  // Magnetic buttons (cursor pull)
-  if (!reduceMotion && finePointer) {
-    document.querySelectorAll('.magnetic').forEach((btn) => {
-      btn.addEventListener('pointermove', (e) => {
-        const r = btn.getBoundingClientRect();
-        const mx = e.clientX - r.left - r.width / 2;
-        const my = e.clientY - r.top - r.height / 2;
-        btn.style.transform = `translate(${mx * 0.28}px, ${my * 0.4}px)`;
-      });
-      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
-    });
-  }
 
   // Preloader — simple "loading", fades out fast, then content reveals
   const pre = document.getElementById('preloader');
