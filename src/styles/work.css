@@ -66,6 +66,7 @@ section.w-sec { padding: 52px 0; }
 .role p { color: var(--soft); }
 .role ul, ul.plain { margin: 10px 0 0 18px; color: var(--ink); }
 .role li, ul.plain li { margin: 5px 0; }
+.role .go { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--violet-2); }
 @media (max-width: 640px) { .role { grid-template-columns: 1fr; gap: 4px; } }
 
 /* footer */
@@ -152,3 +153,13 @@ a.vid-card { display: block; color: inherit; padding: 14px; }
 .vid-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .vid-play { position: absolute; inset: 0; margin: auto; width: 52px; height: 52px; border-radius: 50%; background: rgba(124,58,237,.9); color: #fff; display: grid; place-items: center; font-size: 1.1rem; }
 a.vid-card p { color: var(--ink); font-weight: 500; }
+
+/* "As heard on" podcast strip, just above the contact band */
+section.w-sec.heard { text-align: center; }
+.heard-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+.heard-item { display: block; color: inherit; text-align: left; }
+.heard-item .vid-thumb { margin-bottom: 8px; border: 1px solid var(--line); transition: border-color .2s; }
+.heard-item:hover .vid-thumb { border-color: var(--violet-2); }
+.heard-item .vid-play { width: 40px; height: 40px; font-size: .9rem; }
+.heard-cap { display: block; font-size: .9rem; color: var(--soft); }
+@media (max-width: 640px) { .heard-row { grid-template-columns: 1fr; } }

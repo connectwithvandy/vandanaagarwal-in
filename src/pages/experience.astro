@@ -10,7 +10,7 @@ import { jumpcloud, roles, extras } from '../data/work.js';
   <section class="w-hero">
     <span class="hero-glow" aria-hidden="true"></span>
     <div class="wrap">
-      <span class="kicker">Since 2019</span>
+      <span class="kicker">Experience</span>
       <h1>How I got <em>here</em></h1>
       <p class="sub">
         SDR to AE in 6 months. Manager 6 months after that. Since then I have built SDR teams
@@ -19,33 +19,10 @@ import { jumpcloud, roles, extras } from '../data/work.js';
     </div>
   </section>
 
-  <section class="w-sec" id="jumpcloud">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Most recent</span>
-        <div class="jc-head">
-          <h2>JumpCloud</h2>
-          <span class="when">{jumpcloud.title} · {jumpcloud.when}</span>
-        </div>
-        <p class="jc-intro">{jumpcloud.intro}</p>
-      </div>
-      <div class="jc-grid">
-        {jumpcloud.blocks.map((b) => (
-          <div class="w-card">
-            <h3>{b.head}</h3>
-            <p>{b.body}</p>
-            {b.result && <p class="result">{b.result}</p>}
-            {b.link && <a class="go" href="/built#team">{b.link.label} →</a>}
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="w-sec">
     <div class="wrap">
-      <div class="sec-head"><span class="kicker">Before that</span><h2>Earlier roles</h2></div>
-      {roles.map((r) => (
+      <div class="sec-head"><span class="kicker">Since 2019</span><h2>Where I have worked</h2></div>
+      {[jumpcloud, ...roles].map((r) => (
         <div class="role">
           <div class="when">{r.when}</div>
           <div>
@@ -53,6 +30,7 @@ import { jumpcloud, roles, extras } from '../data/work.js';
             <p class="title">{r.title}</p>
             <p>{r.what}</p>
             {r.wins.length > 0 && <ul>{r.wins.map((w) => <li>{w}</li>)}</ul>}
+            {r.link && <a class="go" href={r.link.href}>{r.link.label} →</a>}
           </div>
         </div>
       ))}

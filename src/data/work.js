@@ -18,7 +18,6 @@ export const proof = [
   { big: '143%', small: 'peak quarter, Rubrik SDR team' },
   { big: '$5.6M', small: 'pipeline in one quarter' },
   { big: '17% to 49%', small: 'meeting to opportunity, JumpCloud' },
-  { big: '100', small: 'people have used Ted' },
 ];
 
 export const whatIDo = [
@@ -43,10 +42,8 @@ export const highlights = ['Inbound Intel', 'Debrief', 'Ted'];
 
 export const about = {
   paras: [
-    'I am Vandy. Based in Bengaluru. Commerce degree, an MBA in sales and marketing, then straight into an SDR seat in 2019.',
-    'I get a travel itch every 3 months, and I usually give in. The gym is not up for negotiation. And I am a proper Bollywood fanatic.',
-    'I love meeting people and learning from them. Give me a community and I am in. That is why I co-founded SDR Leaders of APAC, and why I write on LinkedIn for 13,000+ people.',
-    'I also love experimenting. Most of the projects on this site started as one.',
+    'I am Vandy, based in Bengaluru. Commerce degree, an MBA in sales and marketing, then straight into an SDR seat in 2019.',
+    'I love meeting people, which is why I co-founded SDR Leaders of APAC. I travel every few months, never skip the gym, and I am a proper Bollywood fanatic.',
   ],
   chips: [
     { big: '100 Powerful Women in Sales', small: 'Demandbase and Women in Sales, 2025' },
@@ -99,7 +96,6 @@ export const ted = {
   line: 'a health buddy that lives in WhatsApp',
   story: [
     'You tell Ted what you ate and how you moved. It remembers, and gives you one useful thing you can still do today. No diet culture, no guilt.',
-    'I am not an engineer. I built it alone, at night, after a full day leading SDRs.',
   ],
   facts: [
     { big: '100', small: 'people have used Ted' },
@@ -118,41 +114,41 @@ export const groups = [
   {
     id: 'team',
     title: 'Built for my team',
-    note: 'Tools I built at JumpCloud for my own SDRs. They run on company data, so each one has a page with a sample of what it produces.',
+    note: 'Tools I built at JumpCloud for my own SDRs. Each one has a page with a sample.',
     projects: [
       {
         name: 'Inbound Intel',
         slug: 'inbound-intel',
         line: 'every new lead, researched before the call',
         tags: ['For SDR teams', 'JumpCloud', '2026'],
-        body: 'A new inbound lead comes in. Inbound Intel looks up the company size, the person and any recent news, and checks if it is a partner (an MSP) or a direct buyer, because those go to different teams. Then it finds the one hook worth opening with and drafts the first email. The whole batch goes back into Salesforce.',
+        body: 'Researches every new inbound lead, sorts partners from direct buyers, finds the hook and drafts the first email. My team uses it daily. It saves about 10 minutes per lead.',
       },
       {
         name: 'POV Generator',
         slug: 'pov-generator',
         line: 'why this account should care, right now',
         tags: ['For SDRs and AEs', 'JumpCloud', '2026'],
-        body: 'Type an account name. It reads up on the company, its IT and security leaders, recent funding and what is happening in its industry, then writes a point of view on why identity and device security matters to them now. Plus a first email in the rep’s name.',
+        body: 'Type an account name. It writes why identity and device security matters to them now, plus a first email in the rep’s name.',
       },
       {
         name: 'Prospect Research Agent',
         slug: 'prospect-research-agent',
         line: 'one researcher per company',
         tags: ['For outbound', '2026'],
-        body: 'Give it one company or a long list. It sends a separate research agent to each company so nothing gets mixed up, and saves a short brief for every one. It sits on top of prospect lists from Clay, a data tool sales teams use to build lists.',
+        body: 'Give it a list of companies. It sends a separate research agent to each one and saves a short brief for every company.',
       },
     ],
   },
   {
     id: 'gtm',
     title: 'GTM projects',
-    note: 'Built at a buildathon and a cohort, each around a sales problem I have actually had.',
+    note: 'Built at a buildathon and a cohort.',
     projects: [
       {
         name: 'Debrief',
         line: 'score the conversation, not the person',
         tags: ['GrowthX GTM Buildathon', 'Solo, in one day', 'Live'],
-        body: 'At events, only 5 to 10 conversations go deep. The rest are booth scans. Every event tool scores the person: title, company, size. None of them score what was said. Scan a badge and Debrief gives a fit verdict in about 6 seconds, then fills in the research. After the chat, leave a voice note, and it scores the conversation and drafts the follow up.',
+        body: 'Every event tool scores the person. Debrief scores the conversation: scan a badge, leave a voice note, and it drafts the follow up.',
         link: { href: 'https://debrief-hazel.vercel.app', label: 'Try Debrief' },
       },
       {
@@ -160,7 +156,7 @@ export const groups = [
         slug: 'linkedin-post-coach',
         line: 'your calls in, your posts out',
         tags: ['Clay GTM Engineers cohort', 'Shared with the cohort'],
-        body: 'Everyone in the cohort had to post on LinkedIn, and nobody had the time. So I built a coach anyone could run. It learns how you write, turns your call recordings into drafts, and strips out the lines that sound like AI. It gets you 80% of the way. The last 20% stays yours.',
+        body: 'Learns how you write, turns your call recordings into post drafts, and strips out the lines that sound like AI.',
       },
     ],
   },
@@ -174,44 +170,21 @@ export const groups = [
         slug: 'morning-brief',
         line: 'my day, ready at 11 am',
         tags: ['For me', 'Sep 2026'],
-        body: 'Every morning it reads my four inboxes and calendars, builds my to do list, drafts the replies I owe, and picks two or three things worth reading. Then it emails the whole thing to me. It is the assistant I wanted as a manager and never had.',
+        body: 'Reads my four inboxes and calendars, builds my to do list, drafts the replies I owe, and emails it all to me each morning.',
       },
     ],
   },
 ];
 
 export const jumpcloud = {
-  when: 'Nov 2025 to Oct 2026',
-  title: 'Manager, Sales Development',
-  intro: 'I led 10 SDRs in three pods: APAC outbound, APAC inbound and EMEA inbound. Identity, device and access management, sold to IT teams.',
-  blocks: [
-    {
-      head: 'Fixing the handoff',
-      body: 'Meetings were getting booked, but too few turned into real opportunities. I owned the fix across sales and marketing, signed off by the CMO. We rolled out ICEE, one way of qualifying that everyone used. Every handoff to an AE got a written email. And reps had to bring in more than one person from each account.',
-      result: 'Outbound meeting to opportunity went from 17% to 49% in one quarter.',
-    },
-    {
-      head: 'Rebuilding outbound',
-      body: 'APAC outbound pipeline had nearly dried up when I took it over.',
-      result: '9x in one quarter, from $66K to $624K, with 283% more first meetings.',
-    },
-    {
-      head: 'Running inbound',
-      body: 'Clear rules on how fast leads get worked and how they are written up, and a weekly loop back to marketing on which leads were actually good.',
-      result: 'MQLs at 181% of target in APAC and 135% in EMEA. SQLs at 114% and 110%. About $2.9M qualified pipeline in Q1 across the three pods.',
-    },
-    {
-      head: 'Coaching with AI',
-      body: 'Weekly call reviews on Gong, daily practice calls on Hyperbound, and AI Madness, a team competition to make the practice fun.',
-      result: 'One rep’s unqualified meetings dropped from 70% to 10%, called out at the APAC all hands. A new hire hit 92% of target in 6 weeks. Two reps came off performance plans in 14 and 25 days.',
-    },
-    {
-      head: 'Building tools',
-      body: 'I built Inbound Intel and the POV Generator for my own team, so they could spend less of the day on research and more of it talking to buyers.',
-      result: null,
-      link: { href: '/#team', label: 'See the tools' },
-    },
+  company: 'JumpCloud', title: 'Manager, Sales Development', when: 'Nov 2025 to Oct 2026',
+  what: 'Led 10 SDRs in three pods: APAC outbound, APAC inbound and EMEA inbound.',
+  wins: [
+    'Outbound meeting to opportunity from 17% to 49% in one quarter.',
+    'APAC outbound pipeline from $66K to $624K in one quarter.',
+    'About $2.9M qualified pipeline in Q1 across the three pods.',
   ],
+  link: { href: '/built#team', label: 'See the tools I built for the team' },
 };
 
 export const roles = [
@@ -265,12 +238,13 @@ export const extras = [
 // From LinkedIn recommendations, quoted word for word. All 15 are public on her profile.
 export const RECS_URL = 'https://www.linkedin.com/in/meet-vandana/details/recommendations/';
 export const recs = [
-  { quote: 'She brings a combination of operational rigor, coaching strength, and genuine care for her team.', who: 'Ryan Cunningham', role: 'Worked on the same team at Rubrik' },
+  // The first three show on the home page: a manager, a peer and a direct report.
   { quote: 'She has a rare ability to convey a strategic vision clearly, ensuring that every team member feels aligned and empowered.', who: 'Morgan Walker', role: 'Regional Director, Rubrik' },
-  { quote: 'After I moved back into the field, our relationship came full circle when her SDR team supported mine.', who: 'Claire Roberts', role: 'Account Executive, worked together at Rubrik' },
-  { quote: 'Vandana is the kind of manager who actually gets in the weeds with you.', who: 'Joel Thomas', role: 'Reported to me' },
-  { quote: 'Her understanding of sales is exceptional, and she has a rare ability to train and guide people to become the best version of themselves.', who: 'Anurag Banerjee', role: 'Reported to me' },
-  { quote: 'Scaling a team can be a tough job, but Vandana made it look natural.', who: 'Calvin Leong', role: 'APJ HR Leader, worked together' },
+  { quote: 'She brings a combination of operational rigor, coaching strength, and genuine care for her team.', who: 'Ryan Cunningham', role: 'Peer, Rubrik' },
+  { quote: 'Vandana is the kind of manager who actually gets in the weeds with you.', who: 'Joel Thomas', role: 'Former direct report' },
+  { quote: 'After I moved back into the field, our relationship came full circle when her SDR team supported mine.', who: 'Claire Roberts', role: 'Account Executive, Rubrik' },
+  { quote: 'Her understanding of sales is exceptional, and she has a rare ability to train and guide people to become the best version of themselves.', who: 'Anurag Banerjee', role: 'Former direct report' },
+  { quote: 'Scaling a team can be a tough job, but Vandana made it look natural.', who: 'Calvin Leong', role: 'APJ HR Leader' },
 ];
 
 // The four Topmate offers. Names and durations must match topmate.io/vandana_agarwal.

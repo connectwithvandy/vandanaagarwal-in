@@ -21,10 +21,12 @@ Live with HTTPS at **https://vandanaagarwal.in**, deployed on Vercel, auto-deplo
 
 The home page is now Vandy's **portfolio**, not the coaching page. She is job hunting (left JumpCloud in Oct 2026) and still sells coaching.
 
-- `/` (`src/pages/index.astro`): portfolio home. Hero, what I do, selected work, LinkedIn recommendations, about me, roles I am looking for, coaching teaser, Substack teaser, contact.
+- `/` (`src/pages/index.astro`): portfolio home. Hero, roles I'm built for, LinkedIn recommendations (3), things I built, about me, elsewhere (coaching + Substack cards), "As heard on" podcasts, contact (email only).
 - `/experience`, `/built`: portfolio pages. All portfolio copy lives in `src/data/work.js`; layout in `src/layouts/WorkLayout.astro`; styles in `src/styles/work.css` (on top of `global.css`).
-- `/coaching` (`src/pages/coaching.astro`): the original coaching one-pager, moved here intact. Sections 1 to 14 below now describe this page.
+- `/coaching` (`src/pages/coaching.astro`): the original coaching one-pager, Sections 1 to 14 below describe its original build. **Trimmed 26 Oct 2026 for simplicity** (owner request: too wordy): it now has only hero, marquee, who I help (title + pain line only), the four offers (one line each), 3 reviews, 3 FAQs, final CTA and footer. Meet me, results band, photo banner, process and featured videos were removed (videos now live on the home page). Do not add them back unless Vandy asks.
 - `/resources`: unchanged; its menu links point to `/coaching#...`.
+
+**Simplicity rule (owner, 26 Oct 2026):** a friend found the site too wordy. Keep copy short, one line per card, and never repeat the same number or section across a page. Pat's portfolio was the reference: easy to digest.
 
 Portfolio rules from Vandy: her voice, not salesy; no Coachy project; never mention night shifts; role titles in Title Case; she is **Co-founder** of SDR Leaders of APAC. Jobs email is connectwithvandanaa@gmail.com; coaching email stays coaching@vandanaagarwal.in.
 
@@ -201,7 +203,7 @@ offer copy and image notes in `extras/Topmate-Four-Offers-Updated.md` (images in
 
 ## 6) Definition of done
 
-- One-page site with all sections from section 2, in order (pain-first flow).
+- Coaching page sections as trimmed on 26 Oct 2026 (see Site map), in order (pain-first flow).
 - Every CTA → Topmate, new tab. The main/hero/nav CTAs point at the profile
   (`https://topmate.io/vandana_agarwal`); each **service card** deep-links to its own booking page
   (`https://topmate.io/vandana_agarwal/<id>`).
@@ -209,8 +211,8 @@ offer copy and image notes in `extras/Topmate-Four-Offers-Updated.md` (images in
   Build Your First AI-Powered SDR Workflow, and Build Your SDR Function & GTM Blueprint.
   No prices on the website.
 - Contact email `coaching@vandanaagarwal.in` via `mailto:`.
-- Exactly three featured video podcasts embedded with `loading="lazy"`.
-- Six real, attributed testimonials.
+- The three podcast videos appear on the home page ("As heard on" strip, above contact).
+- Three real, attributed testimonials on /coaching.
 - Experience stated as 8+ years, consistently. No "10+". No overhyping. No em dashes in copy.
 - One H1, semantic headings, real `alt` text, sufficient contrast, keyboard-focusable controls.
 - Fully responsive. Test at 375px, 768px, 1280px.

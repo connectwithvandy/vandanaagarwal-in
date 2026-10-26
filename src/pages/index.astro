@@ -3,14 +3,14 @@ import WorkLayout from '../layouts/WorkLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ContactBand from '../components/ContactBand.astro';
 import SocialIcons from '../components/SocialIcons.astro';
-import { EMAIL, CV, videos, socials, proof, groups, whatIDo, highlights, about, services, recs, RECS_URL, coaching, TOPMATE, posts, SUBSTACK } from '../data/work.js';
+import { EMAIL, CV, videos, proof, groups, highlights, about, services, recs, RECS_URL, SUBSTACK } from '../data/work.js';
 
 const all = groups.flatMap((g) => g.projects);
 const tedCard = {
   name: 'Ted',
   line: 'a health buddy that lives in WhatsApp',
   tags: ['After hours', '100 users', 'Live'],
-  body: 'A health buddy on WhatsApp. Tell it what you ate and how you moved, and it gives you one useful thing you can still do today. Built alone, at night.',
+  body: 'Tell it what you ate and how you moved. It gives you one useful thing you can still do today.',
   link: { href: 'https://heyted.in', label: 'Meet Ted' },
 };
 const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.name === n)));
@@ -24,12 +24,11 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
     <div class="wrap">
       <img class="w-face" src="/assets/va-headshot.jpg" alt="Vandana Agarwal Nik" width="96" height="96" />
       <span class="kicker">GTM leader · Bengaluru</span>
-      <h1>By day I led 10 SDRs.<br /><em>By night I built the tools they needed.</em></h1>
+      <h1>Your pipeline runs on people and process.<br /><em>I build both.</em></h1>
       <p class="sub">
-        Eight years building SDR teams across APAC, EMEA and the US, at JumpCloud, Rubrik,
-        Branch and ClickPost. I am not an engineer. I build with Claude, around problems I have lived.
+        Eight years building SDR teams at JumpCloud, Rubrik, Branch and ClickPost. I build the tools they need with Claude.
       </p>
-      <span class="w-status">Open to AE and GTM roles, ideally at AI native companies</span>
+      <span class="w-status">Hiring for sales or GTM? Let's talk.</span>
       <div class="w-cta">
         <a href={`mailto:${EMAIL}`} class="btn btn-primary">Email me</a>
         <a href={CV} download class="btn btn-ghost-l">Download CV</a>
@@ -41,18 +40,18 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
     </div>
   </section>
 
-  <section class="w-sec" id="what-i-do">
+  <section class="w-sec" id="work-with-me">
     <div class="wrap">
       <div class="sec-head">
         <span class="kicker">What I do</span>
-        <h2>Three things I am good at</h2>
+        <h2>Roles I'm built for</h2>
       </div>
-      <div class="w-grid">
-        {whatIDo.map((w) => (
-          <div class="w-card">
-            <h3>{w.head}</h3>
-            <p style="margin-top:10px">{w.body}</p>
-            <p class="result">{w.proof}</p>
+      <div class="w-grid two">
+        {services.map((s) => (
+          <div class="w-card svc-card">
+            <h3>{s.head}</h3>
+            <p style="margin-top:10px">{s.body}</p>
+            <a class="go" href={`mailto:${EMAIL}?subject=${encodeURIComponent(s.subject)}`}>Email me about this →</a>
           </div>
         ))}
       </div>
@@ -65,10 +64,9 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
       <div class="sec-head">
         <span class="kicker">Recommendations</span>
         <h2>What people say</h2>
-        <p>From managers, peers and people who reported to me. In their own words, on LinkedIn.</p>
       </div>
       <div class="w-grid">
-        {recs.map((r) => (
+        {recs.slice(0, 3).map((r) => (
           <figure class="w-card rec">
             <blockquote>“{r.quote}”</blockquote>
             <figcaption><b>{r.who}</b><span>{r.role}</span></figcaption>
@@ -91,23 +89,6 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
     </div>
   </section>
 
-  <section class="w-sec" id="videos">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">On the mic</span>
-        <h2>Podcasts and talks</h2>
-      </div>
-      <div class="w-grid">
-        {videos.map((v) => (
-          <a class="w-card vid-card" href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener">
-            <span class="vid-thumb"><img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" /><span class="vid-play" aria-hidden="true">▶</span></span>
-            <p>{v.caption}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="w-sec" id="about">
     <div class="wrap about">
       <div>
@@ -124,65 +105,37 @@ const picks = highlights.map((n) => (n === 'Ted' ? tedCard : all.find((p) => p.n
     </div>
   </section>
 
-  <section class="w-sec" id="work-with-me">
+  <section class="w-sec" id="elsewhere">
     <div class="wrap">
       <div class="sec-head">
-        <span class="kicker">Work with me</span>
-        <h2>Roles I am looking for</h2>
-        <p>I am open to a few kinds of roles. Here is what I would bring to each.</p>
+        <span class="kicker">Elsewhere</span>
+        <h2>Coaching and writing</h2>
       </div>
       <div class="w-grid two">
-        {services.map((s, i) => (
-          <div class="w-card svc-card">
-            <span class="num">0{i + 1}</span>
-            <h3>{s.head}</h3>
-            <p style="margin-top:10px">{s.body}</p>
-            <ul class="svc-proof">{s.proof.map((x) => <li>{x}</li>)}</ul>
-            <a class="go" href={`mailto:${EMAIL}?subject=${encodeURIComponent(s.subject)}`}>Email me about this →</a>
-          </div>
-        ))}
+        <a class="w-card offer" href="/coaching">
+          <h3>Coaching</h3>
+          <p>One on one for SDRs, and SDR setup for founders.</p>
+          <span class="go">See coaching →</span>
+        </a>
+        <a class="w-card offer" href={SUBSTACK} target="_blank" rel="noopener">
+          <h3>The SDR Field Guide</h3>
+          <p>A free Substack series on selling in APAC.</p>
+          <span class="go">Read on Substack ↗</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="w-sec" id="coaching">
+  <section class="w-sec heard" id="videos">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">On the side</span>
-        <h2>Coaching for SDRs and founders</h2>
-        <p>I coach SDRs one on one, and help founders set up their SDR function. Booked through Topmate.</p>
-      </div>
-      <div class="w-grid two">
-        {coaching.map((c) => (
-          <a class="w-card offer" href={`${TOPMATE}/${c.id}`} target="_blank" rel="noopener">
-            <span class="dur">{c.dur}</span>
-            <h3>{c.title}</h3>
-            <p>{c.who}</p>
+      <span class="kicker">As heard on</span>
+      <div class="heard-row">
+        {videos.map((v) => (
+          <a class="heard-item" href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener">
+            <span class="vid-thumb"><img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" /><span class="vid-play" aria-hidden="true">▶</span></span>
+            <span class="heard-cap">{v.caption}</span>
           </a>
         ))}
-      </div>
-      <div class="w-cta" style="justify-content:flex-start">
-        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
-        <a href="/coaching" class="btn btn-ghost-l">More about coaching</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="w-sec" id="writing">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Writing</span>
-        <h2>The SDR Field Guide</h2>
-        <p>A free series on Substack about selling in APAC: ICP, cadence, channels, objections.</p>
-      </div>
-      <ol class="post-list">
-        {posts.map((p) => (
-          <li><a href={`${SUBSTACK}/p/${p.slug}`} target="_blank" rel="noopener">{p.title} ↗</a></li>
-        ))}
-      </ol>
-      <div class="w-cta" style="justify-content:flex-start">
-        <a href="/resources" class="btn btn-ghost-l">All resources</a>
-        <a href={SUBSTACK} target="_blank" rel="noopener" class="btn btn-ghost-l">Subscribe on Substack</a>
       </div>
     </div>
   </section>

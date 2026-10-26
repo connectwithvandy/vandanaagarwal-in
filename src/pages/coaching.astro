@@ -51,12 +51,12 @@ const jsonLd = {
   ],
 };
 
-// Who she helps (4 audiences) - led with the pain, then the outcome
+// Who she helps (4 audiences), each led with the pain
 const audiences = [
-  { icon: 'door', title: 'Finding your first SDR role', pain: 'Not sure how to take the first step?', body: 'Get clear on your direction, strengthen your story, and prepare for interviews with practical guidance.' },
-  { icon: 'ramp', title: 'Growing as an SDR', pain: 'Ready to get better, but unsure what to focus on?', body: 'Work through prospecting, cold calls, objections, and career decisions with support built around your goals.' },
-  { icon: 'compass', title: 'Putting AI to work', pain: 'Unsure how AI fits into your day?', body: 'Build a repeatable way to research accounts, prepare for calls, or draft relevant outreach.' },
-  { icon: 'build', title: 'Setting up your SDR function', pain: 'Building from scratch and unsure where to start?', body: 'Work through your target customers, outbound approach, SDR setup, and AI tools, then bring them together in a practical blueprint.' },
+  { icon: 'door', title: 'Finding your first SDR role', pain: 'Not sure how to take the first step?' },
+  { icon: 'ramp', title: 'Growing as an SDR', pain: 'Ready to get better, but unsure what to focus on?' },
+  { icon: 'compass', title: 'Putting AI to work', pain: 'Unsure how AI fits into your day?' },
+  { icon: 'build', title: 'Setting up your SDR function', pain: 'Building from scratch and unsure where to start?' },
 ];
 
 // Stroke line-icons for the audience cards (inherit the lavender accent via currentColor)
@@ -74,7 +74,7 @@ const services = [
     title: 'Mentorship Discovery Call',
     format: '1:1 call',
     dur: '15 min',
-    desc: 'Your first step into mentorship. I’ll understand your goals, where you are right now, and what you need help with. From there, I’ll create a personalized mentorship program for you.',
+    desc: 'Start here. We talk through your goals, and I shape a mentorship plan around them.',
     badge: 'Start here',
     cta: 'Book your discovery call',
   },
@@ -83,7 +83,7 @@ const services = [
     title: '1:1 Mentorship Program',
     format: 'Mentorship program',
     dur: '6 to 8 weeks',
-    desc: 'For aspiring and existing SDRs who want practical guidance to break into their first role, find career direction, improve prospecting, cold calls, sales conversations and objection handling, build confidence, and know what to work on next. No generic advice or one-size-fits-all course. Just practical guidance built around your goals and your real situation.',
+    desc: 'For SDRs breaking in or levelling up: prospecting, cold calls, objections and career direction.',
     badge: 'Mentorship',
     cta: 'Start with a discovery call',
   },
@@ -92,7 +92,7 @@ const services = [
     title: 'Build Your First AI-Powered SDR Workflow',
     format: '1:1 working session',
     dur: '60 min',
-    desc: 'Turn one repetitive sales task into a working AI workflow, with no coding required. Choose account research, personalized outreach, cold-call preparation, follow-ups, objection handling, or daily planning. You’ll leave with a workflow built around your role, reusable prompts and templates, and a clear plan for using it in your daily work.',
+    desc: 'Turn one repetitive sales task into a working AI workflow. No coding needed.',
     badge: 'Hands-on AI',
     cta: 'Build your first AI workflow',
   },
@@ -101,79 +101,27 @@ const services = [
     title: 'Build Your SDR Function & GTM Blueprint',
     format: '1:1 call',
     dur: '60 min',
-    desc: 'A working consultation for founders and sales leaders setting up their SDR function from scratch or rethinking their approach. We’ll discuss go-to-market strategy, SDR setup, AI workflows, and GTM engineering: the tools and automation behind your outreach. Together, we’ll map the priorities into a practical blueprint for what to build next. If you want ongoing guidance as you put it into practice, we can continue across a series of working sessions.',
+    desc: 'For founders and sales leaders setting up SDR. We map a practical blueprint, and can continue across a series of working sessions.',
     badge: 'For companies',
     cta: 'Discuss your SDR & GTM setup',
   },
 ];
 
-const steps = [
-  { n: '01', title: 'Understand', body: 'We get clear on your goal, the challenge in front of you, and what is getting in your way.' },
-  { n: '02', title: 'Build', body: 'We create the plan, workflow, messaging, or sales system around your real situation.' },
-  { n: '03', title: 'Put it to work', body: 'You leave with practical next steps and something you can use immediately, not theory.' },
-];
-
-const videos = [
-  { id: 'wDsukLjubus', caption: 'Inside the SDR career in SaaS: growth and salary' },
-  { id: '35mHdwO_PsI', caption: 'SDR leadership gaps in India, on the Saaspire Podcast' },
-  { id: 'b5bccZRw7YU', caption: 'The SDR Leaders Playbook' },
-];
-
-const results = [
-  { stat: '57% → 91%', label: 'NA inbound SAL conversion, in 5 months' },
-  { stat: '0% → 105%', label: 'New SDR team to outbound target, in 4 months' },
-  { stat: '17% → 49%', label: 'APAC outbound SQL-to-S1, in one quarter' },
-  { stat: '2x SQLs', label: 'Outbound built from scratch at ClickPost' },
-];
-
 const testimonials = [
   { quote: 'I loved that she was very open about what I needed to improve and what my strengths were, so I could pitch myself better. People who need guidance for breaking into SaaS should get a session with Vandana.', who: 'Bharath S', initials: 'BS' },
-  { quote: 'The absolute observer who will give excellent mentorship. I got clarity about where I am and what I need to do. Thanks, Vandana.', who: 'Shivam Pandey', initials: 'SP' },
   { quote: 'The demo interview was very helpful. The pattern was so similar to the real thing that it felt like the interviewer had consulted Vandana. I highly recommend it.', who: 'Udit Sharma', initials: 'US' },
   { quote: 'I reached out to Vandana for insights on SDR hiring. She was super helpful and gave good, actionable insights.', who: 'Sandeep Gupta', initials: 'SG' },
-  { quote: 'Vandana guided me with a practical path to move forward in SaaS, and her insights were both eye-opening and immensely helpful.', who: 'SDR, via Topmate', initials: 'SD' },
-  { quote: 'She gave me good insights and clarity on the things I was stuck on.', who: 'Mohit Dhanwani', initials: 'MD' },
 ];
 
 const faqs = [
   {
     "q": "Where should I start?",
-    "a": "For personalized mentorship, start with the discovery call. Choose the AI working session if you want help with one specific SDR task. If you’re a founder or sales leader setting up your SDR function, choose the SDR Function & GTM Blueprint consultation.",
+    "a": "Start with the discovery call for mentorship. Pick the AI session for help with one task. Founders and sales leaders, pick the SDR Function & GTM Blueprint.",
     "open": true
   },
   {
-    "q": "What happens on the mentorship discovery call?",
-    "a": "We’ll discuss your goals, where you are right now, and what you need help with. That conversation helps me shape a personalized mentorship program and the next steps for working together.",
-    "open": false
-  },
-  {
-    "q": "What is an AI workflow?",
-    "a": "A repeatable set of steps that uses AI to help with a task, such as turning account research into a relevant first outreach draft. We’ll work on one task and check the output together so you understand how to use it.",
-    "open": false
-  },
-  {
     "q": "Do I need coding experience for the AI session?",
-    "a": "No. We’ll start with your experience level, choose a manageable task, and explain each step as we build.",
-    "open": false
-  },
-  {
-    "q": "How is the AI session different from mentorship?",
-    "a": "The AI session focuses on one practical task. Mentorship offers broader guidance around your SDR skills, challenges, confidence, and career direction.",
-    "open": false
-  },
-  {
-    "q": "Can you help me set up an SDR function from scratch?",
-    "a": "Yes. We can work through your target customers, outbound approach, SDR setup, and go-to-market priorities, then map what to build first into a practical blueprint.",
-    "open": false
-  },
-  {
-    "q": "What do you mean by GTM and AI engineering?",
-    "a": "GTM means go-to-market: how your company reaches and wins customers. GTM and AI engineering connect the tools, data, automation, and AI workflows that support that work. In the consultation, we’ll discuss where these fit in your SDR function and what to prioritize.",
-    "open": false
-  },
-  {
-    "q": "Does the founder consultation include building the entire system?",
-    "a": "The consultation focuses on strategy, decisions, and a blueprint for your next steps. If you want ongoing guidance as you put it into practice, we can continue across a series of working sessions. Hands-on implementation, or building systems on your behalf, needs a separately agreed scope.",
+    "a": "No. We start at your level, pick one manageable task, and I explain each step as we build.",
     "open": false
   },
   {
@@ -245,13 +193,12 @@ jsonLd['@graph'].push({
   <div class="wrap hero-inner">
     <span class="kicker reveal">Global SDR coaching</span>
     <h1 class="hero-title reveal" data-d="1">Become the SDR who<br><em><span class="rot-word">books meetings.</span></em></h1>
-    <p class="sub reveal" data-d="2"><b>Break into SaaS</b>, grow your SDR skills, and put practical AI to work. I also help founders and sales leaders build SDR and go-to-market functions from scratch.</p>
+    <p class="sub reveal" data-d="2"><b>Break into SaaS</b>, grow as an SDR, and put AI to work. I also help founders set up their SDR function.</p>
     <div class="hero-cta reveal" data-d="3">
       <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book a session on Topmate</a>
       <a href="#who" class="btn btn-ghost-l">See how I can help</a>
     </div>
     <div class="chips reveal" data-d="3">
-      <div class="chip"><b>Rubrik · ClickPost · JumpCloud</b><small>Companies I’ve worked with</small></div>
       <div class="chip"><b>8+ yrs</b><small>SaaS sales development</small></div>
       <div class="chip"><b>APAC &middot; EMEA &middot; AMER</b><small>Cross-border leadership</small></div>
       <div class="chip"><b>100 Powerful Women in Sales</b><small>Demandbase &amp; Women in Sales, 2025</small></div>
@@ -274,7 +221,6 @@ jsonLd['@graph'].push({
     <div class="sec-head center reveal">
       <span class="kicker">Sound familiar?</span>
       <h2>Wherever you’re stuck in the SDR journey</h2>
-      <p>Find yourself below, then pick the path that fits. If you are not sure, we figure it out together.</p>
     </div>
     <div class="aud-grid">
       {audiences.map((a, i) => (
@@ -282,60 +228,10 @@ jsonLd['@graph'].push({
           <span class="aud-ico" aria-hidden="true" set:html={ICONS[a.icon]}></span>
           <h3>{a.title}</h3>
           <p class="pain">{a.pain}</p>
-          <p>{a.body}</p>
         </div>
       ))}
     </div>
   </div>
-</section>
-
-<!-- HOW I HELP / MEET ME (intro: story + about merged, this is where "Hi, I'm Vandana" lives) -->
-<section id="intro" class="alt">
-  <div class="wrap intro">
-    <div class="intro-photo reveal" data-rev="l">
-      <img src="/assets/va-portrait.jpg" alt="Vandana Agarwal Nik, SDR coach and Sales Development Leader" width="1000" height="1250" class="img-reveal" />
-    </div>
-    <div class="intro-body reveal" data-rev="r" data-d="1">
-      <span class="hello">Hi, I’m Vandana</span>
-      <h2>The mentor I wish I’d had, now in your corner</h2>
-      <p class="lead-q">Early in my career, I didn’t have someone who had done the job and could show me the way. I figured out outbound the hard way, one rejection at a time. That is exactly why I coach now.</p>
-      <p>I build and scale high-performing SDR teams across APAC, EMEA, and AMER, from an early-stage startup at ClickPost to growth and scale at Rubrik and JumpCloud. I am obsessed with coaching systems that turn effort into booked meetings.</p>
-      <p class="ai-line">I help SDRs use AI for account research, personalized outreach, call preparation, follow-ups, and daily planning, without producing generic AI-written spam.</p>
-      <ul class="cred">
-        <li>Co-founder, <a href={APAC} target="_blank" rel="noopener">SDR Leaders of APAC</a> (250+ members)</li>
-        <li>100 Powerful Women in Sales, 2025</li>
-        <li>GrowthX Fellow</li>
-        <li>8+ years in SaaS sales development</li>
-      </ul>
-      <div class="intro-cta">
-        <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
-        <a href={`mailto:${EMAIL}`} class="btn btn-ghost">Email me</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS BAND (success stories) -->
-<section class="results-band">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="kicker" style="color: var(--lav)">From my SDR leadership experience</span>
-      <h2>Results from teams I’ve led</h2>
-    </div>
-    <ul class="results">
-      {results.map((r, i) => (
-        <li class="reveal" style={`--i:${i}`}>
-          <b>{r.stat}</b>
-          <small>{r.label}</small>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<!-- PHOTO BANNER -->
-<section class="banner-strip" aria-label="Helping SDRs perform better and prepare smarter for interviews">
-  <img src="/assets/banner.jpg" alt="Vandana Agarwal Nik. Helping SDRs perform better and prepare smarter for interviews. Career clarity, growth mentorship, interview preparation, and coaching." width="1400" height="350" loading="lazy" />
 </section>
 
 <!-- WAYS TO WORK WITH ME / SERVICES (the offer) -->
@@ -344,7 +240,6 @@ jsonLd['@graph'].push({
     <div class="sec-head center reveal">
       <span class="kicker">Ways to work with me</span>
       <h2>Choose the support you need</h2>
-      <p>Start with a discovery call for personalized mentorship, book a focused AI working session, or map out your SDR and go-to-market function.</p>
     </div>
 
     <div class="svc-grid">
@@ -392,51 +287,6 @@ jsonLd['@graph'].push({
   </div>
 </section>
 
-<!-- PROCESS (how we work together: after testimonials, before FAQ) -->
-<section id="process">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="kicker">How we work together</span>
-      <h2>From a real challenge to a practical next step</h2>
-    </div>
-    <div class="steps">
-      {steps.map((s, i) => (
-        <div class="step reveal" style={`--i:${i}`}>
-          <span class="n">{s.n}</span>
-          <h3>{s.title}</h3>
-          <p>{s.body}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED -->
-<section id="featured">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="kicker">Video podcasts</span>
-      <h2>Catch me on the mic</h2>
-    </div>
-    <div class="videos">
-      {videos.map((v, i) => (
-        <div class="vid reveal" style={`--i:${i}`}>
-          <div class="vframe">
-            <iframe
-              src={`https://www.youtube.com/embed/${v.id}`}
-              title={`Video podcast ${i + 1}: ${v.caption}`}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <p>{v.caption}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq" class="alt faq-sec">
   <div class="wrap">
@@ -460,7 +310,7 @@ jsonLd['@graph'].push({
     <div class="final reveal">
       <span class="kicker">In your corner</span>
       <h2>Ready to make your next move clearer?</h2>
-      <p>A clearer career direction, stronger SDR skills, your first AI workflow, or a blueprint for your SDR and go-to-market function. Let’s start with what you need.</p>
+      <p>Let’s start with what you need.</p>
       <div class="final-cta">
         <a href={TOPMATE} target="_blank" rel="noopener" class="btn btn-primary">Book on Topmate</a>
         <a href={LINKEDIN} target="_blank" rel="noopener" class="btn btn-ghost-l">Connect on LinkedIn</a>
