@@ -241,9 +241,9 @@ export const recs = [
   // The first three show on the home page: a manager, a peer and a direct report.
   { quote: 'She has a rare ability to convey a strategic vision clearly, ensuring that every team member feels aligned and empowered.', who: 'Morgan Walker', role: 'Regional Director, Rubrik' },
   { quote: 'She brings a combination of operational rigor, coaching strength, and genuine care for her team.', who: 'Ryan Cunningham', role: 'Peer, Rubrik' },
-  { quote: 'Vandana is the kind of manager who actually gets in the weeds with you.', who: 'Joel Thomas', role: 'Former direct report' },
+  { quote: 'Vandana is the kind of manager who actually gets in the weeds with you.', who: 'Joel Thomas', role: 'Former direct report, Rubrik' },
   { quote: 'After I moved back into the field, our relationship came full circle when her SDR team supported mine.', who: 'Claire Roberts', role: 'Account Executive, Rubrik' },
-  { quote: 'Her understanding of sales is exceptional, and she has a rare ability to train and guide people to become the best version of themselves.', who: 'Anurag Banerjee', role: 'Former direct report' },
+  { quote: 'Her understanding of sales is exceptional, and she has a rare ability to train and guide people to become the best version of themselves.', who: 'Anurag Banerjee', role: 'Former direct report, Rubrik' },
   { quote: 'Scaling a team can be a tough job, but Vandana made it look natural.', who: 'Calvin Leong', role: 'APJ HR Leader' },
 ];
 
